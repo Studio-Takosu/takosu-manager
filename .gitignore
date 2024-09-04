@@ -1,0 +1,70 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# C extensions
+*.so
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual Environments
+venv/
+ENV/
+env/
+.venv/
+.pyenv/
+.Python
+
+# Pyre type checker
+.pyre/
+
+# Caches
+.pycache/
+*.tmp
+*.log
+
+# Qt Designer-related
+*.autosave
+# *.qrc
+# *.ui
+
+# Qt Creator related
+.qtcreator/
+*.pyproject*
+
+# Qt resource files
+rc_resources.py
+
+# Ignore IDE-specific files
+.idea/
+.vscode/
+*.pur
+*.user
+*.user.*
+
+# Icon files
+*.ico
+
+# Build directories
+build/
+dist/
+
+# Python Packaging
+*.egg
+*.egg-info/
+dist/
+build/
+*.wheel
+
+# macOS
+.DS_Store
