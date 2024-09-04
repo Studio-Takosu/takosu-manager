@@ -102,19 +102,33 @@ class Ui_MainWindow(object):
 "	background-position: left center;\n"
 "    background-repeat: no-repeat;\n"
 "	border: none;\n"
-"	border-left: 22px solid transparent;\n"
 "	background-color: transparent;\n"
 "	text-align: left;\n"
 "	padding-left: 44px;\n"
 "}\n"
-"#topMenu .QPushButton:hov"
-                        "er {\n"
+"\n"
+"#topMenu #homeBtnFrame, \n"
+"#topMenu #pbrBtnFrame, \n"
+"#topM"
+                        "enu #assetBtnFrame {\n"
+"	border: none;\n"
+"	border-left: 0px solid #FF79C6;\n"
+"	padding-left: 22px;\n"
+"}\n"
+"\n"
+"#topMenu #homeBtnFrame:hover, \n"
+"#topMenu #pbrBtnFrame:hover, \n"
+"#topMenu #assetBtnFrame:hover {\n"
 "	background-color: rgb(40, 44, 52);\n"
 "}\n"
-"#topMenu .QPushButton:pressed {	\n"
+"#topMenu #homeBtnFrame:pressed, \n"
+"#topMenu #pbrBtnFrame:pressed, \n"
+"#topMenu #assetBtnFrame:pressed {	\n"
 "	background-color: rgb(189, 147, 249);\n"
 "	color: rgb(255, 255, 255);\n"
 "}\n"
+"\n"
+"\n"
 "#bottomMenu .QPushButton {	\n"
 "	background-position: left center;\n"
 "  	background-repeat: no-repeat;\n"
@@ -132,7 +146,8 @@ class Ui_MainWindow(object):
 "	color: rgb(255, 255, 255);\n"
 "}\n"
 "\n"
-"/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
+"/* ///////////////////////////////////////////////////////////////////////////////"
+                        "//////////////////\n"
 "Content App */\n"
 "#contentTopBg{	\n"
 "	background-color: rgb(33, 37, 43);\n"
@@ -142,8 +157,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "/* Top Buttons */\n"
-"#rightButtons .QPushButton { background-color: rgba(255, 255, 255, 0); border: none;  border-"
-                        "radius: 5px; }\n"
+"#rightButtons .QPushButton { background-color: rgba(255, 255, 255, 0); border: none;  border-radius: 5px; }\n"
 "#rightButtons .QPushButton:hover { background-color: rgb(44, 49, 57); border-style: solid; border-radius: 4px; }\n"
 "#rightButtons .QPushButton:pressed { background-color: rgb(23, 26, 30); border-style: solid; border-radius: 4px; }\n"
 "\n"
@@ -224,12 +238,28 @@ class Ui_MainWindow(object):
         self.topMenu = QFrame(self.leftMenuFrame)
         self.topMenu.setObjectName(u"topMenu")
         self.topMenu.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.topMenu.setStyleSheet(u"")
         self.topMenu.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_6 = QVBoxLayout(self.topMenu)
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
-        self.home_btn = QPushButton(self.topMenu)
+        self.homeFrame = QFrame(self.topMenu)
+        self.homeFrame.setObjectName(u"homeFrame")
+        self.homeFrame.setMinimumSize(QSize(0, 45))
+        self.homeFrame.setMaximumSize(QSize(16777215, 240))
+        self.verticalLayout_10 = QVBoxLayout(self.homeFrame)
+        self.verticalLayout_10.setSpacing(0)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.homeBtnFrame = QFrame(self.homeFrame)
+        self.homeBtnFrame.setObjectName(u"homeBtnFrame")
+        self.homeBtnFrame.setMinimumSize(QSize(0, 45))
+        self.verticalLayout_12 = QVBoxLayout(self.homeBtnFrame)
+        self.verticalLayout_12.setSpacing(0)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.home_btn = QPushButton(self.homeBtnFrame)
         self.home_btn.setObjectName(u"home_btn")
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -238,29 +268,92 @@ class Ui_MainWindow(object):
         self.home_btn.setSizePolicy(sizePolicy)
         self.home_btn.setMinimumSize(QSize(0, 45))
         self.home_btn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.home_btn.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-home.png);")
+        self.home_btn.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-home.png);\n"
+"border: none;")
 
-        self.verticalLayout_6.addWidget(self.home_btn, 0, Qt.AlignmentFlag.AlignVCenter)
+        self.verticalLayout_12.addWidget(self.home_btn)
 
-        self.pbr_btn = QPushButton(self.topMenu)
+
+        self.verticalLayout_10.addWidget(self.homeBtnFrame)
+
+        self.homeContainer = QFrame(self.homeFrame)
+        self.homeContainer.setObjectName(u"homeContainer")
+        self.homeContainer.setMinimumSize(QSize(0, 0))
+        self.homeContainer.setMaximumSize(QSize(16777215, 16777215))
+        self.homeContainer.setStyleSheet(u"background-color: #44475A;")
+        self.verticalLayout_11 = QVBoxLayout(self.homeContainer)
+        self.verticalLayout_11.setSpacing(0)
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
+
+        self.verticalLayout_10.addWidget(self.homeContainer)
+
+
+        self.verticalLayout_6.addWidget(self.homeFrame, 0, Qt.AlignmentFlag.AlignTop)
+
+        self.pbrFrame = QFrame(self.topMenu)
+        self.pbrFrame.setObjectName(u"pbrFrame")
+        self.pbrFrame.setMinimumSize(QSize(0, 45))
+        self.verticalLayout_13 = QVBoxLayout(self.pbrFrame)
+        self.verticalLayout_13.setSpacing(0)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.pbrBtnFrame = QFrame(self.pbrFrame)
+        self.pbrBtnFrame.setObjectName(u"pbrBtnFrame")
+        self.pbrBtnFrame.setMinimumSize(QSize(0, 45))
+        self.verticalLayout_16 = QVBoxLayout(self.pbrBtnFrame)
+        self.verticalLayout_16.setSpacing(0)
+        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.verticalLayout_16.setContentsMargins(0, 0, 0, 0)
+        self.pbr_btn = QPushButton(self.pbrBtnFrame)
         self.pbr_btn.setObjectName(u"pbr_btn")
         sizePolicy.setHeightForWidth(self.pbr_btn.sizePolicy().hasHeightForWidth())
         self.pbr_btn.setSizePolicy(sizePolicy)
         self.pbr_btn.setMinimumSize(QSize(0, 45))
         self.pbr_btn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.pbr_btn.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-circle.png);")
+        self.pbr_btn.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-circle.png);\n"
+"border: none;")
 
-        self.verticalLayout_6.addWidget(self.pbr_btn, 0, Qt.AlignmentFlag.AlignVCenter)
+        self.verticalLayout_16.addWidget(self.pbr_btn)
 
-        self.asset_btn = QPushButton(self.topMenu)
+
+        self.verticalLayout_13.addWidget(self.pbrBtnFrame)
+
+
+        self.verticalLayout_6.addWidget(self.pbrFrame)
+
+        self.assetFrame = QFrame(self.topMenu)
+        self.assetFrame.setObjectName(u"assetFrame")
+        self.assetFrame.setMinimumSize(QSize(0, 45))
+        self.assetFrame.setStyleSheet(u"")
+        self.verticalLayout_14 = QVBoxLayout(self.assetFrame)
+        self.verticalLayout_14.setSpacing(0)
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.assetBtnFrame = QFrame(self.assetFrame)
+        self.assetBtnFrame.setObjectName(u"assetBtnFrame")
+        self.assetBtnFrame.setMinimumSize(QSize(0, 45))
+        self.assetBtnFrame.setStyleSheet(u"")
+        self.verticalLayout_15 = QVBoxLayout(self.assetBtnFrame)
+        self.verticalLayout_15.setSpacing(0)
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
+        self.asset_btn = QPushButton(self.assetBtnFrame)
         self.asset_btn.setObjectName(u"asset_btn")
         sizePolicy.setHeightForWidth(self.asset_btn.sizePolicy().hasHeightForWidth())
         self.asset_btn.setSizePolicy(sizePolicy)
         self.asset_btn.setMinimumSize(QSize(0, 45))
         self.asset_btn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.asset_btn.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-3d.png);")
+        self.asset_btn.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-3d.png);\n"
+"border: none;")
 
-        self.verticalLayout_6.addWidget(self.asset_btn, 0, Qt.AlignmentFlag.AlignVCenter)
+        self.verticalLayout_15.addWidget(self.asset_btn)
+
+
+        self.verticalLayout_14.addWidget(self.assetBtnFrame)
+
+
+        self.verticalLayout_6.addWidget(self.assetFrame)
 
 
         self.verticalLayout_3.addWidget(self.topMenu, 0, Qt.AlignmentFlag.AlignTop)

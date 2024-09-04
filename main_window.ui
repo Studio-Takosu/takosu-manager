@@ -98,18 +98,32 @@ Left Menu */
 	background-position: left center;
     background-repeat: no-repeat;
 	border: none;
-	border-left: 22px solid transparent;
 	background-color: transparent;
 	text-align: left;
 	padding-left: 44px;
 }
-#topMenu .QPushButton:hover {
+
+#topMenu #homeBtnFrame, 
+#topMenu #pbrBtnFrame, 
+#topMenu #assetBtnFrame {
+	border: none;
+	border-left: 0px solid #FF79C6;
+	padding-left: 22px;
+}
+
+#topMenu #homeBtnFrame:hover, 
+#topMenu #pbrBtnFrame:hover, 
+#topMenu #assetBtnFrame:hover {
 	background-color: rgb(40, 44, 52);
 }
-#topMenu .QPushButton:pressed {	
+#topMenu #homeBtnFrame:pressed, 
+#topMenu #pbrBtnFrame:pressed, 
+#topMenu #assetBtnFrame:pressed {	
 	background-color: rgb(189, 147, 249);
 	color: rgb(255, 255, 255);
 }
+
+
 #bottomMenu .QPushButton {	
 	background-position: left center;
   	background-repeat: no-repeat;
@@ -368,6 +382,9 @@ Content App */
                <property name="focusPolicy">
                 <enum>Qt::FocusPolicy::NoFocus</enum>
                </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::Shape::NoFrame</enum>
                </property>
@@ -387,12 +404,18 @@ Content App */
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
-                <item>
-                 <widget class="QFrame" name="homeBtnFrame">
+                <item alignment="Qt::AlignmentFlag::AlignTop">
+                 <widget class="QFrame" name="homeFrame">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
                     <height>45</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>240</height>
                    </size>
                   </property>
                   <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -412,81 +435,261 @@ Content App */
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QPushButton" name="home_btn">
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
+                    <widget class="QFrame" name="homeBtnFrame">
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
                        <height>45</height>
                       </size>
                      </property>
-                     <property name="cursor">
-                      <cursorShape>PointingHandCursor</cursorShape>
+                     <layout class="QVBoxLayout" name="verticalLayout_12">
+                      <property name="spacing">
+                       <number>0</number>
+                      </property>
+                      <property name="leftMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="QPushButton" name="home_btn">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>45</height>
+                         </size>
+                        </property>
+                        <property name="cursor">
+                         <cursorShape>PointingHandCursor</cursorShape>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">background-image: url(:/icons/images/icons/cil-home.png);
+border: none;</string>
+                        </property>
+                        <property name="text">
+                         <string>Home</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QFrame" name="homeContainer">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>16777215</height>
+                      </size>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">background-image: url(:/icons/images/icons/cil-home.png);</string>
+                      <string notr="true">background-color: #44475A;</string>
                      </property>
-                     <property name="text">
-                      <string>Home</string>
-                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_11">
+                      <property name="spacing">
+                       <number>0</number>
+                      </property>
+                      <property name="leftMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
+                     </layout>
                     </widget>
                    </item>
                   </layout>
                  </widget>
                 </item>
-                <item alignment="Qt::AlignmentFlag::AlignVCenter">
-                 <widget class="QPushButton" name="pbr_btn">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
+                <item>
+                 <widget class="QFrame" name="pbrFrame">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
                     <height>45</height>
                    </size>
                   </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-circle.png);</string>
-                  </property>
-                  <property name="text">
-                   <string>PBR Material Reference</string>
-                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_13">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QFrame" name="pbrBtnFrame">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>45</height>
+                      </size>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_16">
+                      <property name="spacing">
+                       <number>0</number>
+                      </property>
+                      <property name="leftMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="QPushButton" name="pbr_btn">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>45</height>
+                         </size>
+                        </property>
+                        <property name="cursor">
+                         <cursorShape>PointingHandCursor</cursorShape>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">background-image: url(:/icons/images/icons/cil-circle.png);
+border: none;</string>
+                        </property>
+                        <property name="text">
+                         <string>PBR Material Reference</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
-                <item alignment="Qt::AlignmentFlag::AlignVCenter">
-                 <widget class="QPushButton" name="asset_btn">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
+                <item>
+                 <widget class="QFrame" name="assetFrame">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
                     <height>45</height>
                    </size>
                   </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-3d.png);</string>
+                   <string notr="true"/>
                   </property>
-                  <property name="text">
-                   <string>Assets</string>
-                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_14">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QFrame" name="assetBtnFrame">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>45</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_15">
+                      <property name="spacing">
+                       <number>0</number>
+                      </property>
+                      <property name="leftMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="QPushButton" name="asset_btn">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>45</height>
+                         </size>
+                        </property>
+                        <property name="cursor">
+                         <cursorShape>PointingHandCursor</cursorShape>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">background-image: url(:/icons/images/icons/cil-3d.png);
+border: none;</string>
+                        </property>
+                        <property name="text">
+                         <string>Assets</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                </layout>
