@@ -1,6 +1,6 @@
 # This Python file uses the following encoding: utf-8
 import sys
-from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
+from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QFrame
 from PySide6.QtGui import QIcon
 from PySide6.QtCore import QPropertyAnimation, QEasingCurve
 from ui_main_window import Ui_MainWindow
@@ -16,8 +16,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # GLOBAL VARIABLES -----------------------------------------------------
         # selected menu style
         self.SELECTED_MENU_STYLE = """
-        background-position: left center;
-        border-left: 22px solid #FF79C6;
+        /* background-position: left center; */
+        border-left: 2px solid #FF79C6;
         /* background-color: rgb(40, 44, 52); */
         """
         
@@ -55,7 +55,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.toggleBtn.clicked.connect(self.on_button_clicked)
         
         # Set Home button as active
-        self.home_btn.setStyleSheet( self.selectMenu( self.home_btn.styleSheet() ) )
+        self.home_btn.parent().setStyleSheet( self.selectMenu( self.home_btn.parent().styleSheet() ) )
         
         
         
@@ -67,24 +67,31 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         btn = self.sender()
         btn_name = btn.objectName()
         
+        # Apply the style to the parent QFrame
+        btn_parent = btn.parent()
+        btn_parent_name = btn_parent.objectName()
+        
         # SHOW HOME PAGE
         if btn_name == "home_btn":
             # self.stackedWidget.setCurrentIndex(0) # set current page
-            self.resetStyle(btn_name) # Reset button styles
-            updatedStyle = self.selectMenu(btn.styleSheet()) # Get updated button style
-            btn.setStyleSheet(updatedStyle) # Apply updated style
+            self.resetStyle(btn_parent_name) # Reset button styles
+            updatedStyle = self.selectMenu(btn_parent.styleSheet()) # Get updated button style
+            btn_parent.setStyleSheet(updatedStyle) # Apply updated style
+            print(btn_parent.styleSheet())
         # SHOW ASSET PAGE
         elif btn_name == "asset_btn":
             # self.stackedWidget.setCurrentIndex(1)
-            self.resetStyle(btn_name) # Reset button styles
-            updatedStyle = self.selectMenu(btn.styleSheet()) # Get updated button style
-            btn.setStyleSheet(updatedStyle) # Apply updated style
+            self.resetStyle(btn_parent_name) # Reset button styles
+            updatedStyle = self.selectMenu(btn_parent.styleSheet()) # Get updated button style
+            btn_parent.setStyleSheet(updatedStyle) # Apply updated style
+            print(btn_parent.styleSheet())
         # SHOW PBR PAGE
         elif btn_name == "pbr_btn":
             # self.stackedWidget.setCurrentIndex(2)
-            self.resetStyle(btn_name) # Reset button styles
-            updatedStyle = self.selectMenu(btn.styleSheet()) # Get updated button style
-            btn.setStyleSheet(updatedStyle) # Apply updated style
+            self.resetStyle(btn_parent_name) # Reset button styles
+            updatedStyle = self.selectMenu(btn_parent.styleSheet()) # Get updated button style
+            btn_parent.setStyleSheet(updatedStyle) # Apply updated style
+            print(btn_parent.styleSheet())
         elif btn_name == "toggleBtn":
             self.toggleMenu(True)
         
@@ -92,6 +99,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # btn.setStyleSheet(self.active_style)
         
         # PRINT BTN NAME
+        print("Updating stylesheet for:", btn_parent_name)
         print(f'Button "{btn_name}" pressed!')
         
     
@@ -113,6 +121,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         """
         selectedStyle = getStyle + self.SELECTED_MENU_STYLE
+        selectedStyle = self.SELECTED_MENU_STYLE
         return selectedStyle
         
     def deselectMenu(self, getStyle):
@@ -127,9 +136,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         """
         defaultStyle = getStyle.replace(self.SELECTED_MENU_STYLE, "")
+        defaultStyle = ""
         return defaultStyle
     
-    def selectStandardMenu(self, widget):
+    def selectStandardMenu(self, widgetName):
         """
         Selects the standard menu for the given widget.
 
@@ -139,12 +149,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Returns:
         None
         """
-        for w in self.topMenu.findChildren(QPushButton):
-            if w.objectName == widget:
-                updatedStyle = self.selectMenu(w.styleSheet())
-                w.setStyleSheet(updatedStyle)
+        print("Updating stylesheet for:", widgetName)
+        for widget in self.topMenu.findChildren(QFrame):
+            if widget.objectName == widgetName:
+                updatedStyle = self.selectMenu(widget.styleSheet())
+                widget.setStyleSheet(updatedStyle)
     
-    def resetStyle(self, widget):
+    def resetStyle(self, widgetName):
         """
         Resets the style of all QPushButton widgets in the topMenu, except for the specified widget.
 
@@ -154,10 +165,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Returns:
         - None
         """
-        for w in self.topMenu.findChildren(QPushButton):
-            if w.objectName() != widget:
-                resetStyle = self.deselectMenu(w.styleSheet())
-                w.setStyleSheet(resetStyle)
+        
+        # loop through all
+        for widget in self.topMenu.findChildren(QFrame):
+            if widget.objectName() != widgetName:
+                resetStyle = self.deselectMenu(widget.styleSheet())
+                widget.setStyleSheet(resetStyle)
         
     def toggleMenu(self, enabled):
         """
