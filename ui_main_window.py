@@ -16,8 +16,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QLayout, QMainWindow, QPushButton, QSizePolicy,
-    QStackedWidget, QVBoxLayout, QWidget)
+    QLayout, QLineEdit, QMainWindow, QPushButton,
+    QSizePolicy, QStackedWidget, QVBoxLayout, QWidget)
 import resources_rc
 
 class Ui_MainWindow(object):
@@ -59,7 +59,7 @@ class Ui_MainWindow(object):
 "Background App */\n"
 "#bgApp {\n"
 "	background-color: #282A36;\n"
-"	border: 0px solid #6272A4\n"
+"	border: 2px solid #6272A4\n"
 "}\n"
 "\n"
 "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
@@ -172,11 +172,43 @@ class Ui_MainWindow(object):
 "#bottomBar { background-color: rgb(44, 49, 58); }\n"
 "#bottomBar QLabel { font-size: 11px; color: rgb(113, 126, 149); padding-left: 10px; padding-right: 10px; padding-bottom: 2px; }\n"
 "\n"
-"/* /////////////////////////////////////////////////////////////////////////////"
-                        "////////////////////\n"
+"\n"
+"/* ////////////////////////////////////////////////////////////////////////"
+                        "/////////////////////////\n"
+"Content Pages */\n"
+"\n"
+"/* //////////////////// \n"
+"MATERIAL REFERENCE */\n"
+"#materialTopFrame { background-color: rgb(44, 49, 58); }\n"
+"\n"
+"#searchContainer {\n"
+"	background-color: rgb(40, 42, 54);\n"
+"	border-radius: 1em;\n"
+"}\n"
+"#searchContainer:hover {\n"
+"	border: 2px solid rgb(50, 52, 64);\n"
+"}\n"
+"#searchContainer  .QLineEdit {\n"
+"	color: #ffffff;\n"
+"	background-color: rgb(40, 42, 54);\n"
+"	border: none;\n"
+"	\n"
+"}\n"
+"\n"
+"#searchContainer .QPushButton {\n"
+"	/* background-color: rgb(40, 42, 54); */\n"
+"	border-radius: 12px;\n"
+"	background-position: center;\n"
+"    background-repeat: no-repeat;\n"
+"}\n"
+"#searchContainer .QPushButton:hover { background-color: rgb(44, 49, 57); border-style: solid; }\n"
+"#searchContainer .QPushButton:pressed { background-color: rgb(23, 26, 30); border-style: solid; }\n"
+"\n"
+"/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
 "Settings Right Box */\n"
 "#settingsRightBox { \n"
-"	background-color: rgb(44, 49, 58);\n"
+""
+                        "	background-color: rgb(44, 49, 58);\n"
 "	border-top: 3px solid #BD93F9;\n"
 "	border-left: 3px solid #BD93F9;\n"
 "}\n"
@@ -533,10 +565,10 @@ class Ui_MainWindow(object):
         self.content.setObjectName(u"content")
         self.pagesContainer = QFrame(self.content)
         self.pagesContainer.setObjectName(u"pagesContainer")
-        self.pagesContainer.setGeometry(QRect(0, 0, 1218, 643))
+        self.pagesContainer.setGeometry(QRect(0, 0, 1220, 645))
         sizePolicy3.setHeightForWidth(self.pagesContainer.sizePolicy().hasHeightForWidth())
         self.pagesContainer.setSizePolicy(sizePolicy3)
-        self.pagesContainer.setMinimumSize(QSize(1218, 643))
+        self.pagesContainer.setMinimumSize(QSize(0, 0))
         self.verticalLayout_8 = QVBoxLayout(self.pagesContainer)
         self.verticalLayout_8.setSpacing(0)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
@@ -549,30 +581,106 @@ class Ui_MainWindow(object):
 "background-position: center;\n"
 "background-repeat: no-repeat;")
         self.verticalLayout_19 = QVBoxLayout(self.homePage)
+        self.verticalLayout_19.setSpacing(0)
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
+        self.verticalLayout_19.setContentsMargins(0, 0, 0, 0)
         self.contentStackedWidget.addWidget(self.homePage)
         self.materialRefPage = QWidget()
         self.materialRefPage.setObjectName(u"materialRefPage")
         self.horizontalLayout_4 = QHBoxLayout(self.materialRefPage)
+        self.horizontalLayout_4.setSpacing(0)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.materialRefFrame = QFrame(self.materialRefPage)
-        self.materialRefFrame.setObjectName(u"materialRefFrame")
-        self.verticalLayout_17 = QVBoxLayout(self.materialRefFrame)
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.materialRefContainer = QFrame(self.materialRefPage)
+        self.materialRefContainer.setObjectName(u"materialRefContainer")
+        self.verticalLayout_17 = QVBoxLayout(self.materialRefContainer)
+        self.verticalLayout_17.setSpacing(0)
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
-        self.matLabel = QLabel(self.materialRefFrame)
+        self.verticalLayout_17.setContentsMargins(0, 0, 0, 0)
+        self.materialTopFrame = QFrame(self.materialRefContainer)
+        self.materialTopFrame.setObjectName(u"materialTopFrame")
+        sizePolicy3.setHeightForWidth(self.materialTopFrame.sizePolicy().hasHeightForWidth())
+        self.materialTopFrame.setSizePolicy(sizePolicy3)
+        self.materialTopFrame.setMinimumSize(QSize(0, 80))
+        self.verticalLayout_24 = QVBoxLayout(self.materialTopFrame)
+        self.verticalLayout_24.setSpacing(0)
+        self.verticalLayout_24.setObjectName(u"verticalLayout_24")
+        self.verticalLayout_24.setContentsMargins(0, 0, 0, 0)
+        self.searchFrame = QFrame(self.materialTopFrame)
+        self.searchFrame.setObjectName(u"searchFrame")
+        self.searchFrame.setMinimumSize(QSize(0, 55))
+        self.searchFrame.setMaximumSize(QSize(16777215, 16777215))
+        self.horizontalLayout_11 = QHBoxLayout(self.searchFrame)
+        self.horizontalLayout_11.setSpacing(0)
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.horizontalLayout_11.setContentsMargins(30, 10, 30, 10)
+        self.searchContainer = QFrame(self.searchFrame)
+        self.searchContainer.setObjectName(u"searchContainer")
+        self.searchContainer.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.searchContainer.setStyleSheet(u"")
+        self.horizontalLayout_10 = QHBoxLayout(self.searchContainer)
+        self.horizontalLayout_10.setSpacing(10)
+        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.horizontalLayout_10.setContentsMargins(10, 0, 20, 0)
+        self.searchButton = QPushButton(self.searchContainer)
+        self.searchButton.setObjectName(u"searchButton")
+        self.searchButton.setMinimumSize(QSize(24, 24))
+        self.searchButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.searchButton.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-magnifying-glass.png);")
+        self.searchButton.setIconSize(QSize(20, 20))
+
+        self.horizontalLayout_10.addWidget(self.searchButton)
+
+        self.searchLineEdit = QLineEdit(self.searchContainer)
+        self.searchLineEdit.setObjectName(u"searchLineEdit")
+        self.searchLineEdit.setClearButtonEnabled(False)
+
+        self.horizontalLayout_10.addWidget(self.searchLineEdit)
+
+
+        self.horizontalLayout_11.addWidget(self.searchContainer)
+
+
+        self.verticalLayout_24.addWidget(self.searchFrame)
+
+        self.filterFrame = QFrame(self.materialTopFrame)
+        self.filterFrame.setObjectName(u"filterFrame")
+        self.filterFrame.setMaximumSize(QSize(16777215, 25))
+        self.horizontalLayout_5 = QHBoxLayout(self.filterFrame)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+
+        self.verticalLayout_24.addWidget(self.filterFrame)
+
+
+        self.verticalLayout_17.addWidget(self.materialTopFrame)
+
+        self.materialBotFrame = QWidget(self.materialRefContainer)
+        self.materialBotFrame.setObjectName(u"materialBotFrame")
+        sizePolicy2.setHeightForWidth(self.materialBotFrame.sizePolicy().hasHeightForWidth())
+        self.materialBotFrame.setSizePolicy(sizePolicy2)
+        self.verticalLayout_25 = QVBoxLayout(self.materialBotFrame)
+        self.verticalLayout_25.setSpacing(0)
+        self.verticalLayout_25.setObjectName(u"verticalLayout_25")
+        self.verticalLayout_25.setContentsMargins(0, 0, 0, 0)
+        self.matLabel = QLabel(self.materialBotFrame)
         self.matLabel.setObjectName(u"matLabel")
         self.matLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_17.addWidget(self.matLabel)
+        self.verticalLayout_25.addWidget(self.matLabel)
 
 
-        self.horizontalLayout_4.addWidget(self.materialRefFrame)
+        self.verticalLayout_17.addWidget(self.materialBotFrame)
+
+
+        self.horizontalLayout_4.addWidget(self.materialRefContainer)
 
         self.contentStackedWidget.addWidget(self.materialRefPage)
         self.assetLibraryPage = QWidget()
         self.assetLibraryPage.setObjectName(u"assetLibraryPage")
         self.horizontalLayout_7 = QHBoxLayout(self.assetLibraryPage)
+        self.horizontalLayout_7.setSpacing(0)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
         self.assetContentFrame = QFrame(self.assetLibraryPage)
         self.assetContentFrame.setObjectName(u"assetContentFrame")
         self.verticalLayout_20 = QVBoxLayout(self.assetContentFrame)
@@ -593,10 +701,10 @@ class Ui_MainWindow(object):
         self.settingsRightBox = QFrame(self.content)
         self.settingsRightBox.setObjectName(u"settingsRightBox")
         self.settingsRightBox.setEnabled(True)
-        self.settingsRightBox.setGeometry(QRect(980, 0, 240, 645))
+        self.settingsRightBox.setGeometry(QRect(1220, 0, 0, 645))
         sizePolicy3.setHeightForWidth(self.settingsRightBox.sizePolicy().hasHeightForWidth())
         self.settingsRightBox.setSizePolicy(sizePolicy3)
-        self.settingsRightBox.setMinimumSize(QSize(240, 643))
+        self.settingsRightBox.setMinimumSize(QSize(0, 643))
         self.settingsRightBox.setMaximumSize(QSize(0, 16777215))
         self.verticalLayout_7 = QVBoxLayout(self.settingsRightBox)
         self.verticalLayout_7.setSpacing(0)
@@ -664,7 +772,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.contentStackedWidget.setCurrentIndex(0)
+        self.contentStackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -704,6 +812,8 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Close</p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
+        self.searchButton.setText("")
+        self.searchLineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search", None))
         self.matLabel.setText(QCoreApplication.translate("MainWindow", u"Material Reference Page", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Asset Library Page", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: Studio Takosu", None))

@@ -56,7 +56,7 @@ QToolTip {
 Background App */
 #bgApp {
 	background-color: #282A36;
-	border: 0px solid #6272A4
+	border: 2px solid #6272A4
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -165,6 +165,37 @@ Content App */
 /* Bottom Bar */
 #bottomBar { background-color: rgb(44, 49, 58); }
 #bottomBar QLabel { font-size: 11px; color: rgb(113, 126, 149); padding-left: 10px; padding-right: 10px; padding-bottom: 2px; }
+
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////
+Content Pages */
+
+/* //////////////////// 
+MATERIAL REFERENCE */
+#materialTopFrame { background-color: rgb(44, 49, 58); }
+
+#searchContainer {
+	background-color: rgb(40, 42, 54);
+	border-radius: 1em;
+}
+#searchContainer:hover {
+	border: 2px solid rgb(50, 52, 64);
+}
+#searchContainer  .QLineEdit {
+	color: #ffffff;
+	background-color: rgb(40, 42, 54);
+	border: none;
+	
+}
+
+#searchContainer .QPushButton {
+	/* background-color: rgb(40, 42, 54); */
+	border-radius: 12px;
+	background-position: center;
+    background-repeat: no-repeat;
+}
+#searchContainer .QPushButton:hover { background-color: rgb(44, 49, 57); border-style: solid; }
+#searchContainer .QPushButton:pressed { background-color: rgb(23, 26, 30); border-style: solid; }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Settings Right Box */
@@ -1128,8 +1159,8 @@ border: none;</string>
                     <rect>
                      <x>0</x>
                      <y>0</y>
-                     <width>1218</width>
-                     <height>643</height>
+                     <width>1220</width>
+                     <height>645</height>
                     </rect>
                    </property>
                    <property name="sizePolicy">
@@ -1163,7 +1194,7 @@ border: none;</string>
                     <item>
                      <widget class="QStackedWidget" name="contentStackedWidget">
                       <property name="currentIndex">
-                       <number>0</number>
+                       <number>1</number>
                       </property>
                       <widget class="QWidget" name="homePage">
                        <property name="styleSheet">
@@ -1171,21 +1202,233 @@ border: none;</string>
 background-position: center;
 background-repeat: no-repeat;</string>
                        </property>
-                       <layout class="QVBoxLayout" name="verticalLayout_19"/>
+                       <layout class="QVBoxLayout" name="verticalLayout_19">
+                        <property name="spacing">
+                         <number>0</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
+                       </layout>
                       </widget>
                       <widget class="QWidget" name="materialRefPage">
                        <layout class="QHBoxLayout" name="horizontalLayout_4">
+                        <property name="spacing">
+                         <number>0</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
                         <item>
-                         <widget class="QFrame" name="materialRefFrame">
+                         <widget class="QFrame" name="materialRefContainer">
                           <layout class="QVBoxLayout" name="verticalLayout_17">
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <property name="leftMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>0</number>
+                           </property>
                            <item>
-                            <widget class="QLabel" name="matLabel">
-                             <property name="text">
-                              <string>Material Reference Page</string>
+                            <widget class="QFrame" name="materialTopFrame">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
                              </property>
-                             <property name="alignment">
-                              <set>Qt::AlignmentFlag::AlignCenter</set>
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>80</height>
+                              </size>
                              </property>
+                             <layout class="QVBoxLayout" name="verticalLayout_24">
+                              <property name="spacing">
+                               <number>0</number>
+                              </property>
+                              <property name="leftMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="topMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="rightMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="bottomMargin">
+                               <number>0</number>
+                              </property>
+                              <item>
+                               <widget class="QFrame" name="searchFrame">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>0</width>
+                                  <height>55</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>16777215</width>
+                                  <height>16777215</height>
+                                 </size>
+                                </property>
+                                <layout class="QHBoxLayout" name="horizontalLayout_11">
+                                 <property name="spacing">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="leftMargin">
+                                  <number>30</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>10</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>30</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>10</number>
+                                 </property>
+                                 <item>
+                                  <widget class="QFrame" name="searchContainer">
+                                   <property name="focusPolicy">
+                                    <enum>Qt::FocusPolicy::NoFocus</enum>
+                                   </property>
+                                   <property name="styleSheet">
+                                    <string notr="true"/>
+                                   </property>
+                                   <layout class="QHBoxLayout" name="horizontalLayout_10">
+                                    <property name="spacing">
+                                     <number>10</number>
+                                    </property>
+                                    <property name="leftMargin">
+                                     <number>10</number>
+                                    </property>
+                                    <property name="topMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="rightMargin">
+                                     <number>20</number>
+                                    </property>
+                                    <property name="bottomMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <item>
+                                     <widget class="QPushButton" name="searchButton">
+                                      <property name="minimumSize">
+                                       <size>
+                                        <width>24</width>
+                                        <height>24</height>
+                                       </size>
+                                      </property>
+                                      <property name="cursor">
+                                       <cursorShape>PointingHandCursor</cursorShape>
+                                      </property>
+                                      <property name="styleSheet">
+                                       <string notr="true">background-image: url(:/icons/images/icons/cil-magnifying-glass.png);</string>
+                                      </property>
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                      <property name="iconSize">
+                                       <size>
+                                        <width>20</width>
+                                        <height>20</height>
+                                       </size>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item>
+                                     <widget class="QLineEdit" name="searchLineEdit">
+                                      <property name="placeholderText">
+                                       <string>Search</string>
+                                      </property>
+                                      <property name="clearButtonEnabled">
+                                       <bool>false</bool>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                   </layout>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QFrame" name="filterFrame">
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>16777215</width>
+                                  <height>25</height>
+                                 </size>
+                                </property>
+                                <layout class="QHBoxLayout" name="horizontalLayout_5"/>
+                               </widget>
+                              </item>
+                             </layout>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QWidget" name="materialBotFrame" native="true">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <layout class="QVBoxLayout" name="verticalLayout_25">
+                              <property name="spacing">
+                               <number>0</number>
+                              </property>
+                              <property name="leftMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="topMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="rightMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="bottomMargin">
+                               <number>0</number>
+                              </property>
+                              <item>
+                               <widget class="QLabel" name="matLabel">
+                                <property name="text">
+                                 <string>Material Reference Page</string>
+                                </property>
+                                <property name="alignment">
+                                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                                </property>
+                               </widget>
+                              </item>
+                             </layout>
                             </widget>
                            </item>
                           </layout>
@@ -1195,6 +1438,21 @@ background-repeat: no-repeat;</string>
                       </widget>
                       <widget class="QWidget" name="assetLibraryPage">
                        <layout class="QHBoxLayout" name="horizontalLayout_7">
+                        <property name="spacing">
+                         <number>0</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
                         <item>
                          <widget class="QFrame" name="assetContentFrame">
                           <layout class="QVBoxLayout" name="verticalLayout_20">
@@ -1223,9 +1481,9 @@ background-repeat: no-repeat;</string>
                    </property>
                    <property name="geometry">
                     <rect>
-                     <x>980</x>
+                     <x>1220</x>
                      <y>0</y>
-                     <width>240</width>
+                     <width>0</width>
                      <height>645</height>
                     </rect>
                    </property>
@@ -1237,7 +1495,7 @@ background-repeat: no-repeat;</string>
                    </property>
                    <property name="minimumSize">
                     <size>
-                     <width>240</width>
+                     <width>0</width>
                      <height>643</height>
                     </size>
                    </property>
