@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLayout, QMainWindow, QPushButton, QSizePolicy,
-    QVBoxLayout, QWidget)
+    QStackedWidget, QVBoxLayout, QWidget)
 import resources_rc
 
 class Ui_MainWindow(object):
@@ -157,6 +157,7 @@ class Ui_MainWindow(object):
 "}\n"
 "#contentBottom{\n"
 "	border-top: 3px solid rgb(44, 49, 58);\n"
+"	background-color: #282A36;\n"
 "}\n"
 "\n"
 "/* Top Buttons */\n"
@@ -169,7 +170,17 @@ class Ui_MainWindow(object):
 "\n"
 "/* Bottom Bar */\n"
 "#bottomBar { background-color: rgb(44, 49, 58); }\n"
-"#bottomBar QLabel { font-size: 11px; color: rgb(113, 126, 149); padding-left: 10px; padding-right: 10px; padding-bottom: 2px; }")
+"#bottomBar QLabel { font-size: 11px; color: rgb(113, 126, 149); padding-left: 10px; padding-right: 10px; padding-bottom: 2px; }\n"
+"\n"
+"/* /////////////////////////////////////////////////////////////////////////////"
+                        "////////////////////\n"
+"Settings Right Box */\n"
+"#settingsRightBox { \n"
+"	background-color: rgb(44, 49, 58);\n"
+"	border-top: 3px solid #BD93F9;\n"
+"	border-left: 3px solid #BD93F9;\n"
+"}\n"
+"")
         self.appMargins = QVBoxLayout(self.styleSheet)
         self.appMargins.setSpacing(0)
         self.appMargins.setObjectName(u"appMargins")
@@ -187,7 +198,7 @@ class Ui_MainWindow(object):
         self.appLayout.setContentsMargins(0, 0, 0, 0)
         self.leftMenuBg = QFrame(self.bgApp)
         self.leftMenuBg.setObjectName(u"leftMenuBg")
-        self.leftMenuBg.setMinimumSize(QSize(240, 0))
+        self.leftMenuBg.setMinimumSize(QSize(60, 0))
         self.leftMenuBg.setMaximumSize(QSize(60, 16777215))
         self.verticalLayout = QVBoxLayout(self.leftMenuBg)
         self.verticalLayout.setSpacing(0)
@@ -233,10 +244,10 @@ class Ui_MainWindow(object):
         self.toggleFrame.setMinimumSize(QSize(0, 45))
         self.toggleBtn = QPushButton(self.toggleFrame)
         self.toggleBtn.setObjectName(u"toggleBtn")
-        self.toggleBtn.setGeometry(QRect(180, 0, 60, 45))
+        self.toggleBtn.setGeometry(QRect(0, 0, 60, 45))
         self.toggleBtn.setMinimumSize(QSize(0, 45))
         self.toggleBtn.setMaximumSize(QSize(60, 16777215))
-        self.toggleBtn.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-chevron-left.png);")
+        self.toggleBtn.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-chevron-right.png);")
 
         self.verticalLayout_9.addWidget(self.toggleFrame)
 
@@ -412,7 +423,9 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.leftBox.sizePolicy().hasHeightForWidth())
         self.leftBox.setSizePolicy(sizePolicy1)
         self.horizontalLayout_3 = QHBoxLayout(self.leftBox)
+        self.horizontalLayout_3.setSpacing(0)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.titleRightInfo = QLabel(self.leftBox)
         self.titleRightInfo.setObjectName(u"titleRightInfo")
         sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Expanding)
@@ -513,19 +526,47 @@ class Ui_MainWindow(object):
         self.content = QFrame(self.contentBottom)
         self.content.setObjectName(u"content")
         self.horizontalLayout_5 = QHBoxLayout(self.content)
+        self.horizontalLayout_5.setSpacing(0)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.pagesContainer = QFrame(self.content)
         self.pagesContainer.setObjectName(u"pagesContainer")
         self.verticalLayout_8 = QVBoxLayout(self.pagesContainer)
+        self.verticalLayout_8.setSpacing(0)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.contentStackedWidget = QStackedWidget(self.pagesContainer)
+        self.contentStackedWidget.setObjectName(u"contentStackedWidget")
+        self.homePage = QWidget()
+        self.homePage.setObjectName(u"homePage")
+        self.contentStackedWidget.addWidget(self.homePage)
+        self.pbrMatRefPage = QWidget()
+        self.pbrMatRefPage.setObjectName(u"pbrMatRefPage")
+        self.contentStackedWidget.addWidget(self.pbrMatRefPage)
+        self.assetLibraryPage = QWidget()
+        self.assetLibraryPage.setObjectName(u"assetLibraryPage")
+        self.contentStackedWidget.addWidget(self.assetLibraryPage)
+
+        self.verticalLayout_8.addWidget(self.contentStackedWidget)
+
 
         self.horizontalLayout_5.addWidget(self.pagesContainer)
 
         self.settingsRightBox = QFrame(self.content)
         self.settingsRightBox.setObjectName(u"settingsRightBox")
+        self.settingsRightBox.setMinimumSize(QSize(240, 0))
         self.settingsRightBox.setMaximumSize(QSize(0, 16777215))
         self.verticalLayout_7 = QVBoxLayout(self.settingsRightBox)
+        self.verticalLayout_7.setSpacing(0)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.settingsContainer = QFrame(self.settingsRightBox)
+        self.settingsContainer.setObjectName(u"settingsContainer")
+        self.verticalLayout_18 = QVBoxLayout(self.settingsContainer)
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+
+        self.verticalLayout_7.addWidget(self.settingsContainer)
+
 
         self.horizontalLayout_5.addWidget(self.settingsRightBox)
 
@@ -578,6 +619,9 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.styleSheet)
 
         self.retranslateUi(MainWindow)
+
+        self.contentStackedWidget.setCurrentIndex(0)
+
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi

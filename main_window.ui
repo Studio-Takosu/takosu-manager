@@ -151,6 +151,7 @@ Content App */
 }
 #contentBottom{
 	border-top: 3px solid rgb(44, 49, 58);
+	background-color: #282A36;
 }
 
 /* Top Buttons */
@@ -163,7 +164,16 @@ Content App */
 
 /* Bottom Bar */
 #bottomBar { background-color: rgb(44, 49, 58); }
-#bottomBar QLabel { font-size: 11px; color: rgb(113, 126, 149); padding-left: 10px; padding-right: 10px; padding-bottom: 2px; }</string>
+#bottomBar QLabel { font-size: 11px; color: rgb(113, 126, 149); padding-left: 10px; padding-right: 10px; padding-bottom: 2px; }
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////
+Settings Right Box */
+#settingsRightBox { 
+	background-color: rgb(44, 49, 58);
+	border-top: 3px solid #BD93F9;
+	border-left: 3px solid #BD93F9;
+}
+</string>
    </property>
    <layout class="QVBoxLayout" name="appMargins">
     <property name="spacing">
@@ -218,7 +228,7 @@ Content App */
         <widget class="QFrame" name="leftMenuBg">
          <property name="minimumSize">
           <size>
-           <width>240</width>
+           <width>60</width>
            <height>0</height>
           </size>
          </property>
@@ -372,7 +382,7 @@ Content App */
                   <widget class="QPushButton" name="toggleBtn">
                    <property name="geometry">
                     <rect>
-                     <x>180</x>
+                     <x>0</x>
                      <y>0</y>
                      <width>60</width>
                      <height>45</height>
@@ -391,7 +401,7 @@ Content App */
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">background-image: url(:/icons/images/icons/cil-chevron-left.png);</string>
+                    <string notr="true">background-image: url(:/icons/images/icons/cil-chevron-right.png);</string>
                    </property>
                    <property name="text">
                     <string/>
@@ -832,6 +842,21 @@ border: none;</string>
                 </sizepolicy>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_3">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QLabel" name="titleRightInfo">
                   <property name="sizePolicy">
@@ -1072,20 +1097,85 @@ border: none;</string>
              <item>
               <widget class="QFrame" name="content">
                <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QFrame" name="pagesContainer">
-                  <layout class="QVBoxLayout" name="verticalLayout_8"/>
+                  <layout class="QVBoxLayout" name="verticalLayout_8">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QStackedWidget" name="contentStackedWidget">
+                     <widget class="QWidget" name="verticalStackedWidgetPage1" native="true">
+                      <layout class="QVBoxLayout" name="verticalLayout_19"/>
+                     </widget>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                 <item>
                  <widget class="QFrame" name="settingsRightBox">
+                  <property name="minimumSize">
+                   <size>
+                    <width>240</width>
+                    <height>0</height>
+                   </size>
+                  </property>
                   <property name="maximumSize">
                    <size>
                     <width>0</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <layout class="QVBoxLayout" name="verticalLayout_7"/>
+                  <layout class="QVBoxLayout" name="verticalLayout_7">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QFrame" name="settingsContainer">
+                     <layout class="QVBoxLayout" name="verticalLayout_18"/>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                </layout>
