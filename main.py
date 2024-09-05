@@ -17,7 +17,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # GLOBAL VARIABLES -----------------------------------------------------
         # selected menu style
         self.SELECTED_MENU_STYLE = """
-        /* background-position: left center; */
         border-left: 2px solid #FF79C6;
         background-color: #44475A;
         """
@@ -74,31 +73,35 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         # SHOW HOME PAGE
         if btn_name == "home_btn":
-            # self.stackedWidget.setCurrentIndex(0) # set current page
+            self.contentStackedWidget.setCurrentIndex(0) # set current page
             self.resetStyle(btn_parent_name) # Reset button styles
             updatedStyle = self.selectMenu(btn_parent.styleSheet()) # Get updated button style
             btn_parent.setStyleSheet(updatedStyle) # Apply updated style
             # Update titleRightInfo text
             self.titleRightInfo.setText(btn.text())
             print(btn_parent.styleSheet())
-        # SHOW ASSET PAGE
-        elif btn_name == "asset_btn":
-            # self.stackedWidget.setCurrentIndex(1)
-            self.resetStyle(btn_parent_name) # Reset button styles
-            updatedStyle = self.selectMenu(btn_parent.styleSheet()) # Get updated button style
-            btn_parent.setStyleSheet(updatedStyle) # Apply updated style
-            # Update titleRightInfo text
-            self.titleRightInfo.setText(btn.text())
-            print(btn_parent.styleSheet())
+        
         # SHOW PBR PAGE
         elif btn_name == "pbr_btn":
-            # self.stackedWidget.setCurrentIndex(2)
+            self.contentStackedWidget.setCurrentIndex(1)
             self.resetStyle(btn_parent_name) # Reset button styles
             updatedStyle = self.selectMenu(btn_parent.styleSheet()) # Get updated button style
             btn_parent.setStyleSheet(updatedStyle) # Apply updated style
             # Update titleRightInfo text
             self.titleRightInfo.setText(btn.text())
             print(btn_parent.styleSheet())
+        
+        # SHOW ASSET PAGE
+        elif btn_name == "asset_btn":
+            self.contentStackedWidget.setCurrentIndex(2)
+            self.resetStyle(btn_parent_name) # Reset button styles
+            updatedStyle = self.selectMenu(btn_parent.styleSheet()) # Get updated button style
+            btn_parent.setStyleSheet(updatedStyle) # Apply updated style
+            # Update titleRightInfo text
+            self.titleRightInfo.setText(btn.text())
+            print(btn_parent.styleSheet())
+        
+        # LEFT MENU TOGGLE BUTTON
         elif btn_name == "toggleBtn":
             self.toggleMenu(True)
         
@@ -249,3 +252,4 @@ if __name__ == "__main__":
     app.setWindowIcon(QIcon("icon.ico"))
     window = MainWindow()
     sys.exit(app.exec())
+    
