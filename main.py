@@ -1,8 +1,9 @@
 # This Python file uses the following encoding: utf-8
+from cgi import print_arguments
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QFrame
 from PySide6.QtGui import QIcon
-from PySide6.QtCore import QPropertyAnimation, QEasingCurve
+from PySide6.QtCore import QPropertyAnimation, QEasingCurve, QPoint
 from ui_main_window import Ui_MainWindow
 
 
@@ -18,7 +19,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.SELECTED_MENU_STYLE = """
         /* background-position: left center; */
         border-left: 2px solid #FF79C6;
-        /* background-color: rgb(40, 44, 52); */
+        background-color: #44475A;
         """
         
         # expanded menu widths
@@ -77,6 +78,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.resetStyle(btn_parent_name) # Reset button styles
             updatedStyle = self.selectMenu(btn_parent.styleSheet()) # Get updated button style
             btn_parent.setStyleSheet(updatedStyle) # Apply updated style
+            # Update titleRightInfo text
+            self.titleRightInfo.setText(btn.text())
             print(btn_parent.styleSheet())
         # SHOW ASSET PAGE
         elif btn_name == "asset_btn":
@@ -84,6 +87,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.resetStyle(btn_parent_name) # Reset button styles
             updatedStyle = self.selectMenu(btn_parent.styleSheet()) # Get updated button style
             btn_parent.setStyleSheet(updatedStyle) # Apply updated style
+            # Update titleRightInfo text
+            self.titleRightInfo.setText(btn.text())
             print(btn_parent.styleSheet())
         # SHOW PBR PAGE
         elif btn_name == "pbr_btn":
@@ -91,6 +96,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.resetStyle(btn_parent_name) # Reset button styles
             updatedStyle = self.selectMenu(btn_parent.styleSheet()) # Get updated button style
             btn_parent.setStyleSheet(updatedStyle) # Apply updated style
+            # Update titleRightInfo text
+            self.titleRightInfo.setText(btn.text())
             print(btn_parent.styleSheet())
         elif btn_name == "toggleBtn":
             self.toggleMenu(True)
@@ -99,7 +106,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # btn.setStyleSheet(self.active_style)
         
         # PRINT BTN NAME
-        print("Updating stylesheet for:", btn_parent_name)
+        # print("Updating stylesheet for:", btn_parent_name)
         print(f'Button "{btn_name}" pressed!')
         
     
@@ -182,26 +189,57 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Returns:
         - None
         """
+        
+        def activeToggleStyle():
+            updatedStyle = """
+            background-image: url(:/icons/images/icons/cil-chevron-left.png);
+            """
+            return updatedStyle
+        
+        def defaultToggleStyle():
+            defaultStyle = """
+            background-image: url(:/icons/images/icons/cil-chevron-right.png);
+            """
+            return defaultStyle
+        
         originalWidth = 60
         if enabled:
-            pass
-            width = self.leftMenuBg.width()
+            width = self.leftMenuBg.width() # current width of the menu
             expandedWidth = self.EXPANDED_MENU_WIDTH
+            pos = self.toggleBtn.pos() # current position of the toggle button
             
             if width == originalWidth:
                 # set expanded width
                 newWidth = expandedWidth
+                newPos = QPoint(180, 0)
+                newToggleStyle = activeToggleStyle()
+                toggleDuration = self.ANIMATION_DURATION
             else:
                 # set original width
                 newWidth = originalWidth
-                
-            # animate the menu
+                newPos = QPoint(0, 0)
+                newToggleStyle = defaultToggleStyle()
+                toggleDuration = 300
+            
+            # setup the menu animation
             self.animation = QPropertyAnimation(self.leftMenuBg, b"minimumWidth")
             self.animation.setDuration(self.ANIMATION_DURATION)
             self.animation.setStartValue(width)
             self.animation.setEndValue(newWidth)
             self.animation.setEasingCurve(QEasingCurve.InOutQuart)
+            
+            # setup toggle button anumation for layout alignment
+            self.toggleAnimation = QPropertyAnimation(self.toggleBtn, b"pos")
+            self.toggleAnimation.setDuration(toggleDuration)
+            self.toggleAnimation.setStartValue(pos)
+            self.toggleAnimation.setEndValue(newPos)
+            self.toggleAnimation.setEasingCurve(QEasingCurve.InOutQuart)
+            
+            
+            # start the animation
             self.animation.start()
+            self.toggleAnimation.start()
+            self.toggleBtn.setStyleSheet(newToggleStyle)
     
     
 
