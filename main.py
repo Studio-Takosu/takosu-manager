@@ -1,9 +1,10 @@
 # This Python file uses the following encoding: utf-8
-from cgi import print_arguments
 import sys
+from typing import Any
+from urllib.parse import quote_from_bytes
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QFrame
 from PySide6.QtGui import QIcon
-from PySide6.QtCore import QPropertyAnimation, QEasingCurve, QPoint
+from PySide6.QtCore import QPropertyAnimation, QEasingCurve, QPoint, QObject, QSize
 from ui_main_window import Ui_MainWindow
 
 
@@ -36,7 +37,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # self.setAttribute(Qt.WA_TranslucentBackground)
         
         
-        
         # APP MIN/MAX/CLOSE BUTTONS --------------------------------------------
         self.closeAppBtn.clicked.connect(self.close)
         self.minimizeAppBtn.clicked.connect(self.showMinimized)
@@ -53,14 +53,56 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.home_btn.clicked.connect(self.on_button_clicked)
         self.pbr_btn.clicked.connect(self.on_button_clicked)
         self.toggleBtn.clicked.connect(self.on_button_clicked)
+        self.settingsTopBtn.clicked.connect(self.on_button_clicked)
         
-        # Set Home button as active
+        # Set Home button as active and set the Home page to active
         self.home_btn.parent().setStyleSheet( self.selectMenu( self.home_btn.parent().styleSheet() ) )
+        self.contentStackedWidget.setCurrentIndex(0)
         
         
         
         # SHOW APP -------------------------------------------------------------
         self.show()
+    
+        
+        # apply the new width and height to the pagesContainer QFrame
+        self.pagesContainer.resize(
+            self.contentFrame.width(), 
+            self.contentFrame.height()
+        )
+        
+        self.settingsRightBox.setMinimumSize(self.settingsRightBox.width(), self.contentFrame.height())
+        self.settingsRightBox.move(self.contentFrame.width() - self.settingsRightBox.width(), 0)
+        print(f"Settings Right Box Pos X: {self.contentFrame.width() - self.settingsRightBox.width()}")
+        
+    def resizeEvent(self, event):
+        # get the current width of the content QFrame
+        contentWidth = self.contentFrame.width()
+        contentHeight = self.contentFrame.height()
+        
+        # apply the new width and height to the pagesContainer QFrame
+        self.pagesContainer.setMinimumSize(contentWidth, contentHeight)
+        self.pagesContainer.resize(contentWidth, contentHeight)
+        
+        # apply the new width and height to the settingsRightBox QFrame
+        self.settingsRightBox.setMinimumSize(self.settingsRightBox.width(), contentHeight)
+        self.settingsRightBox.resize(self.settingsRightBox.width(), contentHeight)
+        
+        
+        # Absolute positioning for settingsRightBox (positioned on top of pagesContainer)
+        self.settingsRightBox.move(contentWidth - self.settingsRightBox.width(), 0)
+        
+        # self.homePage.setStyleSheet("""
+        #     background-image: url(:/images/takosu-lrg);
+        #     background-position: center;
+        #     background-repeat: no-repeat;
+        # """)
+        # self.homePage.update()
+        # self.homePage.repaint()
+        
+        # call the parent resizeEvent
+        super(MainWindow, self).resizeEvent(event)
+    
 
     def on_button_clicked(self):
         # Get button that was clicked
@@ -103,7 +145,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         # LEFT MENU TOGGLE BUTTON
         elif btn_name == "toggleBtn":
-            self.toggleMenu(True)
+            self.toggleMainMenu(True)
+            
+        elif btn_name == "settingsTopBtn":
+            self.toggleRightMenu(True)
         
         # Apply the active style to the clicked button
         # btn.setStyleSheet(self.active_style)
@@ -149,22 +194,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         defaultStyle = ""
         return defaultStyle
     
-    def selectStandardMenu(self, widgetName):
-        """
-        Selects the standard menu for the given widget.
-
-        Parameters:
-        - widget: The widget to select the standard menu for.
-
-        Returns:
-        None
-        """
-        print("Updating stylesheet for:", widgetName)
-        for widget in self.topMenu.findChildren(QFrame):
-            if widget.objectName == widgetName:
-                updatedStyle = self.selectMenu(widget.styleSheet())
-                widget.setStyleSheet(updatedStyle)
-    
     def resetStyle(self, widgetName):
         """
         Resets the style of all QPushButton widgets in the topMenu, except for the specified widget.
@@ -182,7 +211,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 resetStyle = self.deselectMenu(widget.styleSheet())
                 widget.setStyleSheet(resetStyle)
         
-    def toggleMenu(self, enabled):
+    def toggleMainMenu(self, enabled):
         """
         Toggles the menu based on the given `enabled` parameter.
 
@@ -225,26 +254,90 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 toggleDuration = 300
             
             # setup the menu animation
-            self.animation = QPropertyAnimation(self.leftMenuBg, b"minimumWidth")
-            self.animation.setDuration(self.ANIMATION_DURATION)
-            self.animation.setStartValue(width)
-            self.animation.setEndValue(newWidth)
-            self.animation.setEasingCurve(QEasingCurve.InOutQuart)
+            self.sizeAnim = self.create_menu_animation(
+                self.leftMenuBg,
+                b"minimumWidth",
+                width,
+                newWidth,
+                self.ANIMATION_DURATION
+            )
             
             # setup toggle button anumation for layout alignment
-            self.toggleAnimation = QPropertyAnimation(self.toggleBtn, b"pos")
-            self.toggleAnimation.setDuration(toggleDuration)
-            self.toggleAnimation.setStartValue(pos)
-            self.toggleAnimation.setEndValue(newPos)
-            self.toggleAnimation.setEasingCurve(QEasingCurve.InOutQuart)
+            self.toggleAnimation = self.create_menu_animation(
+                self.toggleBtn, 
+                b"pos",
+                pos,
+                newPos,
+                toggleDuration
+            )
             
             
             # start the animation
-            self.animation.start()
+            self.sizeAnim.start()
             self.toggleAnimation.start()
             self.toggleBtn.setStyleSheet(newToggleStyle)
     
-    
+    def toggleRightMenu(self, enabled):
+        # self.RIGHT_BOX_WIDTH = 240
+        height = self.settingsRightBox.height()
+        initialSize = QSize(0, height)
+        
+        if enabled:
+            currentSize = self.settingsRightBox.size()
+            expandedSize = QSize(self.RIGHT_BOX_WIDTH, height)
+            currentPos = self.settingsRightBox.pos()
+            closedPos = QPoint(currentPos.x() + self.RIGHT_BOX_WIDTH, currentPos.y())
+            openPos = QPoint(currentPos.x() - self.RIGHT_BOX_WIDTH, currentPos.y())
+            
+            
+            if currentSize.width() == initialSize.width():
+                # Open the settingsRightBox
+                self.settingsRightBox.raise_()  # Raise settingsRightBox to be on top
+                updatedSize = expandedSize
+                updatedPos = openPos
+                animDuration = self.ANIMATION_DURATION
+            else:
+                # Close the settingsRightBox
+                print(self.settingsRightBox.property("size"))
+                self.settingsRightBox.lower()  # Lower settingsRightBox to be behind pagesContainer
+                updatedSize = initialSize
+                updatedPos = closedPos
+                animDuration = 300
+            
+            self.sizeAnim = self.create_menu_animation(
+                self.settingsRightBox,
+                b"size",
+                currentSize,
+                updatedSize,
+                self.ANIMATION_DURATION
+            )
+            self.minSizeAnim = self.create_menu_animation(
+                self.settingsRightBox,
+                b"minimumSize",
+                currentSize,
+                updatedSize,
+                self.ANIMATION_DURATION
+            )
+            self.posAnim = self.create_menu_animation(
+                self.settingsRightBox,
+                b"pos",
+                currentPos,
+                updatedPos,
+                animDuration
+            )
+            
+            
+            self.sizeAnim.start()
+            self.minSizeAnim.start()
+            self.posAnim.start()
+        
+    def create_menu_animation(self, widget:QObject, property:str, startValue:Any, endValue:Any, duration:int = 500):
+        animation = QPropertyAnimation(widget, property)
+        animation.setDuration(duration)
+        animation.setStartValue(startValue)
+        animation.setEndValue(endValue)
+        animation.setEasingCurve(QEasingCurve.InOutQuart)
+        return animation
 
 
 if __name__ == "__main__":
