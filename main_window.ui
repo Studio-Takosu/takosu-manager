@@ -76,20 +76,23 @@ Left Menu */
 
 /* TOGGLE BUTTON */
 #toggleBtn {
+	/* background-position: left center; */
 	background-position: left center;
   	background-repeat: no-repeat;
 	border: none;
 	border-left: 20px solid transparent;
 	border-right: 20px solid transparent;
-	background-color: rgb(37, 41, 48);
 	text-align: left;
 	padding-left: 44px;
 	color: rgb(113, 126, 149);
 }
-#toggleBtn:hover {
+#toggleFrame {
+	background-color: rgb(37, 41, 48);
+}
+#toggleFrame:hover {
 	background-color: rgb(40, 44, 52);
 }
-#toggleBtn:pressed {
+#toggleFrame:pressed {
 	background-color: rgb(189, 147, 249);
 }
 
@@ -359,19 +362,41 @@ Content App */
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QPushButton" name="toggleBtn">
+                 <widget class="QFrame" name="toggleFrame">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
                     <height>45</height>
                    </size>
                   </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/icon_menu.png);</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
+                  <widget class="QPushButton" name="toggleBtn">
+                   <property name="geometry">
+                    <rect>
+                     <x>180</x>
+                     <y>0</y>
+                     <width>60</width>
+                     <height>45</height>
+                    </rect>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>45</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>60</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-image: url(:/icons/images/icons/cil-chevron-left.png);</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
                  </widget>
                 </item>
                </layout>
@@ -682,7 +707,7 @@ border: none;</string>
 border: none;</string>
                         </property>
                         <property name="text">
-                         <string>Assets</string>
+                         <string>Asset Library</string>
                         </property>
                        </widget>
                       </item>
@@ -834,7 +859,7 @@ border: none;</string>
                    <string notr="true">font: 800 16pt &quot;Exo SemiBold&quot;;</string>
                   </property>
                   <property name="text">
-                   <string>HOME</string>
+                   <string>Home</string>
                   </property>
                  </widget>
                 </item>

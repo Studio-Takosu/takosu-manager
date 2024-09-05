@@ -80,20 +80,23 @@ class Ui_MainWindow(object):
 "\n"
 "/* TOGGLE BUTTON */\n"
 "#toggleBtn {\n"
+"	/* background-position: left center; */\n"
 "	background-position: left center;\n"
 "  	background-repeat: no-repeat;\n"
 "	border: none;\n"
 "	border-left: 20px solid transparent;\n"
 "	border-right: 20px solid transparent;\n"
-"	background-color: rgb(37, 41, 48);\n"
 "	text-align: left;\n"
 "	padding-left: 44px;\n"
 "	color: rgb(113, 126, 149);\n"
 "}\n"
-"#toggleBtn:hover {\n"
+"#toggleFrame {\n"
+"	background-color: rgb(37, 41, 48);\n"
+"}\n"
+"#toggleFrame:hover {\n"
 "	background-color: rgb(40, 44, 52);\n"
 "}\n"
-"#toggleBtn:pressed {\n"
+"#toggleFrame:pressed {\n"
 "	background-color: rgb(189, 147, 249);\n"
 "}\n"
 "\n"
@@ -105,12 +108,12 @@ class Ui_MainWindow(object):
 "	background-color: transparent;\n"
 "	text-align: left;\n"
 "	padding-left: 44px;\n"
-"}\n"
+""
+                        "}\n"
 "\n"
 "#topMenu #homeBtnFrame, \n"
 "#topMenu #pbrBtnFrame, \n"
-"#topM"
-                        "enu #assetBtnFrame {\n"
+"#topMenu #assetBtnFrame {\n"
 "	border: none;\n"
 "	border-left: 0px solid #FF79C6;\n"
 "	padding-left: 22px;\n"
@@ -146,8 +149,8 @@ class Ui_MainWindow(object):
 "	color: rgb(255, 255, 255);\n"
 "}\n"
 "\n"
-"/* ///////////////////////////////////////////////////////////////////////////////"
-                        "//////////////////\n"
+"/* //////"
+                        "///////////////////////////////////////////////////////////////////////////////////////////\n"
 "Content App */\n"
 "#contentTopBg{	\n"
 "	background-color: rgb(33, 37, 43);\n"
@@ -225,12 +228,17 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.setSpacing(0)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
-        self.toggleBtn = QPushButton(self.toggleBox)
+        self.toggleFrame = QFrame(self.toggleBox)
+        self.toggleFrame.setObjectName(u"toggleFrame")
+        self.toggleFrame.setMinimumSize(QSize(0, 45))
+        self.toggleBtn = QPushButton(self.toggleFrame)
         self.toggleBtn.setObjectName(u"toggleBtn")
+        self.toggleBtn.setGeometry(QRect(180, 0, 60, 45))
         self.toggleBtn.setMinimumSize(QSize(0, 45))
-        self.toggleBtn.setStyleSheet(u"background-image: url(:/icons/images/icons/icon_menu.png);")
+        self.toggleBtn.setMaximumSize(QSize(60, 16777215))
+        self.toggleBtn.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-chevron-left.png);")
 
-        self.verticalLayout_9.addWidget(self.toggleBtn)
+        self.verticalLayout_9.addWidget(self.toggleFrame)
 
 
         self.verticalLayout_3.addWidget(self.toggleBox)
@@ -580,9 +588,9 @@ class Ui_MainWindow(object):
         self.toggleBtn.setText("")
         self.home_btn.setText(QCoreApplication.translate("MainWindow", u"Home", None))
         self.pbr_btn.setText(QCoreApplication.translate("MainWindow", u"PBR Material Reference", None))
-        self.asset_btn.setText(QCoreApplication.translate("MainWindow", u"Assets", None))
+        self.asset_btn.setText(QCoreApplication.translate("MainWindow", u"Asset Library", None))
         self.toggleLeftBtn.setText(QCoreApplication.translate("MainWindow", u"User Settings", None))
-        self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"HOME", None))
+        self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"Home", None))
 #if QT_CONFIG(tooltip)
         self.settingsTopBtn.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Settings</p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
