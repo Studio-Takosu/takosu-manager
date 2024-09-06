@@ -46,6 +46,10 @@ env/
 rc_resources.py
 main_window_ui.py
 
+# automatically generated but don't want to include in the repo
+src/app/ui/ui_main_window.py
+pbr_reference_ui.py
+
 # Ignore IDE-specific files
 .idea/
 .vscode/
