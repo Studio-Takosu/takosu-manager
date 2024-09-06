@@ -24,6 +24,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         
         # ----------------------------------------------------------------------------
+        # INSTATIATE PBR MATERIAL REFERENCE ------------------------------------------
+        self.pbr_model = PBRModel()
+        self.pbr_view = PBRView(self)
+        self.pbr_controller = PBRController(self.pbr_model, self.pbr_view)
+        
+        # load the data
+        self.pbr_model.load_data()
+        
+        # attach the pbr_view to the materialRefContainer
+        self.materialRefContainer.layout().addWidget(self.pbr_view)
+        
+        
+        # ----------------------------------------------------------------------------
         # GLOBAL VARIABLES -----------------------------------------------------------
         # selected menu style
         self.SELECTED_MENU_STYLE = """
@@ -79,32 +92,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.timer.timeout.connect(self.timer_resizeContentFrame)
         
         
-        # ----------------------------------------------------------------------------
-        # PBR MATERIAL REFERENCE PAGE ------------------------------------------------
-        # Hide the placeholder searchLineEdit
-        self.searchLineEdit.hide()
-        
-        # Add CustomSearchLineEdit to the searchContainer
-        # Replacing the placeholder searchLineEdit
-        self.searchLineEdit = CustomSearchLineEdit()
-        self.searchLineEdit.setPlaceholderText("Search")
-        self.searchLineEdit.setStyleSheet("""
-            color: #ffffff;
-            background-color: rgb(40, 42, 54);
-            border: none;
-        """)
-        self.searchLineEdit.returnPressed.connect(self.on_search_return)
-        self.searchContainer.layout().addWidget(self.searchLineEdit)
-        # ---------
-        self.searchBtn.installEventFilter(self)
-        
-        # reset parent for the cancel button
-        # otherwise it will appear on the left side of the searchLineEdit
-        self.cancelSearchBtn.setParent(None)
-        self.cancelSearchBtn.clicked.connect(self.on_cancel_search)
-        self.searchContainer.layout().addWidget(self.cancelSearchBtn)
-        
-        
         
         
         # ----------------------------------------------------------------------------
@@ -125,18 +112,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.settingsRightBox.move(self.contentFrame.width() - self.settingsRightBox.width(), 0)
         # print(f"Settings Right Box Pos X: {self.contentFrame.width() - self.settingsRightBox.width()}")
     
-    def eventFilter(self, obj, event):
-        """Event filter to detect hover events."""
-        if obj == self.searchBtn:
-            # print("Event: ", event.type())
-            if event.type() == 127:
-                print("Mouse entered")
-                # self.start_animation(1.0)  # Hover in (move to white)
-            elif event.type() == 128:
-                print("Mouse left")
-                # self.start_animation(0.0)  # Hover out (move to gray)
-        return super().eventFilter(obj, event)
-        
     def resizeEvent(self, event):
         # get the current width of the content QFrame
         self.resizeContentFrame()
@@ -144,16 +119,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # call the parent resizeEvent
         super(MainWindow, self).resizeEvent(event)
     
-    def on_search_return(self):
-        print(self.searchLineEdit.text())
-        # remove focus from the searchLineEdit
-        self.sender().clearFocus()
-        
-    def on_cancel_search(self):
-        self.searchLineEdit.clear()
-        self.sender().clearFocus()
-        
-        
     def on_button_clicked(self):
         # Get button that was clicked
         btn = self.sender()
