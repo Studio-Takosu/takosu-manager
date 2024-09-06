@@ -9,7 +9,7 @@ class CustomSearchLineEdit(QLineEdit):
         self.focus_in_style = focus_in_style or """
           background-color: rgb(40, 42, 54);
           border-radius: 1em;
-          border: 2px solid #8BE9FD;  /* Cyan border when focused */
+          border: 2px solid rgb(139, 233, 253);  /* Cyan border when focused */
         """
         self.focus_out_style = focus_out_style or ""
         

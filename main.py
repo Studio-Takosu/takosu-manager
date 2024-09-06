@@ -76,10 +76,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.searchLineEdit.setStyleSheet("""
             color: #ffffff;
             background-color: rgb(40, 42, 54);
-            border: none;"""
-        )
+            border: none;
+        """)
         self.searchLineEdit.returnPressed.connect(self.on_search_return_pressed)
         self.searchContainer.layout().addWidget(self.searchLineEdit)
+        # ---------
+        self.searchBtn.installEventFilter(self)
+        
+        # reset parent for the cancel button
+        # otherwise it will appear on the left side of the searchLineEdit
+        self.cancelSearchBtn.setParent(None)
+        self.searchContainer.layout().addWidget(self.cancelSearchBtn)
+        
         
         
         
@@ -96,6 +104,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.settingsRightBox.setMinimumSize(self.settingsRightBox.width(), self.contentFrame.height())
         self.settingsRightBox.move(self.contentFrame.width() - self.settingsRightBox.width(), 0)
         # print(f"Settings Right Box Pos X: {self.contentFrame.width() - self.settingsRightBox.width()}")
+    
+    def eventFilter(self, obj, event):
+        """Event filter to detect hover events."""
+        if obj == self.searchBtn:
+            # print("Event: ", event.type())
+            if event.type() == 127:
+                print("Mouse entered")
+                # self.start_animation(1.0)  # Hover in (move to white)
+            elif event.type() == 128:
+                print("Mouse left")
+                # self.start_animation(0.0)  # Hover out (move to gray)
+        return super().eventFilter(obj, event)
         
     def resizeEvent(self, event):
         # get the current width of the content QFrame
