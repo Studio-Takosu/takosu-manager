@@ -18,7 +18,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLayout, QLineEdit, QMainWindow, QPushButton,
     QSizePolicy, QStackedWidget, QVBoxLayout, QWidget)
-import resources.resources_rc
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'ui')))
+import ui.resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -73,7 +76,7 @@ class Ui_MainWindow(object):
 "}\n"
 "#topLogo {\n"
 "	background-color: rgb(33, 37, 43);\n"
-"	background-image: url(:/images/takosu);\n"
+"	background-image: url(:/images/resources/images/takosu.png);\n"
 "	background-position: centered;\n"
 "	background-repeat: no-repeat;\n"
 "}\n"
@@ -107,9 +110,9 @@ class Ui_MainWindow(object):
 "	border: none;\n"
 "	background-color: transparent;\n"
 "	text-align: left;\n"
-"	padding-left: 44px;\n"
-""
-                        "}\n"
+"	pa"
+                        "dding-left: 44px;\n"
+"}\n"
 "\n"
 "#topMenu #homeBtnFrame, \n"
 "#topMenu #pbrBtnFrame, \n"
@@ -147,10 +150,10 @@ class Ui_MainWindow(object):
 "#bottomMenu .QPushButton:pressed {	\n"
 "	background-color: rgb(189, 147, 249);\n"
 "	color: rgb(255, 255, 255);\n"
-"}\n"
+""
+                        "}\n"
 "\n"
-"/* //////"
-                        "///////////////////////////////////////////////////////////////////////////////////////////\n"
+"/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
 "Content App */\n"
 "#contentTopBg{	\n"
 "	background-color: rgb(33, 37, 43);\n"
@@ -173,8 +176,8 @@ class Ui_MainWindow(object):
 "#bottomBar QLabel { font-size: 11px; color: rgb(113, 126, 149); padding-left: 10px; padding-right: 10px; padding-bottom: 2px; }\n"
 "\n"
 "\n"
-"/* ////////////////////////////////////////////////////////////////////////"
-                        "/////////////////////////\n"
+"/* ////////////////////////////////////////////////////"
+                        "/////////////////////////////////////////////\n"
 "Content Pages */\n"
 "\n"
 "/* //////////////////// \n"
@@ -211,8 +214,8 @@ class Ui_MainWindow(object):
 "	border-style: solid; \n"
 "}\n"
 "\n"
-"/* ///////////////////////////////////////////////////////////////////////////////////"
-                        "//////////////\n"
+"/* ///////////////////////////////////////////////////////////////"
+                        "//////////////////////////////////\n"
 "Settings Right Box */\n"
 "#settingsRightBox { \n"
 "	background-color: rgb(44, 49, 58);\n"
@@ -286,7 +289,7 @@ class Ui_MainWindow(object):
         self.toggleBtn.setGeometry(QRect(0, 0, 60, 45))
         self.toggleBtn.setMinimumSize(QSize(0, 45))
         self.toggleBtn.setMaximumSize(QSize(60, 16777215))
-        self.toggleBtn.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-chevron-right.png);")
+        self.toggleBtn.setStyleSheet(u"background-image: url(:/icons/resources/icons/cil-chevron-right.png);")
 
         self.verticalLayout_9.addWidget(self.toggleFrame)
 
@@ -326,7 +329,7 @@ class Ui_MainWindow(object):
         self.home_btn.setSizePolicy(sizePolicy)
         self.home_btn.setMinimumSize(QSize(0, 45))
         self.home_btn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.home_btn.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-home.png);\n"
+        self.home_btn.setStyleSheet(u"background-image: url(:/icons/resources/icons/cil-home.png);\n"
 "border: none;")
 
         self.verticalLayout_12.addWidget(self.home_btn)
@@ -369,7 +372,7 @@ class Ui_MainWindow(object):
         self.pbr_btn.setSizePolicy(sizePolicy)
         self.pbr_btn.setMinimumSize(QSize(0, 45))
         self.pbr_btn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.pbr_btn.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-circle.png);\n"
+        self.pbr_btn.setStyleSheet(u"background-image: url(:/icons/resources/icons/cil-circle.png);\n"
 "border: none;")
 
         self.verticalLayout_16.addWidget(self.pbr_btn)
@@ -402,7 +405,7 @@ class Ui_MainWindow(object):
         self.asset_btn.setSizePolicy(sizePolicy)
         self.asset_btn.setMinimumSize(QSize(0, 45))
         self.asset_btn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.asset_btn.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-3d.png);\n"
+        self.asset_btn.setStyleSheet(u"background-image: url(:/icons/resources/icons/cil-3d.png);\n"
 "border: none;")
 
         self.verticalLayout_15.addWidget(self.asset_btn)
@@ -426,7 +429,7 @@ class Ui_MainWindow(object):
         self.toggleLeftBtn = QPushButton(self.bottomMenu)
         self.toggleLeftBtn.setObjectName(u"toggleLeftBtn")
         self.toggleLeftBtn.setMinimumSize(QSize(0, 45))
-        self.toggleLeftBtn.setStyleSheet(u"background-image: url(:/icons/images/icons/icon_settings.png);")
+        self.toggleLeftBtn.setStyleSheet(u"background-image: url(:/icons/resources/icons/icon_settings.png);")
         self.toggleLeftBtn.setIconSize(QSize(20, 20))
 
         self.verticalLayout_5.addWidget(self.toggleLeftBtn)
@@ -505,7 +508,7 @@ class Ui_MainWindow(object):
         self.settingsTopBtn.setMaximumSize(QSize(28, 28))
         self.settingsTopBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon = QIcon()
-        icon.addFile(u":/icons/images/icons/icon_settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u":/icons/resources/icons/icon_settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.settingsTopBtn.setIcon(icon)
         self.settingsTopBtn.setIconSize(QSize(20, 20))
 
@@ -519,7 +522,7 @@ class Ui_MainWindow(object):
         self.minimizeAppBtn.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.minimizeAppBtn.setAutoFillBackground(False)
         icon1 = QIcon()
-        icon1.addFile(u":/icons/images/icons/icon_minimize.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u":/icons/resources/icons/icon_minimize.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.minimizeAppBtn.setIcon(icon1)
         self.minimizeAppBtn.setIconSize(QSize(20, 20))
 
@@ -531,7 +534,7 @@ class Ui_MainWindow(object):
         self.maximizeRestoreAppBtn.setMaximumSize(QSize(28, 28))
         self.maximizeRestoreAppBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon2 = QIcon()
-        icon2.addFile(u":/icons/images/icons/icon_maximize.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon2.addFile(u":/icons/resources/icons/icon_maximize.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.maximizeRestoreAppBtn.setIcon(icon2)
         self.maximizeRestoreAppBtn.setIconSize(QSize(20, 20))
 
@@ -543,7 +546,7 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setMaximumSize(QSize(28, 28))
         self.closeAppBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon3 = QIcon()
-        icon3.addFile(u":/icons/images/icons/icon_close.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon3.addFile(u":/icons/resources/icons/icon_close.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.closeAppBtn.setIcon(icon3)
         self.closeAppBtn.setIconSize(QSize(20, 20))
 
@@ -584,7 +587,7 @@ class Ui_MainWindow(object):
         self.contentStackedWidget.setObjectName(u"contentStackedWidget")
         self.homePage = QWidget()
         self.homePage.setObjectName(u"homePage")
-        self.homePage.setStyleSheet(u"background-image: url(:/images/takosu-lrg);\n"
+        self.homePage.setStyleSheet(u"background-image: url(:/images/resources/images/takosu-logo-512.png);\n"
 "background-position: center;\n"
 "background-repeat: no-repeat;")
         self.verticalLayout_19 = QVBoxLayout(self.homePage)
@@ -634,7 +637,7 @@ class Ui_MainWindow(object):
         self.searchBtn.setMinimumSize(QSize(24, 24))
         self.searchBtn.setMaximumSize(QSize(24, 24))
         self.searchBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.searchBtn.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-magnifying-glass.png);\n"
+        self.searchBtn.setStyleSheet(u"background-image: url(:/icons/resources/icons/cil-magnifying-glass.png);\n"
 "border: none;\n"
 "")
         self.searchBtn.setIconSize(QSize(20, 20))
@@ -652,7 +655,7 @@ class Ui_MainWindow(object):
         self.cancelSearchBtn.setObjectName(u"cancelSearchBtn")
         self.cancelSearchBtn.setMinimumSize(QSize(24, 24))
         self.cancelSearchBtn.setMaximumSize(QSize(24, 24))
-        self.cancelSearchBtn.setStyleSheet(u"background-image: url(:/icons/images/icons/icon_close_24.svg);\n"
+        self.cancelSearchBtn.setStyleSheet(u"background-image: url(:/icons/resources/icons/icon_close_24.svg);\n"
 "border: none;")
         self.cancelSearchBtn.setIconSize(QSize(16, 16))
 
@@ -769,7 +772,7 @@ class Ui_MainWindow(object):
         self.frame_size_grip.setObjectName(u"frame_size_grip")
         self.frame_size_grip.setMinimumSize(QSize(20, 0))
         self.frame_size_grip.setMaximumSize(QSize(20, 16777215))
-        self.frame_size_grip.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-size-grip.png);\n"
+        self.frame_size_grip.setStyleSheet(u"background-image: url(:/icons/resources/icons/cil-size-grip.png);\n"
 "background-repeat: no-repeat;\n"
 "background-position: right bottom;")
         self.frame_size_grip.setFrameShape(QFrame.Shape.NoFrame)
@@ -793,7 +796,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.contentStackedWidget.setCurrentIndex(1)
+        self.contentStackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
