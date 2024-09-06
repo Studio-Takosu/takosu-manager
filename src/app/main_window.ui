@@ -992,7 +992,7 @@ border: none;</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset resource="resources/resources.qrc">
                     <normaloff>:/icons/images/icons/icon_settings.png</normaloff>:/icons/images/icons/icon_settings.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1033,7 +1033,7 @@ border: none;</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset resource="resources/resources.qrc">
                     <normaloff>:/icons/images/icons/icon_minimize.png</normaloff>:/icons/images/icons/icon_minimize.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1068,7 +1068,7 @@ border: none;</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset resource="resources/resources.qrc">
                     <normaloff>:/icons/images/icons/icon_maximize.png</normaloff>:/icons/images/icons/icon_maximize.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1103,7 +1103,7 @@ border: none;</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset resource="resources/resources.qrc">
                     <normaloff>:/icons/images/icons/icon_close.png</normaloff>:/icons/images/icons/icon_close.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1686,7 +1686,7 @@ background-position: right bottom;</string>
   </widget>
  </widget>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="resources/resources.qrc"/>
  </resources>
  <connections/>
 </ui>

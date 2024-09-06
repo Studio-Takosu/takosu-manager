@@ -1,12 +1,16 @@
 # This Python file uses the following encoding: utf-8
 import sys
+import os
 from typing import Any
-from urllib.parse import quote_from_bytes
+# ----------------------------------------------------------------
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QFrame
 from PySide6.QtGui import QIcon
 from PySide6.QtCore import QPropertyAnimation, QEasingCurve, QPoint, QObject, QSize, QTimer, Qt
+# ----------------------------------------------------------------
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from widgets.search_widget import CustomSearchLineEdit
 from ui_main_window import Ui_MainWindow
-from src.widgets.search_widget import CustomSearchLineEdit
+
 
 
 
