@@ -4,8 +4,9 @@ from typing import Any
 from urllib.parse import quote_from_bytes
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QFrame
 from PySide6.QtGui import QIcon
-from PySide6.QtCore import QPropertyAnimation, QEasingCurve, QPoint, QObject, QSize, QTimer
+from PySide6.QtCore import QPropertyAnimation, QEasingCurve, QPoint, QObject, QSize, QTimer, Qt
 from ui_main_window import Ui_MainWindow
+from src.widgets.search_widget import CustomSearchLineEdit
 
 
 
@@ -56,13 +57,29 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.settingsTopBtn.clicked.connect(self.on_button_clicked)
         
         
-        # Timer to simulate the animation by changing alignment over time
+        # Timer to simulate the animation by changing contentFrame over time
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.timer_resizeContentFrame)
         
         # Set Home button as active and set the Home page to active
         self.home_btn.parent().setStyleSheet( self.selectMenu( self.home_btn.parent().styleSheet() ) )
         self.contentStackedWidget.setCurrentIndex(0)
+        
+        
+        # Hide the placeholder searchLineEdit
+        self.searchLineEdit.hide()
+        
+        # Add CustomSearchLineEdit to the searchContainer
+        # Replacing the placeholder searchLineEdit
+        self.searchLineEdit = CustomSearchLineEdit()
+        self.searchLineEdit.setPlaceholderText("Search")
+        self.searchLineEdit.setStyleSheet("""
+            color: #ffffff;
+            background-color: rgb(40, 42, 54);
+            border: none;"""
+        )
+        self.searchLineEdit.returnPressed.connect(self.on_search_return_pressed)
+        self.searchContainer.layout().addWidget(self.searchLineEdit)
         
         
         
@@ -87,7 +104,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # call the parent resizeEvent
         super(MainWindow, self).resizeEvent(event)
     
-
+    def on_search_return_pressed(self):
+        print(self.searchLineEdit.text())
+        # remove focus from the searchLineEdit
+        self.sender().clearFocus()
+        
+        
     def on_button_clicked(self):
         # Get button that was clicked
         btn = self.sender()
@@ -264,7 +286,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             
             # new timer to stop the self.timer animation after 500ms
             QTimer.singleShot(500, lambda: self.timer.stop())
-        
+
     
     def toggleRightMenu(self, enabled):
         # self.RIGHT_BOX_WIDTH = 240
