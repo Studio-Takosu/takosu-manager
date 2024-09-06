@@ -16,7 +16,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__()
         self.setupUi(self)
         
-        # GLOBAL VARIABLES -----------------------------------------------------
+        
+        # ----------------------------------------------------------------------------
+        # GLOBAL VARIABLES -----------------------------------------------------------
         # selected menu style
         self.SELECTED_MENU_STYLE = """
         border-left: 2px solid #FF79C6;
@@ -29,7 +31,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.RIGHT_BOX_WIDTH = 240
         self.ANIMATION_DURATION = 500
         
-        # APP NAME -------------------------------------------------------------
+        
+        # ----------------------------------------------------------------------------
+        # APP NAME -------------------------------------------------------------------
         title = "Takosu Manager"
         self.setWindowTitle(title)
         
@@ -38,7 +42,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # self.setAttribute(Qt.WA_TranslucentBackground)
         
         
-        # APP MIN/MAX/CLOSE BUTTONS --------------------------------------------
+        # ----------------------------------------------------------------------------
+        # APP MIN/MAX/CLOSE BUTTONS --------------------------------------------------
         self.closeAppBtn.clicked.connect(self.close)
         self.minimizeAppBtn.clicked.connect(self.showMinimized)
         self.maximizeRestoreAppBtn.clicked.connect(self.toggle_maximize_restore)
@@ -47,8 +52,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.maximizeRestoreAppBtn.hide()
         
         
-        
-        # MENU BUTTONS ---------------------------------------------------------
+        # ----------------------------------------------------------------------------
+        # MENU BUTTONS ---------------------------------------------------------------
         # Connect button signals to the method
         self.asset_btn.clicked.connect(self.on_button_clicked)
         self.home_btn.clicked.connect(self.on_button_clicked)
@@ -57,15 +62,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.settingsTopBtn.clicked.connect(self.on_button_clicked)
         
         
-        # Timer to simulate the animation by changing contentFrame over time
-        self.timer = QTimer(self)
-        self.timer.timeout.connect(self.timer_resizeContentFrame)
-        
+        # ----------------------------------------------------------------------------
+        # CONTENT STACKED WIDGET -----------------------------------------------------
         # Set Home button as active and set the Home page to active
         self.home_btn.parent().setStyleSheet( self.selectMenu( self.home_btn.parent().styleSheet() ) )
         self.contentStackedWidget.setCurrentIndex(0)
         
+        # Timer to simulate the animation by changing contentFrame over time
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.timer_resizeContentFrame)
         
+        
+        # ----------------------------------------------------------------------------
+        # PBR MATERIAL REFERENCE PAGE ------------------------------------------------
         # Hide the placeholder searchLineEdit
         self.searchLineEdit.hide()
         
@@ -78,7 +87,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             background-color: rgb(40, 42, 54);
             border: none;
         """)
-        self.searchLineEdit.returnPressed.connect(self.on_search_return_pressed)
+        self.searchLineEdit.returnPressed.connect(self.on_search_return)
         self.searchContainer.layout().addWidget(self.searchLineEdit)
         # ---------
         self.searchBtn.installEventFilter(self)
@@ -86,15 +95,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # reset parent for the cancel button
         # otherwise it will appear on the left side of the searchLineEdit
         self.cancelSearchBtn.setParent(None)
+        self.cancelSearchBtn.clicked.connect(self.on_cancel_search)
         self.searchContainer.layout().addWidget(self.cancelSearchBtn)
         
         
         
         
-        # SHOW APP -------------------------------------------------------------
+        # ----------------------------------------------------------------------------
+        # SHOW APP -------------------------------------------------------------------
         self.show()
-    
+
         
+        
+        # ----------------------------------------------------------------------------
+        # APPLY RESIZE TO FLOATING WIDGETS -------------------------------------------
         # apply the new width and height to the pagesContainer QFrame
         self.pagesContainer.resize(
             self.contentFrame.width(), 
@@ -124,9 +138,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # call the parent resizeEvent
         super(MainWindow, self).resizeEvent(event)
     
-    def on_search_return_pressed(self):
+    def on_search_return(self):
         print(self.searchLineEdit.text())
         # remove focus from the searchLineEdit
+        self.sender().clearFocus()
+        
+    def on_cancel_search(self):
+        self.searchLineEdit.clear()
         self.sender().clearFocus()
         
         
