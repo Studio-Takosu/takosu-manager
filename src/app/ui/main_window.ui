@@ -69,7 +69,7 @@ Left Menu */
 }
 #topLogo {
 	background-color: rgb(33, 37, 43);
-	background-image: url(:/images/takosu);
+	background-image: url(:/images/resources/images/takosu.png);
 	background-position: centered;
 	background-repeat: no-repeat;
 }
@@ -439,7 +439,7 @@ Settings Right Box */
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">background-image: url(:/icons/images/icons/cil-chevron-right.png);</string>
+                    <string notr="true">background-image: url(:/icons/resources/icons/cil-chevron-right.png);</string>
                    </property>
                    <property name="text">
                     <string/>
@@ -552,7 +552,7 @@ Settings Right Box */
                          <cursorShape>PointingHandCursor</cursorShape>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">background-image: url(:/icons/images/icons/cil-home.png);
+                         <string notr="true">background-image: url(:/icons/resources/icons/cil-home.png);
 border: none;</string>
                         </property>
                         <property name="text">
@@ -671,7 +671,7 @@ border: none;</string>
                          <cursorShape>PointingHandCursor</cursorShape>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">background-image: url(:/icons/images/icons/cil-circle.png);
+                         <string notr="true">background-image: url(:/icons/resources/icons/cil-circle.png);
 border: none;</string>
                         </property>
                         <property name="text">
@@ -760,7 +760,7 @@ border: none;</string>
                          <cursorShape>PointingHandCursor</cursorShape>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">background-image: url(:/icons/images/icons/cil-3d.png);
+                         <string notr="true">background-image: url(:/icons/resources/icons/cil-3d.png);
 border: none;</string>
                         </property>
                         <property name="text">
@@ -810,7 +810,7 @@ border: none;</string>
                    </size>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/icon_settings.png);</string>
+                   <string notr="true">background-image: url(:/icons/resources/icons/icon_settings.png);</string>
                   </property>
                   <property name="text">
                    <string>User Settings</string>
@@ -992,8 +992,8 @@ border: none;</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources/resources.qrc">
-                    <normaloff>:/icons/images/icons/icon_settings.png</normaloff>:/icons/images/icons/icon_settings.png</iconset>
+                   <iconset resource="resources.qrc">
+                    <normaloff>:/icons/resources/icons/icon_settings.png</normaloff>:/icons/resources/icons/icon_settings.png</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -1033,8 +1033,8 @@ border: none;</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources/resources.qrc">
-                    <normaloff>:/icons/images/icons/icon_minimize.png</normaloff>:/icons/images/icons/icon_minimize.png</iconset>
+                   <iconset resource="resources.qrc">
+                    <normaloff>:/icons/resources/icons/icon_minimize.png</normaloff>:/icons/resources/icons/icon_minimize.png</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -1068,8 +1068,8 @@ border: none;</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources/resources.qrc">
-                    <normaloff>:/icons/images/icons/icon_maximize.png</normaloff>:/icons/images/icons/icon_maximize.png</iconset>
+                   <iconset resource="resources.qrc">
+                    <normaloff>:/icons/resources/icons/icon_maximize.png</normaloff>:/icons/resources/icons/icon_maximize.png</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -1103,8 +1103,8 @@ border: none;</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources/resources.qrc">
-                    <normaloff>:/icons/images/icons/icon_close.png</normaloff>:/icons/images/icons/icon_close.png</iconset>
+                   <iconset resource="resources.qrc">
+                    <normaloff>:/icons/resources/icons/icon_close.png</normaloff>:/icons/resources/icons/icon_close.png</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -1201,11 +1201,11 @@ border: none;</string>
                     <item>
                      <widget class="QStackedWidget" name="contentStackedWidget">
                       <property name="currentIndex">
-                       <number>1</number>
+                       <number>0</number>
                       </property>
                       <widget class="QWidget" name="homePage">
                        <property name="styleSheet">
-                        <string notr="true">background-image: url(:/images/takosu-lrg);
+                        <string notr="true">background-image: url(:/images/resources/images/takosu-logo-512.png);
 background-position: center;
 background-repeat: no-repeat;</string>
                        </property>
@@ -1364,7 +1364,7 @@ background-repeat: no-repeat;</string>
                                        <cursorShape>PointingHandCursor</cursorShape>
                                       </property>
                                       <property name="styleSheet">
-                                       <string notr="true">background-image: url(:/icons/images/icons/cil-magnifying-glass.png);
+                                       <string notr="true">background-image: url(:/icons/resources/icons/cil-magnifying-glass.png);
 border: none;
 </string>
                                       </property>
@@ -1407,7 +1407,7 @@ border: none;
                                        </size>
                                       </property>
                                       <property name="styleSheet">
-                                       <string notr="true">background-image: url(:/icons/images/icons/icon_close_24.svg);
+                                       <string notr="true">background-image: url(:/icons/resources/icons/icon_close_24.svg);
 border: none;</string>
                                       </property>
                                       <property name="text">
@@ -1658,7 +1658,7 @@ border: none;</string>
                    </size>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image: url(:/icons/images/icons/cil-size-grip.png);
+                   <string notr="true">background-image: url(:/icons/resources/icons/cil-size-grip.png);
 background-repeat: no-repeat;
 background-position: right bottom;</string>
                   </property>
@@ -1686,7 +1686,7 @@ background-position: right bottom;</string>
   </widget>
  </widget>
  <resources>
-  <include location="resources/resources.qrc"/>
+  <include location="resources.qrc"/>
  </resources>
  <connections/>
 </ui>

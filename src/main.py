@@ -7,9 +7,9 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QFrame
 from PySide6.QtGui import QIcon
 from PySide6.QtCore import QPropertyAnimation, QEasingCurve, QPoint, QObject, QSize, QTimer, Qt
 # ----------------------------------------------------------------
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from widgets.search_widget import CustomSearchLineEdit
-from ui_main_window import Ui_MainWindow
+from app import *
+from modules import *
+from widgets import *
 
 
 
@@ -18,6 +18,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def __init__(self):
         super(MainWindow, self).__init__()
+        
+        # self.ui = Ui_MainWindow()
         self.setupUi(self)
         
         
@@ -270,13 +272,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         def activeToggleStyle():
             updatedStyle = """
-            background-image: url(:/icons/images/icons/cil-chevron-left.png);
+            background-image: url(:/icons/resources/icons/cil-chevron-left.png);
             """
             return updatedStyle
         
         def defaultToggleStyle():
             defaultStyle = """
-            background-image: url(:/icons/images/icons/cil-chevron-right.png);
+            background-image: url(:/icons/resources/icons/cil-chevron-right.png);
             """
             return defaultStyle
         
