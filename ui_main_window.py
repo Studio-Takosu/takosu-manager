@@ -202,13 +202,13 @@ class Ui_MainWindow(object):
 "    background-repeat: no-repeat;\n"
 "}\n"
 "#searchContainer .QPushButton:hover { background-color: rgb(44, 49, 57); border-style: solid; }\n"
-"#searchContainer .QPushButton:pressed { background-color: #FFB86C; border-style: solid; }\n"
+"#searchContainer .QPushButton:pressed { background-color: rgb(139, 233, 253); border-style: solid; }\n"
 "\n"
 "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
 "Settings Right Box */\n"
-"#settingsRightBox { \n"
-"	backg"
-                        "round-color: rgb(44, 49, 58);\n"
+"#settingsRightBox { "
+                        "\n"
+"	background-color: rgb(44, 49, 58);\n"
 "	border-top: 3px solid #BD93F9;\n"
 "	border-left: 3px solid #BD93F9;\n"
 "}\n"
@@ -621,16 +621,18 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10 = QHBoxLayout(self.searchContainer)
         self.horizontalLayout_10.setSpacing(10)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.horizontalLayout_10.setContentsMargins(10, 0, 20, 0)
-        self.searchButton = QPushButton(self.searchContainer)
-        self.searchButton.setObjectName(u"searchButton")
-        self.searchButton.setMinimumSize(QSize(24, 24))
-        self.searchButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.searchButton.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-magnifying-glass.png);\n"
-"border: none;")
-        self.searchButton.setIconSize(QSize(20, 20))
+        self.horizontalLayout_10.setContentsMargins(15, 0, 15, 0)
+        self.searchBtn = QPushButton(self.searchContainer)
+        self.searchBtn.setObjectName(u"searchBtn")
+        self.searchBtn.setMinimumSize(QSize(24, 24))
+        self.searchBtn.setMaximumSize(QSize(24, 24))
+        self.searchBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.searchBtn.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-magnifying-glass.png);\n"
+"border: none;\n"
+"")
+        self.searchBtn.setIconSize(QSize(20, 20))
 
-        self.horizontalLayout_10.addWidget(self.searchButton)
+        self.horizontalLayout_10.addWidget(self.searchBtn)
 
         self.searchLineEdit = QLineEdit(self.searchContainer)
         self.searchLineEdit.setObjectName(u"searchLineEdit")
@@ -638,6 +640,17 @@ class Ui_MainWindow(object):
         self.searchLineEdit.setClearButtonEnabled(False)
 
         self.horizontalLayout_10.addWidget(self.searchLineEdit)
+
+        self.cancelSearchBtn = QPushButton(self.searchContainer)
+        self.cancelSearchBtn.setObjectName(u"cancelSearchBtn")
+        self.cancelSearchBtn.setMinimumSize(QSize(24, 24))
+        self.cancelSearchBtn.setMaximumSize(QSize(24, 24))
+        self.cancelSearchBtn.setStyleSheet(u"background-image: url(:/icons/images/icons/icon_close_24.svg);\n"
+"border: none;\n"
+"color: rgb(170, 0, 0);")
+        self.cancelSearchBtn.setIconSize(QSize(16, 16))
+
+        self.horizontalLayout_10.addWidget(self.cancelSearchBtn)
 
 
         self.horizontalLayout_11.addWidget(self.searchContainer)
@@ -814,8 +827,9 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Close</p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
-        self.searchButton.setText("")
+        self.searchBtn.setText("")
         self.searchLineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search", None))
+        self.cancelSearchBtn.setText("")
         self.matLabel.setText(QCoreApplication.translate("MainWindow", u"Material Reference Page", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Asset Library Page", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: Studio Takosu", None))
