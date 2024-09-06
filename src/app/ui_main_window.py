@@ -16,8 +16,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QLayout, QLineEdit, QMainWindow, QPushButton,
-    QSizePolicy, QStackedWidget, QVBoxLayout, QWidget)
+    QLayout, QMainWindow, QPushButton, QSizePolicy,
+    QStackedWidget, QVBoxLayout, QWidget)
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'ui')))
@@ -607,94 +607,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_17.setSpacing(0)
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
         self.verticalLayout_17.setContentsMargins(0, 0, 0, 0)
-        self.materialTopFrame = QFrame(self.materialRefContainer)
-        self.materialTopFrame.setObjectName(u"materialTopFrame")
-        sizePolicy3.setHeightForWidth(self.materialTopFrame.sizePolicy().hasHeightForWidth())
-        self.materialTopFrame.setSizePolicy(sizePolicy3)
-        self.materialTopFrame.setMinimumSize(QSize(0, 80))
-        self.verticalLayout_24 = QVBoxLayout(self.materialTopFrame)
-        self.verticalLayout_24.setSpacing(0)
-        self.verticalLayout_24.setObjectName(u"verticalLayout_24")
-        self.verticalLayout_24.setContentsMargins(0, 0, 0, 0)
-        self.searchFrame = QFrame(self.materialTopFrame)
-        self.searchFrame.setObjectName(u"searchFrame")
-        self.searchFrame.setMinimumSize(QSize(0, 55))
-        self.searchFrame.setMaximumSize(QSize(16777215, 16777215))
-        self.horizontalLayout_11 = QHBoxLayout(self.searchFrame)
-        self.horizontalLayout_11.setSpacing(0)
-        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.horizontalLayout_11.setContentsMargins(30, 10, 30, 10)
-        self.searchContainer = QFrame(self.searchFrame)
-        self.searchContainer.setObjectName(u"searchContainer")
-        self.searchContainer.setFocusPolicy(Qt.FocusPolicy.NoFocus)
-        self.searchContainer.setStyleSheet(u"")
-        self.horizontalLayout_10 = QHBoxLayout(self.searchContainer)
-        self.horizontalLayout_10.setSpacing(10)
-        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.horizontalLayout_10.setContentsMargins(15, 0, 15, 0)
-        self.searchBtn = QPushButton(self.searchContainer)
-        self.searchBtn.setObjectName(u"searchBtn")
-        self.searchBtn.setMinimumSize(QSize(24, 24))
-        self.searchBtn.setMaximumSize(QSize(24, 24))
-        self.searchBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.searchBtn.setStyleSheet(u"background-image: url(:/icons/resources/icons/cil-magnifying-glass.png);\n"
-"border: none;\n"
-"")
-        self.searchBtn.setIconSize(QSize(20, 20))
-
-        self.horizontalLayout_10.addWidget(self.searchBtn)
-
-        self.searchLineEdit = QLineEdit(self.searchContainer)
-        self.searchLineEdit.setObjectName(u"searchLineEdit")
-        self.searchLineEdit.setEnabled(False)
-        self.searchLineEdit.setClearButtonEnabled(False)
-
-        self.horizontalLayout_10.addWidget(self.searchLineEdit)
-
-        self.cancelSearchBtn = QPushButton(self.searchContainer)
-        self.cancelSearchBtn.setObjectName(u"cancelSearchBtn")
-        self.cancelSearchBtn.setMinimumSize(QSize(24, 24))
-        self.cancelSearchBtn.setMaximumSize(QSize(24, 24))
-        self.cancelSearchBtn.setStyleSheet(u"background-image: url(:/icons/resources/icons/icon_close_24.svg);\n"
-"border: none;")
-        self.cancelSearchBtn.setIconSize(QSize(16, 16))
-
-        self.horizontalLayout_10.addWidget(self.cancelSearchBtn)
-
-
-        self.horizontalLayout_11.addWidget(self.searchContainer)
-
-
-        self.verticalLayout_24.addWidget(self.searchFrame)
-
-        self.filterFrame = QFrame(self.materialTopFrame)
-        self.filterFrame.setObjectName(u"filterFrame")
-        self.filterFrame.setMaximumSize(QSize(16777215, 25))
-        self.horizontalLayout_5 = QHBoxLayout(self.filterFrame)
-        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-
-        self.verticalLayout_24.addWidget(self.filterFrame)
-
-
-        self.verticalLayout_17.addWidget(self.materialTopFrame)
-
-        self.materialBotFrame = QWidget(self.materialRefContainer)
-        self.materialBotFrame.setObjectName(u"materialBotFrame")
-        sizePolicy2.setHeightForWidth(self.materialBotFrame.sizePolicy().hasHeightForWidth())
-        self.materialBotFrame.setSizePolicy(sizePolicy2)
-        self.verticalLayout_25 = QVBoxLayout(self.materialBotFrame)
-        self.verticalLayout_25.setSpacing(0)
-        self.verticalLayout_25.setObjectName(u"verticalLayout_25")
-        self.verticalLayout_25.setContentsMargins(0, 0, 0, 0)
-        self.matLabel = QLabel(self.materialBotFrame)
-        self.matLabel.setObjectName(u"matLabel")
-        self.matLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.verticalLayout_25.addWidget(self.matLabel)
-
-
-        self.verticalLayout_17.addWidget(self.materialBotFrame)
-
 
         self.horizontalLayout_4.addWidget(self.materialRefContainer)
 
@@ -796,7 +708,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.contentStackedWidget.setCurrentIndex(0)
+        self.contentStackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -836,10 +748,6 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Close</p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
-        self.searchBtn.setText("")
-        self.searchLineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Search", None))
-        self.cancelSearchBtn.setText("")
-        self.matLabel.setText(QCoreApplication.translate("MainWindow", u"Material Reference Page", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Asset Library Page", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: Studio Takosu", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"v0.0.1", None))
