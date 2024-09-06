@@ -194,8 +194,15 @@ MATERIAL REFERENCE */
 	background-position: center;
     background-repeat: no-repeat;
 }
-#searchContainer .QPushButton:hover { background-color: rgb(44, 49, 57); border-style: solid; }
-#searchContainer .QPushButton:pressed { background-color: rgb(139, 233, 253); border-style: solid; }
+#searchContainer .QPushButton:hover { 
+	background-color: rgb(144, 149, 157); 
+	border-style: solid; 
+	color: rgb(170, 0, 0);
+}
+#searchContainer .QPushButton:pressed { 
+	background-color: rgb(139, 233, 253); 
+	border-style: solid; 
+}
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Settings Right Box */
@@ -1401,8 +1408,7 @@ border: none;
                                       </property>
                                       <property name="styleSheet">
                                        <string notr="true">background-image: url(:/icons/images/icons/icon_close_24.svg);
-border: none;
-color: rgb(170, 0, 0);</string>
+border: none;</string>
                                       </property>
                                       <property name="text">
                                        <string/>

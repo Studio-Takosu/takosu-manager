@@ -18,7 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLayout, QLineEdit, QMainWindow, QPushButton,
     QSizePolicy, QStackedWidget, QVBoxLayout, QWidget)
-import resources_rc
+import rc_resources
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -201,13 +201,20 @@ class Ui_MainWindow(object):
 "	background-position: center;\n"
 "    background-repeat: no-repeat;\n"
 "}\n"
-"#searchContainer .QPushButton:hover { background-color: rgb(44, 49, 57); border-style: solid; }\n"
-"#searchContainer .QPushButton:pressed { background-color: rgb(139, 233, 253); border-style: solid; }\n"
+"#searchContainer .QPushButton:hover { \n"
+"	background-color: rgb(144, 149, 157); \n"
+"	border-style: solid; \n"
+"	color: rgb(170, 0, 0);\n"
+"}\n"
+"#searchContainer .QPushButton:pressed { \n"
+"	background-color: rgb(139, 233, 253); \n"
+"	border-style: solid; \n"
+"}\n"
 "\n"
-"/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
+"/* ///////////////////////////////////////////////////////////////////////////////////"
+                        "//////////////\n"
 "Settings Right Box */\n"
-"#settingsRightBox { "
-                        "\n"
+"#settingsRightBox { \n"
 "	background-color: rgb(44, 49, 58);\n"
 "	border-top: 3px solid #BD93F9;\n"
 "	border-left: 3px solid #BD93F9;\n"
@@ -646,8 +653,7 @@ class Ui_MainWindow(object):
         self.cancelSearchBtn.setMinimumSize(QSize(24, 24))
         self.cancelSearchBtn.setMaximumSize(QSize(24, 24))
         self.cancelSearchBtn.setStyleSheet(u"background-image: url(:/icons/images/icons/icon_close_24.svg);\n"
-"border: none;\n"
-"color: rgb(170, 0, 0);")
+"border: none;")
         self.cancelSearchBtn.setIconSize(QSize(16, 16))
 
         self.horizontalLayout_10.addWidget(self.cancelSearchBtn)
