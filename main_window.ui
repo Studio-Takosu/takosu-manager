@@ -56,7 +56,7 @@ QToolTip {
 Background App */
 #bgApp {
 	background-color: #282A36;
-	border: 2px solid #6272A4
+	border: 0px solid #6272A4
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -195,7 +195,7 @@ MATERIAL REFERENCE */
     background-repeat: no-repeat;
 }
 #searchContainer .QPushButton:hover { background-color: rgb(44, 49, 57); border-style: solid; }
-#searchContainer .QPushButton:pressed { background-color: rgb(23, 26, 30); border-style: solid; }
+#searchContainer .QPushButton:pressed { background-color: #FFB86C; border-style: solid; }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 Settings Right Box */
@@ -1351,7 +1351,8 @@ background-repeat: no-repeat;</string>
                                        <cursorShape>PointingHandCursor</cursorShape>
                                       </property>
                                       <property name="styleSheet">
-                                       <string notr="true">background-image: url(:/icons/images/icons/cil-magnifying-glass.png);</string>
+                                       <string notr="true">background-image: url(:/icons/images/icons/cil-magnifying-glass.png);
+border: none;</string>
                                       </property>
                                       <property name="text">
                                        <string/>
@@ -1366,6 +1367,9 @@ background-repeat: no-repeat;</string>
                                     </item>
                                     <item>
                                      <widget class="QLineEdit" name="searchLineEdit">
+                                      <property name="enabled">
+                                       <bool>false</bool>
+                                      </property>
                                       <property name="placeholderText">
                                        <string>Search</string>
                                       </property>

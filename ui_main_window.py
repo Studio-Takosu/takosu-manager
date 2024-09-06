@@ -59,7 +59,7 @@ class Ui_MainWindow(object):
 "Background App */\n"
 "#bgApp {\n"
 "	background-color: #282A36;\n"
-"	border: 2px solid #6272A4\n"
+"	border: 0px solid #6272A4\n"
 "}\n"
 "\n"
 "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
@@ -202,13 +202,13 @@ class Ui_MainWindow(object):
 "    background-repeat: no-repeat;\n"
 "}\n"
 "#searchContainer .QPushButton:hover { background-color: rgb(44, 49, 57); border-style: solid; }\n"
-"#searchContainer .QPushButton:pressed { background-color: rgb(23, 26, 30); border-style: solid; }\n"
+"#searchContainer .QPushButton:pressed { background-color: #FFB86C; border-style: solid; }\n"
 "\n"
 "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
 "Settings Right Box */\n"
 "#settingsRightBox { \n"
-""
-                        "	background-color: rgb(44, 49, 58);\n"
+"	backg"
+                        "round-color: rgb(44, 49, 58);\n"
 "	border-top: 3px solid #BD93F9;\n"
 "	border-left: 3px solid #BD93F9;\n"
 "}\n"
@@ -626,13 +626,15 @@ class Ui_MainWindow(object):
         self.searchButton.setObjectName(u"searchButton")
         self.searchButton.setMinimumSize(QSize(24, 24))
         self.searchButton.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.searchButton.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-magnifying-glass.png);")
+        self.searchButton.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-magnifying-glass.png);\n"
+"border: none;")
         self.searchButton.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_10.addWidget(self.searchButton)
 
         self.searchLineEdit = QLineEdit(self.searchContainer)
         self.searchLineEdit.setObjectName(u"searchLineEdit")
+        self.searchLineEdit.setEnabled(False)
         self.searchLineEdit.setClearButtonEnabled(False)
 
         self.horizontalLayout_10.addWidget(self.searchLineEdit)
