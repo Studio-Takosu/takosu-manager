@@ -44,6 +44,7 @@ env/
 
 # Qt resource files
 rc_resources.py
+main_window_ui.py
 
 # Ignore IDE-specific files
 .idea/
@@ -53,7 +54,7 @@ rc_resources.py
 *.user.*
 
 # Icon files
-*.ico
+# *.ico
 
 # Build directories
 build/
