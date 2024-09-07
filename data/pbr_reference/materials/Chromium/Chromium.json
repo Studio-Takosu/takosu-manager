@@ -1,0 +1,39 @@
+{
+    "name": "Chromium",
+    "color": [
+        0.638,
+        0.651,
+        0.663
+    ],
+    "metalness": 1,
+    "specularColor": [
+        0.632,
+        0.718,
+        0.809
+    ],
+    "roughness": 0,
+    "ior": 1.5,
+    "complexIor": [
+        3.4256,
+        4.273,
+        2.7891,
+        4.1976,
+        2.0246,
+        3.8586
+    ],
+    "density": 7200,
+    "category": [
+        "Metal"
+    ],
+    "description": "",
+    "sources": [
+        "https://refractiveindex.info/?shelf=main&book=Cr&page=Rakic-BB",
+        "https://en.wikipedia.org/wiki/Density"
+    ],
+    "tags": [
+        "chrome"
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/chromium.jpeg"
+    ]
+}

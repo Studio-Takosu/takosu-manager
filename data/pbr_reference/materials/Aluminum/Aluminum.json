@@ -1,0 +1,43 @@
+{
+    "name": "Aluminum",
+    "color": [
+        0.912,
+        0.914,
+        0.92
+    ],
+    "metalness": 1,
+    "specularColor": [
+        0.97,
+        0.979,
+        0.988
+    ],
+    "roughness": 0,
+    "ior": 1.5,
+    "complexIor": [
+        1.3456,
+        7.4746,
+        0.96521,
+        6.3995,
+        0.61722,
+        5.3031
+    ],
+    "density": 2700,
+    "category": [
+        "Metal"
+    ],
+    "description": "",
+    "sources": [
+        "https://refractiveindex.info/?shelf=3d&book=metals&page=aluminium",
+        "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_base_html#metalness",
+        "https://en.wikipedia.org/wiki/Aluminium",
+        "https://en.wikipedia.org/wiki/Density",
+        "https://en.wikipedia.org/wiki/Mirror"
+    ],
+    "tags": [
+        "aluminium",
+        "mirror"
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/aluminum.jpeg"
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "name": "Gasoline",
+    "color": [
+        1,
+        0.97,
+        0.617
+    ],
+    "metalness": 0,
+    "roughness": 0,
+    "ior": 1.427,
+    "transmission": 1,
+    "density": 770,
+    "viscosity": 0.6,
+    "category": [
+        "Liquid"
+    ],
+    "description": "",
+    "sources": [
+        "https://en.wikipedia.org/wiki/Gasoline",
+        "https://www.researchgate.net/figure/Refractive-index-of-fuels-33-34_tbl1_277419833",
+        "https://www.engineeringtoolbox.com/fuels-densities-specific-volumes-d_166.html",
+        "http://hyperphysics.phy-astr.gsu.edu/hbase/Tables/viscosity.html"
+    ],
+    "tags": [
+        "petrol",
+        "fuel"
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/gasoline.jpeg"
+    ]
+}

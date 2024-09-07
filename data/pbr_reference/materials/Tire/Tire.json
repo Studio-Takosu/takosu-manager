@@ -1,0 +1,27 @@
+{
+    "name": "Tire",
+    "color": [
+        0.023,
+        0.023,
+        0.023
+    ],
+    "metalness": 0,
+    "roughness": 0.5,
+    "ior": 1.5,
+    "density": 0,
+    "category": [
+        "Manmade"
+    ],
+    "description": "Car tire.",
+    "sources": [
+        "https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/tire/",
+        "https://en.wikipedia.org/wiki/Tire"
+    ],
+    "tags": [
+        "tyre",
+        "rubber"
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/tire.jpeg"
+    ]
+}

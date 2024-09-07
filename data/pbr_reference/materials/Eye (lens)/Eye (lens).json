@@ -1,0 +1,27 @@
+{
+    "name": "Eye (lens)",
+    "color": [
+        1,
+        1,
+        1
+    ],
+    "metalness": 0,
+    "roughness": 0,
+    "ior": 1.386,
+    "transmission": 1,
+    "density": 0,
+    "category": [
+        "Human"
+    ],
+    "description": "The refractive index of human lens varies from approximately 1.406 in the central layers down to 1.386 in less dense layers of the lens. This index gradient enhances the optical power of the lens.",
+    "sources": [
+        "https://en.wikipedia.org/wiki/Lens_(anatomy)#Accommodation",
+        "https://pubmed.ncbi.nlm.nih.gov/8134087/"
+    ],
+    "tags": [
+        ""
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/eye-lens.jpeg"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "name": "Whiteboard",
+    "color": [
+        0.869,
+        0.867,
+        0.771
+    ],
+    "metalness": 0,
+    "roughness": 0,
+    "ior": 1.5,
+    "density": 0,
+    "category": [
+        "Manmade"
+    ],
+    "description": "",
+    "sources": [
+        "https://spectraldb.com/measurements/00074/"
+    ],
+    "tags": [
+        ""
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/whiteboard.jpeg"
+    ]
+}

@@ -1,0 +1,40 @@
+{
+    "name": "Cobalt",
+    "color": [
+        0.692,
+        0.703,
+        0.673
+    ],
+    "metalness": 1,
+    "specularColor": [
+        0.684,
+        0.771,
+        0.817
+    ],
+    "roughness": 0,
+    "ior": 1.5,
+    "complexIor": [
+        3.5681,
+        5.0469,
+        2.7408,
+        4.7897,
+        2.0192,
+        3.9523
+    ],
+    "density": 8900,
+    "category": [
+        "Metal"
+    ],
+    "description": "",
+    "sources": [
+        "https://refractiveindex.info/?shelf=main&book=Co&page=Werner-DFT",
+        "https://seblagarde.wordpress.com/2011/08/17/feeding-a-physical-based-lighting-mode/",
+        "https://en.wikipedia.org/wiki/Density"
+    ],
+    "tags": [
+        ""
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cobalt.jpeg"
+    ]
+}

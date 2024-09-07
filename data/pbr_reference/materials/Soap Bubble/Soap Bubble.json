@@ -1,0 +1,30 @@
+{
+    "name": "Soap Bubble",
+    "color": [
+        1,
+        1,
+        1
+    ],
+    "metalness": 0,
+    "roughness": 0,
+    "ior": 1,
+    "transmission": 1,
+    "thinFilmThickness": 500,
+    "thinFilmIor": 1.4,
+    "density": 0,
+    "category": [
+        "Organic"
+    ],
+    "description": "The colors of a soap bubble are the result of an interaction between the light reflected from the front and back surfaces of the soap film, a phenomenon known as thin-film interference. The thickness of a soap bubble can range between 10 nm and 1000 nm. It's thinner at the top due to gravity.",
+    "sources": [
+        "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_thinfilm_html",
+        "https://soapbubble.fandom.com/wiki/Color_and_Film_Thickness",
+        "https://en.wikipedia.org/wiki/Thin-film_interference#Soap_bubble"
+    ],
+    "tags": [
+        ""
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/soap-bubble.jpeg"
+    ]
+}

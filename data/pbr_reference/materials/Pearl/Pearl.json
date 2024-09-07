@@ -1,0 +1,38 @@
+{
+    "name": "Pearl",
+    "color": [
+        0.8,
+        0.75,
+        0.7
+    ],
+    "metalness": 0,
+    "roughness": 0.35,
+    "ior": 1.68,
+    "subsurfaceRadius": [
+        0.3,
+        0.5,
+        0.3
+    ],
+    "thinFilmThickness": 420,
+    "thinFilmIor": 2,
+    "density": 2700,
+    "category": [
+        "Organic"
+    ],
+    "description": "The akoya pearl is a saltwater cultured pearl from the akoya oyster. Akoya are considered to be the classic pearl used for necklaces and other pearl jewelry. Nacre is the material of which pearls are composed and consists of aragonite crystal layers separated by conchiolin, a protein secreted by mollusk shells. The thickness of these layers determines the color of reflection from the nacre. The transmission interference color is complementary to the reflection interference color.",
+    "sources": [
+        "https://www.nature.com/articles/s41598-021-94737-w",
+        "https://rgl.s3.eu-central-1.amazonaws.com/media/papers/Guillen2020Pearlescent.pdf",
+        "https://www.gemstones-guide.com/Pearl.html",
+        "https://www.gemsociety.org/article/pearl-jewelry-and-gemstone-information/",
+        "https://refractiveindex.info/?shelf=main&book=CaCO3&page=Ghosh-o",
+        "https://en.wikipedia.org/wiki/Nacre"
+    ],
+    "tags": [
+        "nacre",
+        "sss"
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/pearl.jpeg"
+    ]
+}

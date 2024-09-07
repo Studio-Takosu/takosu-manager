@@ -1,0 +1,39 @@
+{
+    "name": "Glass",
+    "color": [
+        1,
+        1,
+        1
+    ],
+    "metalness": 0,
+    "roughness": 0,
+    "ior": 1.52,
+    "transmission": 1,
+    "transmissionDispersion": 64,
+    "density": 2500,
+    "acousticAbsorption": [
+        0.04,
+        0.04,
+        0.03,
+        0.03,
+        0.02,
+        0.02
+    ],
+    "category": [
+        "Crystal"
+    ],
+    "description": "",
+    "sources": [
+        "https://refractiveindex.info/?shelf=3d&book=glass&page=soda-lime-clear",
+        "https://en.wikipedia.org/wiki/Soda%E2%80%93lime_glass",
+        "https://en.wikipedia.org/wiki/Density",
+        "https://www.acoustic-supplies.com/absorption-coefficient-chart/",
+        "https://www.acoustic.ua/st/web_absorption_data_eng.pdf"
+    ],
+    "tags": [
+        ""
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/glass.jpeg"
+    ]
+}

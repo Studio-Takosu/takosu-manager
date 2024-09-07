@@ -1,0 +1,31 @@
+{
+    "name": "Chocolate",
+    "color": [
+        0.162,
+        0.091,
+        0.06
+    ],
+    "metalness": 0,
+    "roughness": 0.5,
+    "ior": 1.5,
+    "density": 1300,
+    "densityRange": [
+        1229,
+        1336
+    ],
+    "category": [
+        "Organic"
+    ],
+    "description": "",
+    "sources": [
+        "https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/chocolate/",
+        "https://en.wikipedia.org/wiki/Chocolate_(color)",
+        "https://www.density.co.uk/documents/Density-of-Chocolate.pdf"
+    ],
+    "tags": [
+        ""
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/chocolate.jpeg"
+    ]
+}

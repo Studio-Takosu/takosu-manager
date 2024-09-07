@@ -1,0 +1,28 @@
+{
+    "name": "Plastic (PC)",
+    "color": [
+        1,
+        1,
+        1
+    ],
+    "metalness": 0,
+    "roughness": 0,
+    "ior": 1.5848,
+    "transmission": 1,
+    "density": 1200,
+    "category": [
+        "Plastic"
+    ],
+    "description": "",
+    "sources": [
+        "https://en.wikipedia.org/wiki/Polycarbonate",
+        "https://refractiveindex.info/?shelf=3d&book=plastics&page=pc",
+        "https://www.bpf.co.uk/plastipedia/polymers/polycarbonate.aspx"
+    ],
+    "tags": [
+        "polycarbonate"
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-pc.jpeg"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "name": "Plastic (PP)",
+    "color": [
+        1,
+        1,
+        1
+    ],
+    "metalness": 0,
+    "roughness": 0,
+    "ior": 1.492,
+    "transmission": 1,
+    "density": 900,
+    "category": [
+        "Plastic"
+    ],
+    "description": "",
+    "sources": [
+        "https://en.wikipedia.org/wiki/Polypropylene",
+        "https://refractiveindex.info/?shelf=3d&book=plastics&page=pc",
+        "https://www.osapublishing.org/ao/viewmedia.cfm?uri=ao-42-3-592"
+    ],
+    "tags": [
+        "polypropylene"
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-pp.jpeg"
+    ]
+}

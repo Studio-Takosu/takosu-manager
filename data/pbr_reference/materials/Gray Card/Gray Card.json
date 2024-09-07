@@ -1,0 +1,25 @@
+{
+    "name": "Gray Card",
+    "color": [
+        0.18,
+        0.18,
+        0.18
+    ],
+    "metalness": 0,
+    "roughness": 0.5,
+    "ior": 1.5,
+    "density": 0,
+    "category": [
+        "Calibration"
+    ],
+    "description": "18% gray has a perceptual lightness of 50%.",
+    "sources": [
+        "https://en.wikipedia.org/wiki/Middle_gray"
+    ],
+    "tags": [
+        "grey"
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/gray-card.jpeg"
+    ]
+}

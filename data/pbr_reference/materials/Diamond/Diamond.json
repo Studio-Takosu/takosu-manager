@@ -1,0 +1,31 @@
+{
+    "name": "Diamond",
+    "color": [
+        1,
+        1,
+        1
+    ],
+    "metalness": 0,
+    "roughness": 0,
+    "ior": 2.4168,
+    "transmission": 1,
+    "transmissionDispersion": 55.3,
+    "density": 3500,
+    "category": [
+        "Crystal"
+    ],
+    "description": "",
+    "sources": [
+        "https://refractiveindex.info/?shelf=3d&book=crystals&page=diamond",
+        "https://refractiveindex.info/?shelf=main&book=C&page=Peter",
+        "https://www.gemsociety.org/article/table-refractive-index-double-refraction-gems/",
+        "https://en.wikipedia.org/wiki/Density"
+    ],
+    "tags": [
+        "gem",
+        "gemstone"
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/diamond.jpeg"
+    ]
+}

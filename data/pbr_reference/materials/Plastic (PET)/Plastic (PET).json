@@ -1,0 +1,27 @@
+{
+    "name": "Plastic (PET)",
+    "color": [
+        1,
+        1,
+        1
+    ],
+    "metalness": 0,
+    "roughness": 0,
+    "ior": 1.575,
+    "transmission": 1,
+    "density": 1380,
+    "category": [
+        "Plastic"
+    ],
+    "description": "",
+    "sources": [
+        "https://en.wikipedia.org/wiki/Polyethylene_terephthalate",
+        "https://polymerdatabase.com/polymer%20physics/Ref%20Index%20Table2%20.html"
+    ],
+    "tags": [
+        "polyethylene terephthalate"
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-pet.jpeg"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "name": "Eye (cornea)",
+    "color": [
+        1,
+        1,
+        1
+    ],
+    "metalness": 0,
+    "roughness": 0,
+    "ior": 1.376,
+    "transmission": 1,
+    "density": 0,
+    "category": [
+        "Human"
+    ],
+    "description": "",
+    "sources": [
+        "https://en.wikipedia.org/wiki/Cornea",
+        "https://www.sciencedirect.com/science/article/abs/pii/S1367048418310452"
+    ],
+    "tags": [
+        ""
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/eye-cornea.jpeg"
+    ]
+}

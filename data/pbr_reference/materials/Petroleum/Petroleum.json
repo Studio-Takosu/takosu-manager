@@ -1,0 +1,41 @@
+{
+    "name": "Petroleum",
+    "color": [
+        0.03,
+        0.027,
+        0.024
+    ],
+    "metalness": 0,
+    "roughness": 0,
+    "ior": 1.5,
+    "subsurfaceRadius": [
+        3,
+        1,
+        0.25
+    ],
+    "density": 920,
+    "densityRange": [
+        870,
+        1000
+    ],
+    "viscosity": 100,
+    "category": [
+        "Liquid"
+    ],
+    "description": "The viscosity of crude oil is sensitive to temperature.",
+    "sources": [
+        "https://en.wikipedia.org/wiki/Petroleum",
+        "https://en.wikipedia.org/wiki/API_gravity",
+        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9922782/",
+        "https://www.sciencedirect.com/science/article/abs/pii/S1350449520305636",
+        "https://www.sciencedirect.com/science/article/pii/S003442572200133X"
+    ],
+    "tags": [
+        "oil",
+        "crude oil",
+        "sss"
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/petroleum.jpeg"
+    ]
+}

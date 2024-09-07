@@ -1,0 +1,31 @@
+{
+    "name": "Bone",
+    "color": [
+        0.793,
+        0.793,
+        0.664
+    ],
+    "metalness": 0,
+    "roughness": 0.5,
+    "ior": 1.5,
+    "density": 1900,
+    "densityRange": [
+        1000,
+        2000
+    ],
+    "category": [
+        "Organic"
+    ],
+    "description": "",
+    "sources": [
+        "https://hypertextbook.com/facts/2002/AnnaYarusskaya.shtml",
+        "https://www.tandfonline.com/doi/pdf/10.3109/02841867809127938",
+        "https://en.wikipedia.org/wiki/Bone"
+    ],
+    "tags": [
+        "skeleton"
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/bone.jpeg"
+    ]
+}

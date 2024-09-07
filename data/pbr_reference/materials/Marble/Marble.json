@@ -1,0 +1,34 @@
+{
+    "name": "Marble",
+    "color": [
+        0.83,
+        0.791,
+        0.753
+    ],
+    "metalness": 0,
+    "roughness": 0,
+    "ior": 1.5,
+    "subsurfaceRadius": [
+        0.851,
+        0.557,
+        0.395
+    ],
+    "density": 2700,
+    "category": [
+        "Crystal"
+    ],
+    "description": "",
+    "sources": [
+        "https://en.wikipedia.org/wiki/Marble",
+        "https://www.aqua-calc.com/page/density-table/substance/marble",
+        "https://www.sciencedirect.com/science/article/pii/S2090447919300826",
+        "https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf",
+        "https://renderman.pixar.com/resources/RenderMan_20/subsurface.html"
+    ],
+    "tags": [
+        "sss"
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/marble.jpeg"
+    ]
+}

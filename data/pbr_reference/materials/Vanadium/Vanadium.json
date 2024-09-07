@@ -1,0 +1,39 @@
+{
+    "name": "Vanadium",
+    "color": [
+        0.52,
+        0.532,
+        0.541
+    ],
+    "metalness": 1,
+    "specularColor": [
+        0.402,
+        0.447,
+        0.395
+    ],
+    "roughness": 0,
+    "ior": 1.5,
+    "complexIor": [
+        3.8114,
+        2.931,
+        3.6721,
+        3.0917,
+        4.0878,
+        3.1196
+    ],
+    "density": 6100,
+    "category": [
+        "Metal"
+    ],
+    "description": "",
+    "sources": [
+        "https://refractiveindex.info/?shelf=main&book=V&page=Werner-DFT",
+        "https://en.wikipedia.org/wiki/Density"
+    ],
+    "tags": [
+        ""
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/vanadium.jpeg"
+    ]
+}

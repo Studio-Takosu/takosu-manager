@@ -1,0 +1,29 @@
+{
+    "name": "Plastic (Acrylic)",
+    "color": [
+        1,
+        1,
+        1
+    ],
+    "metalness": 0,
+    "roughness": 0,
+    "ior": 1.476,
+    "transmission": 1,
+    "density": 1180,
+    "category": [
+        "Plastic"
+    ],
+    "description": "",
+    "sources": [
+        "https://en.wikipedia.org/wiki/Poly(methyl_methacrylate)",
+        "https://polymerdatabase.com/polymer%20physics/Ref%20Index%20Table2%20.html"
+    ],
+    "tags": [
+        "PMMA",
+        "plexi",
+        "polymethyl methacrylate"
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-acrylic.jpeg"
+    ]
+}

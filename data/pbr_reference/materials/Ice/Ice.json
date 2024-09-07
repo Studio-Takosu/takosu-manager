@@ -1,0 +1,30 @@
+{
+    "name": "Ice",
+    "color": [
+        1,
+        1,
+        1
+    ],
+    "metalness": 0,
+    "roughness": 0.5,
+    "ior": 1.3098,
+    "transmission": 1,
+    "transmissionDispersion": 64.87,
+    "density": 917,
+    "category": [
+        "Crystal"
+    ],
+    "description": "",
+    "sources": [
+        "https://refractiveindex.info/?shelf=3d&book=crystals&page=ice",
+        "https://refractiveindex.info/?shelf=main&book=H2O&page=Kofman-150K",
+        "https://en.wikipedia.org/wiki/Density",
+        "https://en.wikipedia.org/wiki/Optical_properties_of_water_and_ice"
+    ],
+    "tags": [
+        ""
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/ice.jpeg"
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "name": "Coffee",
+    "color": [
+        0.027,
+        0.019,
+        0.018
+    ],
+    "metalness": 0,
+    "roughness": 0,
+    "ior": 1.33,
+    "subsurfaceRadius": [
+        10,
+        5,
+        1
+    ],
+    "density": 1000,
+    "viscosity": 1.002,
+    "category": [
+        "Liquid"
+    ],
+    "description": "",
+    "sources": [
+        "https://github.com/AntonPalmqvist/physically-based-api/tree/main/data/materials/coffee/"
+    ],
+    "tags": [
+        "sss"
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/coffee.jpeg"
+    ]
+}

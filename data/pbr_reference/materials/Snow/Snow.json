@@ -1,0 +1,35 @@
+{
+    "name": "Snow",
+    "color": [
+        0.85,
+        0.85,
+        0.85
+    ],
+    "metalness": 0,
+    "roughness": 0.5,
+    "ior": 1.3098,
+    "density": 0,
+    "acousticAbsorption": [
+        0.45,
+        0.75,
+        0.9,
+        0.95,
+        0.95,
+        0.95
+    ],
+    "category": [
+        "Crystal"
+    ],
+    "description": "",
+    "sources": [
+        "https://seblagarde.wordpress.com/2011/08/17/feeding-a-physical-based-lighting-mode/",
+        "https://refractiveindex.info/?shelf=3d&book=crystals&page=ice",
+        "https://web.archive.org/web/20230605174450/http://mapleintegration.com/sound_ab.php"
+    ],
+    "tags": [
+        "ice"
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/snow.jpeg"
+    ]
+}

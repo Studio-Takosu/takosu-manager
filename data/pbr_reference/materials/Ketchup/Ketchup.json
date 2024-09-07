@@ -1,0 +1,37 @@
+{
+    "name": "Ketchup",
+    "color": [
+        0.164,
+        0.006,
+        0.002
+    ],
+    "metalness": 0,
+    "roughness": 0.1,
+    "ior": 1.3,
+    "subsurfaceRadius": [
+        0.476,
+        0.058,
+        0.039
+    ],
+    "density": 1150,
+    "viscosity": 50000,
+    "category": [
+        "Organic"
+    ],
+    "description": "",
+    "sources": [
+        "https://help.autodesk.com/view/ARNOL/ENU/?guid=arnold_user_guide_ac_standard_surface_ac_standard_subsurface_html",
+        "https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf",
+        "https://renderman.pixar.com/resources/RenderMan_20/subsurface.html",
+        "https://nextlimitsupport.atlassian.net/wiki/spaces/rf2016docs/pages/5497120/Hybrido+Viscosity+Table",
+        "https://en.wikipedia.org/wiki/List_of_viscosities",
+        "https://www.aqua-calc.com/page/density-table/substance/heinz-blank-tomato-blank-ketchup-coma-and-blank-upc-column--blank-00013000004664"
+    ],
+    "tags": [
+        "liquid",
+        "sss"
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/ketchup.jpeg"
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "name": "Polyurethane",
+    "color": [
+        1,
+        1,
+        1
+    ],
+    "metalness": 0,
+    "roughness": 0,
+    "ior": 1.6,
+    "transmission": 1,
+    "density": 0,
+    "category": [
+        "Plastic"
+    ],
+    "description": "Modern car paints are nearly always an acrylic polyurethane \"enamel\" with a pigmented basecoat and a clear topcoat. It may be described as \"acrylic\", \"acrylic enamel\", \"urethane\", etc. and the clearcoat in particular may be described as a lacquer.",
+    "sources": [
+        "https://en.wikipedia.org/wiki/Automotive_paint",
+        "https://en.wikipedia.org/wiki/Lacquer#Acrylic_lacquers",
+        "https://hal.science/hal-04030017/document",
+        "https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2011163461"
+    ],
+    "tags": [
+        "acrylic",
+        "coat",
+        "car paint",
+        "lacquer"
+    ],
+    "reference": [
+        "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/polyurethane.jpeg"
+    ]
+}
