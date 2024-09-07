@@ -42,12 +42,10 @@ class PBRController(ControllerInterface):
     #   return super().eventFilter(obj, event)
     
     def on_search_return(self):
-      print(self.view.ui.searchLineEdit.text())
-      # remove focus from the searchLineEdit
-      self.view.ui.searchLineEdit.clearFocus()
+        print(self.view.ui.searchLineEdit.text())
+        # remove focus from the searchLineEdit
+        self.view.ui.searchLineEdit.clearFocus()
     
     def on_cancel_search(self):
-      self.view.ui.searchLineEdit.clear()
-      self.view.ui.searchLineEdit.clearFocus()
-    
-    
+        self.view.ui.searchLineEdit.clear()
+        self.view.ui.searchLineEdit.clearFocus()
