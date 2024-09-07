@@ -22,10 +22,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # self.ui = Ui_MainWindow()
         self.setupUi(self)
         
+        # Create a thread pool
+        self.threadpool = QThreadPool()
+        print(f"Multithreading with maximum {self.threadpool.maxThreadCount()} threads")
         
         # ----------------------------------------------------------------------------
         # INSTATIATE PBR MATERIAL REFERENCE ------------------------------------------
-        self.pbr_model = PBRModel()
+        self.pbr_model = PBRModel(self.threadpool)
         self.pbr_view = PBRView(self)
         self.pbr_controller = PBRController(self.pbr_model, self.pbr_view)
         
