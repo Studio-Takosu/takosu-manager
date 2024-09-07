@@ -16,8 +16,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QLineEdit, QPushButton, QSizePolicy, QVBoxLayout,
-    QWidget)
+    QLineEdit, QListWidget, QListWidgetItem, QPushButton,
+    QSizePolicy, QVBoxLayout, QWidget)
 
 class Ui_PbrReferenceWidget(object):
     def setupUi(self, PbrReferenceWidget):
@@ -25,8 +25,13 @@ class Ui_PbrReferenceWidget(object):
             PbrReferenceWidget.setObjectName(u"PbrReferenceWidget")
         PbrReferenceWidget.resize(1220, 645)
         PbrReferenceWidget.setMinimumSize(QSize(940, 560))
-        PbrReferenceWidget.setStyleSheet(u"/* //////////////////// \n"
+        PbrReferenceWidget.setStyleSheet(u"/* ////////////////////////////////////////////////////////////\n"
 "MATERIAL REFERENCE */\n"
+".QLabel {\n"
+"	\n"
+"	font: 600 12pt \"Exo SemiBold\";\n"
+"}\n"
+"\n"
 "#materialTopFrame { background-color: rgb(44, 49, 58); }\n"
 "\n"
 "#searchContainer {\n"
@@ -57,6 +62,36 @@ class Ui_PbrReferenceWidget(object):
 "#searchContainer .QPushButton:pressed { \n"
 "	background-color: rgb(139, 233, 253); \n"
 "	border-style: solid; \n"
+"}\n"
+"\n"
+"/* ///////////////////////////////"
+                        "////////// \n"
+"Material List Frame */\n"
+"#materialListFrame {\n"
+"	background-color: #44475A;\n"
+"	border-right: 4px solid #BD93F9;\n"
+"}\n"
+"\n"
+"#matLibTitleFrame {\n"
+"	background-color: rgb(98, 114, 164);\n"
+"	border-bottom: 2px solid #282A36;\n"
+"	margin-right: 4px;\n"
+"	padding-left: 15px;\n"
+"}\n"
+"\n"
+"#matLibraryListWidget {\n"
+"	background-color: transparent;\n"
+"	border: none;\n"
+"}\n"
+"\n"
+"#matWidgetTopFrame .QFrame {\n"
+"	background-color: #44475A;\n"
+"	border-radius: 20px;\n"
+"}\n"
+"\n"
+"#matWidgetBotFrame .QFrame {\n"
+"	background-color: #44475A;\n"
+"	border-radius: 20px;\n"
 "}")
         self.verticalLayout_3 = QVBoxLayout(PbrReferenceWidget)
         self.verticalLayout_3.setSpacing(0)
@@ -113,7 +148,8 @@ class Ui_PbrReferenceWidget(object):
         self.cancelSearchBtn.setObjectName(u"cancelSearchBtn")
         self.cancelSearchBtn.setMinimumSize(QSize(24, 24))
         self.cancelSearchBtn.setMaximumSize(QSize(24, 24))
-        self.cancelSearchBtn.setStyleSheet(u"background-image: url(:/icons/resources/icons/icon_close_24.svg);\n"
+        self.cancelSearchBtn.setStyleSheet(u"/* background-image : url(:/icons/resources/icons/icon_close_24.svg); */\n"
+"image: url(:/icons/resources/icons/icon_close_24.svg);\n"
 "border: none;")
         self.cancelSearchBtn.setIconSize(QSize(16, 16))
 
@@ -143,15 +179,137 @@ class Ui_PbrReferenceWidget(object):
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.materialBotFrame.sizePolicy().hasHeightForWidth())
         self.materialBotFrame.setSizePolicy(sizePolicy1)
-        self.verticalLayout_26 = QVBoxLayout(self.materialBotFrame)
-        self.verticalLayout_26.setSpacing(0)
-        self.verticalLayout_26.setObjectName(u"verticalLayout_26")
-        self.verticalLayout_26.setContentsMargins(0, 0, 0, 0)
-        self.matLabel = QLabel(self.materialBotFrame)
-        self.matLabel.setObjectName(u"matLabel")
-        self.matLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.horizontalLayout_2 = QHBoxLayout(self.materialBotFrame)
+        self.horizontalLayout_2.setSpacing(0)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.materialListFrame = QFrame(self.materialBotFrame)
+        self.materialListFrame.setObjectName(u"materialListFrame")
+        self.materialListFrame.setMinimumSize(QSize(240, 0))
+        self.materialListFrame.setMaximumSize(QSize(320, 16777215))
+        self.verticalLayout_2 = QVBoxLayout(self.materialListFrame)
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.matLibTitleFrame = QFrame(self.materialListFrame)
+        self.matLibTitleFrame.setObjectName(u"matLibTitleFrame")
+        self.matLibTitleFrame.setMinimumSize(QSize(0, 60))
+        self.verticalLayout_4 = QVBoxLayout(self.matLibTitleFrame)
+        self.verticalLayout_4.setSpacing(0)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.materialLibrayLabel = QLabel(self.matLibTitleFrame)
+        self.materialLibrayLabel.setObjectName(u"materialLibrayLabel")
+        sizePolicy.setHeightForWidth(self.materialLibrayLabel.sizePolicy().hasHeightForWidth())
+        self.materialLibrayLabel.setSizePolicy(sizePolicy)
+        self.materialLibrayLabel.setStyleSheet(u"")
+        self.materialLibrayLabel.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
 
-        self.verticalLayout_26.addWidget(self.matLabel)
+        self.verticalLayout_4.addWidget(self.materialLibrayLabel)
+
+
+        self.verticalLayout_2.addWidget(self.matLibTitleFrame)
+
+        self.matLibraryListWidget = QListWidget(self.materialListFrame)
+        self.matLibraryListWidget.setObjectName(u"matLibraryListWidget")
+        self.matLibraryListWidget.setMaximumSize(QSize(16777215, 16777215))
+        self.matLibraryListWidget.setStyleSheet(u"")
+        self.matLibraryListWidget.setItemAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+        self.matLibraryListWidget.setSortingEnabled(True)
+
+        self.verticalLayout_2.addWidget(self.matLibraryListWidget)
+
+
+        self.horizontalLayout_2.addWidget(self.materialListFrame)
+
+        self.materialDashFrame = QFrame(self.materialBotFrame)
+        self.materialDashFrame.setObjectName(u"materialDashFrame")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.materialDashFrame.sizePolicy().hasHeightForWidth())
+        self.materialDashFrame.setSizePolicy(sizePolicy2)
+        self.verticalLayout_5 = QVBoxLayout(self.materialDashFrame)
+        self.verticalLayout_5.setSpacing(0)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.matLabelFrame = QFrame(self.materialDashFrame)
+        self.matLabelFrame.setObjectName(u"matLabelFrame")
+        self.horizontalLayout = QHBoxLayout(self.matLabelFrame)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(25, 10, 25, 10)
+        self.matLabel = QLabel(self.matLabelFrame)
+        self.matLabel.setObjectName(u"matLabel")
+        self.matLabel.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+
+        self.horizontalLayout.addWidget(self.matLabel)
+
+
+        self.verticalLayout_5.addWidget(self.matLabelFrame)
+
+        self.matWidgetsFrame = QFrame(self.materialDashFrame)
+        self.matWidgetsFrame.setObjectName(u"matWidgetsFrame")
+        sizePolicy1.setHeightForWidth(self.matWidgetsFrame.sizePolicy().hasHeightForWidth())
+        self.matWidgetsFrame.setSizePolicy(sizePolicy1)
+        self.verticalLayout_6 = QVBoxLayout(self.matWidgetsFrame)
+        self.verticalLayout_6.setSpacing(15)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.verticalLayout_6.setContentsMargins(25, 0, 25, 20)
+        self.matWidgetTopFrame = QFrame(self.matWidgetsFrame)
+        self.matWidgetTopFrame.setObjectName(u"matWidgetTopFrame")
+        self.horizontalLayout_3 = QHBoxLayout(self.matWidgetTopFrame)
+        self.horizontalLayout_3.setSpacing(20)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.matRenderFrame = QFrame(self.matWidgetTopFrame)
+        self.matRenderFrame.setObjectName(u"matRenderFrame")
+        self.verticalLayout_7 = QVBoxLayout(self.matRenderFrame)
+        self.verticalLayout_7.setSpacing(0)
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.label = QLabel(self.matRenderFrame)
+        self.label.setObjectName(u"label")
+        self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.verticalLayout_7.addWidget(self.label)
+
+
+        self.horizontalLayout_3.addWidget(self.matRenderFrame)
+
+        self.verticalFrame_2 = QFrame(self.matWidgetTopFrame)
+        self.verticalFrame_2.setObjectName(u"verticalFrame_2")
+        self.verticalLayout_8 = QVBoxLayout(self.verticalFrame_2)
+        self.verticalLayout_8.setSpacing(0)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
+
+        self.horizontalLayout_3.addWidget(self.verticalFrame_2)
+
+
+        self.verticalLayout_6.addWidget(self.matWidgetTopFrame)
+
+        self.matWidgetBotFrame = QFrame(self.matWidgetsFrame)
+        self.matWidgetBotFrame.setObjectName(u"matWidgetBotFrame")
+        self.horizontalLayout_4 = QHBoxLayout(self.matWidgetBotFrame)
+        self.horizontalLayout_4.setSpacing(0)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.verticalFrame = QFrame(self.matWidgetBotFrame)
+        self.verticalFrame.setObjectName(u"verticalFrame")
+        self.verticalLayout_9 = QVBoxLayout(self.verticalFrame)
+        self.verticalLayout_9.setSpacing(0)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
+
+        self.horizontalLayout_4.addWidget(self.verticalFrame)
+
+
+        self.verticalLayout_6.addWidget(self.matWidgetBotFrame)
+
+
+        self.verticalLayout_5.addWidget(self.matWidgetsFrame)
+
+
+        self.horizontalLayout_2.addWidget(self.materialDashFrame)
 
 
         self.verticalLayout_3.addWidget(self.materialBotFrame)
@@ -167,6 +325,8 @@ class Ui_PbrReferenceWidget(object):
         self.searchBtn.setText("")
         self.searchLineEdit.setPlaceholderText(QCoreApplication.translate("PbrReferenceWidget", u"Search", None))
         self.cancelSearchBtn.setText("")
-        self.matLabel.setText(QCoreApplication.translate("PbrReferenceWidget", u"Material Reference Page", None))
+        self.materialLibrayLabel.setText(QCoreApplication.translate("PbrReferenceWidget", u"Library", None))
+        self.matLabel.setText(QCoreApplication.translate("PbrReferenceWidget", u"Material Name", None))
+        self.label.setText(QCoreApplication.translate("PbrReferenceWidget", u"Material Render", None))
     # retranslateUi
 
