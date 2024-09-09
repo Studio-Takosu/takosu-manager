@@ -97,6 +97,9 @@ class GridViewItem(QWidget):
 
 
 class GridView(QWidget):
+    # Signal to notify when an item is selected/clicked
+    selected = Signal(str)
+    
     def __init__(self, parent=None):
         super().__init__(parent)
         self.selected_item = None
@@ -147,6 +150,8 @@ class GridView(QWidget):
         # Set the new item as selected
         self.selected_item = selected_widget
         self.selected_item.set_selected(True)
+        self.selected.emit(self.selected_item.item_name)
+        # print("Selected item:", self.selected_item.item_name)
 
 
 class ScrollableGridView(QWidget):

@@ -3,8 +3,9 @@
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from typing import Any
 from interfaces import ControllerInterface
-from PySide6.QtCore import QThreadPool, QTimer, Qt, QRectF
+from PySide6.QtCore import QThreadPool, QTimer, Qt, QRectF, QPropertyAnimation, QEasingCurve, QObject, QPoint
 from PySide6.QtWidgets import QListWidgetItem
 from PySide6.QtGui import QIcon, QPixmap, QPainter, QPainterPath
 
@@ -29,9 +30,27 @@ class PBRController(ControllerInterface):
         # Connect the signals from the view
         ui.searchLineEdit.returnPressed.connect(self.on_search_return)
         ui.cancelSearchBtn.clicked.connect(self.on_cancel_search)
+        ui.propsCloseButton.clicked.connect(self.toggle_properties_frame)
+        ui.gridWidget.grid_widget.selected.connect(self.on_material_selected)
         
-        ui.matLibraryListWidget.itemClicked.connect(self.on_material_selected)
+        # ui.matLibraryListWidget.itemClicked.connect(self.on_material_selected)
         # ui.searchBtn.installEventFilter(self)
+        
+    def on_button_clicked(self):
+        # Get button that was clicked
+        btn = self.sender()
+        btn_name = btn.objectName()
+        
+        # Apply the style to the parent QFrame
+        btn_parent = btn.parent()
+        btn_parent_name = btn_parent.objectName()
+        
+        
+        if btn_name == "propsCloseButton":
+            self.toggle_properties_frame(False)
+            
+        if btn_name == "grid_widget":
+            self.toggle_properties_frame(True)
 
     def on_search(self):
         """Fetch material data when search is clicked."""
@@ -90,15 +109,14 @@ class PBRController(ControllerInterface):
         self.view.ui.PbrStackedWidget.setCurrentIndex(0)
         self.set_material_library()
     
-    def on_material_selected(self, item):
-        print("Material selected:", item.text())
-        self.view.ui.matLabel.setText(item.text())
-        self.set_material_selected(item.text())
-        
-    
     def set_material_library(self):
         """Set the material library data in the view."""
         self.view.ui.gridWidget.populate_grid_view(self.model.materials_data)
+    
+    def on_material_selected(self, item):
+        """ Opens the Properties Tab when a material is selected in the grid view. """
+        # print("Material selected:", item)
+        self.toggle_properties_frame(True)
         
     def create_rounded_pixmap(self, pixmap: QPixmap, radius: int = 10) -> QPixmap:
         """Create a rounded pixmap from a square pixmap."""
@@ -130,3 +148,50 @@ class PBRController(ControllerInterface):
         baseImg = QPixmap(data['image'])
         img = self.create_rounded_pixmap(baseImg, 25)
         self.view.ui.matRenderLabel.setPixmap( QIcon(img).pixmap(200, 200) )
+        
+    def toggle_properties_frame(self, enabled):
+        """Toggle the properties frame in the view."""
+        expanded_width = 320 # width when expanded
+        width = self.view.ui.materialPropFrame.width() # current width of the menu
+        
+        if enabled:
+            if width != expanded_width:
+                # set expanded width
+                newWidth = expanded_width
+                newPos = QPoint(180, 0)
+                toggleDuration = 500
+                
+                # setup the menu animation
+                self.sizeAnim = self.create_menu_animation(
+                    self.view.ui.materialPropFrame,
+                    b"minimumWidth",
+                    width,
+                    newWidth,
+                    toggleDuration
+                )
+                # start the animation
+                self.sizeAnim.start()
+        else:
+            if width != 0:
+                # set original width
+                newWidth = 0
+                toggleDuration = 300
+                
+                # setup the menu animation
+                self.sizeAnim = self.create_menu_animation(
+                    self.view.ui.materialPropFrame,
+                    b"minimumWidth",
+                    width,
+                    newWidth,
+                    toggleDuration
+                )
+                # start the animation
+                self.sizeAnim.start()
+        
+    def create_menu_animation(self, widget:QObject, property:str, startValue:Any, endValue:Any, duration:int = 500):
+        animation = QPropertyAnimation(widget, property)
+        animation.setDuration(duration)
+        animation.setStartValue(startValue)
+        animation.setEndValue(endValue)
+        animation.setEasingCurve(QEasingCurve.InOutQuart)
+        return animation
