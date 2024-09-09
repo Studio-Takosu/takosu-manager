@@ -61,31 +61,16 @@ MATERIAL REFERENCE */
 
 /* ///////////////////////////////////////// 
 Material List Frame */
-#materialListFrame {
+#materialPropFrame {
 	background-color: #44475A;
 	border-right: 4px solid #BD93F9;
 }
 
-#matLibTitleFrame {
+#propertiesTitleFrame {
 	background-color: rgb(98, 114, 164);
 	border-bottom: 2px solid #282A36;
 	margin-right: 4px;
 	padding-left: 15px;
-}
-
-#matLibraryListWidget {
-	background-color: transparent;
-	border: none;
-}
-
-#matWidgetTopFrame .QFrame {
-	background-color: #44475A;
-	border-radius: 20px;
-}
-
-#matWidgetBotFrame .QFrame {
-	background-color: #44475A;
-	border-radius: 20px;
 }</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_11">
@@ -107,7 +92,7 @@ Material List Frame */
    <item>
     <widget class="QStackedWidget" name="PbrStackedWidget">
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="pbrMainPage">
       <layout class="QVBoxLayout" name="verticalLayout">
@@ -331,7 +316,7 @@ border: none;</string>
            <number>0</number>
           </property>
           <item>
-           <widget class="QFrame" name="materialListFrame">
+           <widget class="QFrame" name="materialPropFrame">
             <property name="minimumSize">
              <size>
               <width>240</width>
@@ -361,7 +346,7 @@ border: none;</string>
               <number>0</number>
              </property>
              <item>
-              <widget class="QFrame" name="matLibTitleFrame">
+              <widget class="QFrame" name="propertiesTitleFrame">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -373,7 +358,7 @@ border: none;</string>
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="materialLibrayLabel">
+                 <widget class="QLabel" name="propertiesLabel">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -384,7 +369,7 @@ border: none;</string>
                    <string notr="true"/>
                   </property>
                   <property name="text">
-                   <string>Library</string>
+                   <string>Properties</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -461,182 +446,6 @@ border: none;</string>
              <property name="bottomMargin">
               <number>0</number>
              </property>
-             <item>
-              <widget class="QFrame" name="matLabelFrame">
-               <layout class="QHBoxLayout" name="horizontalLayout">
-                <property name="leftMargin">
-                 <number>25</number>
-                </property>
-                <property name="topMargin">
-                 <number>10</number>
-                </property>
-                <property name="rightMargin">
-                 <number>25</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>10</number>
-                </property>
-                <item>
-                 <widget class="QLabel" name="matLabel">
-                  <property name="text">
-                   <string>Material Name</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
-              <widget class="QFrame" name="matWidgetsFrame">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <layout class="QVBoxLayout" name="verticalLayout_6">
-                <property name="spacing">
-                 <number>15</number>
-                </property>
-                <property name="leftMargin">
-                 <number>25</number>
-                </property>
-                <property name="topMargin">
-                 <number>0</number>
-                </property>
-                <property name="rightMargin">
-                 <number>25</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>20</number>
-                </property>
-                <item>
-                 <widget class="QFrame" name="matWidgetTopFrame">
-                  <layout class="QHBoxLayout" name="horizontalLayout_3">
-                   <property name="spacing">
-                    <number>20</number>
-                   </property>
-                   <property name="leftMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="rightMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
-                   <item>
-                    <widget class="QFrame" name="matRenderFrame">
-                     <layout class="QVBoxLayout" name="verticalLayout_7">
-                      <property name="spacing">
-                       <number>0</number>
-                      </property>
-                      <property name="leftMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="topMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="rightMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="bottomMargin">
-                       <number>0</number>
-                      </property>
-                      <item alignment="Qt::AlignmentFlag::AlignHCenter">
-                       <widget class="QLabel" name="matRenderLabel">
-                        <property name="maximumSize">
-                         <size>
-                          <width>200</width>
-                          <height>200</height>
-                         </size>
-                        </property>
-                        <property name="text">
-                         <string>material render</string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignmentFlag::AlignCenter</set>
-                        </property>
-                       </widget>
-                      </item>
-                     </layout>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QFrame" name="verticalFrame_2">
-                     <layout class="QVBoxLayout" name="verticalLayout_8">
-                      <property name="spacing">
-                       <number>0</number>
-                      </property>
-                      <property name="leftMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="topMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="rightMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="bottomMargin">
-                       <number>0</number>
-                      </property>
-                     </layout>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QFrame" name="matWidgetBotFrame">
-                  <layout class="QHBoxLayout" name="horizontalLayout_4">
-                   <property name="spacing">
-                    <number>0</number>
-                   </property>
-                   <property name="leftMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="rightMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
-                   <item>
-                    <widget class="QFrame" name="verticalFrame">
-                     <layout class="QVBoxLayout" name="verticalLayout_9">
-                      <property name="spacing">
-                       <number>0</number>
-                      </property>
-                      <property name="leftMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="topMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="rightMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="bottomMargin">
-                       <number>0</number>
-                      </property>
-                     </layout>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
             </layout>
            </widget>
           </item>
@@ -680,99 +489,6 @@ border: none;</string>
           <property name="bottomMargin">
            <number>0</number>
           </property>
-         </layout>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="testPage">
-      <layout class="QVBoxLayout" name="verticalLayout_15">
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <property name="leftMargin">
-        <number>0</number>
-       </property>
-       <property name="topMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
-       </property>
-       <item>
-        <widget class="QFrame" name="testFrame">
-         <layout class="QVBoxLayout" name="verticalLayout_14">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QScrollArea" name="scrollArea">
-            <property name="frameShape">
-             <enum>QFrame::Shape::NoFrame</enum>
-            </property>
-            <property name="sizeAdjustPolicy">
-             <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
-            </property>
-            <property name="widgetResizable">
-             <bool>true</bool>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-            </property>
-            <widget class="QWidget" name="scrollAreaWidgetContents">
-             <property name="geometry">
-              <rect>
-               <x>0</x>
-               <y>0</y>
-               <width>1220</width>
-               <height>645</height>
-              </rect>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_16">
-              <property name="spacing">
-               <number>0</number>
-              </property>
-              <property name="sizeConstraint">
-               <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
-              </property>
-              <property name="leftMargin">
-               <number>0</number>
-              </property>
-              <property name="topMargin">
-               <number>0</number>
-              </property>
-              <property name="rightMargin">
-               <number>0</number>
-              </property>
-              <property name="bottomMargin">
-               <number>0</number>
-              </property>
-              <item>
-               <layout class="QGridLayout" name="gridLayout">
-                <property name="sizeConstraint">
-                 <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
-                </property>
-               </layout>
-              </item>
-             </layout>
-            </widget>
-           </widget>
-          </item>
          </layout>
         </widget>
        </item>
