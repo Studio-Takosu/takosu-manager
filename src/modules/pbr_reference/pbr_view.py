@@ -52,10 +52,12 @@ class PBRView(QWidget):
       self.ui.splash_screen = SplashView()
       self.ui.splashFrame.layout().addWidget(self.ui.splash_screen)
       self.ui.PbrStackedWidget.setCurrentIndex(1)
-      # self.ui.matRenderLabel.setPixmap
+      # self.ui.matLibraryListWidget.clear()
       
-      # self.ui.matLibraryListWidget.setCurrentItem(self.ui.matLibraryListWidget.item(0))
-      # self.ui.matLibraryListWidget.item(0).setIcon
+      # ----------------------------------------------------------------------------
+      # Set up the Grid View -------------------------------------------------------
+      self.ui.gridWidget = ScrollableGridView()
+      self.ui.testFrame.layout().addWidget(self.ui.gridWidget)
     
     def display_material(self, material_data):
         """Update the UI with material data."""

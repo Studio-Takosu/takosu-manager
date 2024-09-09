@@ -284,9 +284,10 @@ class Ui_PbrReferenceWidget(object):
         self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
         self.matRenderLabel = QLabel(self.matRenderFrame)
         self.matRenderLabel.setObjectName(u"matRenderLabel")
+        self.matRenderLabel.setMaximumSize(QSize(200, 200))
         self.matRenderLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_7.addWidget(self.matRenderLabel)
+        self.verticalLayout_7.addWidget(self.matRenderLabel, 0, Qt.AlignmentFlag.AlignHCenter)
 
 
         self.horizontalLayout_3.addWidget(self.matRenderFrame)
@@ -347,13 +348,29 @@ class Ui_PbrReferenceWidget(object):
         self.verticalLayout_10.addWidget(self.splashFrame)
 
         self.PbrStackedWidget.addWidget(self.splashPage)
+        self.testPage = QWidget()
+        self.testPage.setObjectName(u"testPage")
+        self.verticalLayout_15 = QVBoxLayout(self.testPage)
+        self.verticalLayout_15.setSpacing(0)
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
+        self.testFrame = QFrame(self.testPage)
+        self.testFrame.setObjectName(u"testFrame")
+        self.verticalLayout_14 = QVBoxLayout(self.testFrame)
+        self.verticalLayout_14.setSpacing(0)
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
+
+        self.verticalLayout_15.addWidget(self.testFrame)
+
+        self.PbrStackedWidget.addWidget(self.testPage)
 
         self.verticalLayout_11.addWidget(self.PbrStackedWidget)
 
 
         self.retranslateUi(PbrReferenceWidget)
 
-        self.PbrStackedWidget.setCurrentIndex(0)
+        self.PbrStackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(PbrReferenceWidget)
@@ -366,6 +383,6 @@ class Ui_PbrReferenceWidget(object):
         self.cancelSearchBtn.setText("")
         self.materialLibrayLabel.setText(QCoreApplication.translate("PbrReferenceWidget", u"Library", None))
         self.matLabel.setText(QCoreApplication.translate("PbrReferenceWidget", u"Material Name", None))
-        self.matRenderLabel.setText(QCoreApplication.translate("PbrReferenceWidget", u"Material Render", None))
+        self.matRenderLabel.setText(QCoreApplication.translate("PbrReferenceWidget", u"material render", None))
     # retranslateUi
 
