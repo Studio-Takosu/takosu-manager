@@ -6,7 +6,7 @@ class WorkerSignals(QObject):
     finished = Signal()  # Signal to indicate the worker has finished
     error = Signal(tuple)  # Signal to send error information
     result = Signal(object)  # Signal to send the result
-    progress = Signal(int)  # Signal to report progress
+    progress = Signal(int, object)  # Signal to report progress
 
 class Worker(QRunnable):
     def __init__(self, fn, *args, **kwargs):
