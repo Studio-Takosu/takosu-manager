@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/images/resources/images/takosu.png</normaloff>:/images/resources/images/takosu.png</iconset>
+  </property>
   <property name="unifiedTitleAndToolBarOnMac">
    <bool>false</bool>
   </property>
@@ -151,7 +155,7 @@ Content App */
 }
 #contentBottom{
 	border-top: 3px solid rgb(44, 49, 58);
-	background-color: #282A36;
+	background-color: rgb(30, 30, 30);
 }
 
 /* Top Buttons */
@@ -1201,7 +1205,7 @@ border: none;</string>
                     <item>
                      <widget class="QStackedWidget" name="contentStackedWidget">
                       <property name="currentIndex">
-                       <number>1</number>
+                       <number>2</number>
                       </property>
                       <widget class="QWidget" name="homePage">
                        <property name="styleSheet">
@@ -1327,7 +1331,7 @@ background-repeat: no-repeat;</string>
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
-                     <height>643</height>
+                     <height>0</height>
                     </size>
                    </property>
                    <property name="maximumSize">
