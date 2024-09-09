@@ -92,6 +92,30 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.timer.timeout.connect(self.timer_resizeContentFrame)
         
         
+        # Create a QGraphicsDropShadowEffect
+        right_box_shadow = QGraphicsDropShadowEffect(self.settingsRightBox)
+        right_box_shadow.setBlurRadius(45)
+        right_box_shadow.setColor(QColor(0, 0, 0, 75))
+        right_box_shadow.setOffset(-25, 5)
+        
+        self.settingsRightBox.setGraphicsEffect(right_box_shadow)
+        
+        # Create a QGraphicsDropShadowEffect
+        toggle_box_shadow = QGraphicsDropShadowEffect(self.toggleBox)
+        toggle_box_shadow.setBlurRadius(45)
+        toggle_box_shadow.setColor(QColor(0, 0, 0, 75))
+        toggle_box_shadow.setOffset(0, 5)
+        self.toggleBox.setGraphicsEffect(toggle_box_shadow)
+        self.toggleBox.raise_()
+        
+        # Create a QGraphicsDropShadowEffect
+        bottomMenu_shadow = QGraphicsDropShadowEffect(self.bottomMenu)
+        bottomMenu_shadow.setBlurRadius(45)
+        bottomMenu_shadow.setColor(QColor(0, 0, 0, 75))
+        bottomMenu_shadow.setOffset(0, -5)
+        self.bottomMenu.setGraphicsEffect(bottomMenu_shadow)
+        self.bottomMenu.raise_()
+        
         
         
         # ----------------------------------------------------------------------------
@@ -261,12 +285,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 newPos = QPoint(180, 0)
                 newToggleStyle = activeToggleStyle()
                 toggleDuration = self.ANIMATION_DURATION
+                # self.left_box_shadow.setParent(self.leftMenuFrame)
+                # self.leftMenuFrame.setGraphicsEffect(self.left_box_shadow)
             else:
                 # set original width
                 newWidth = originalWidth
                 newPos = QPoint(0, 0)
                 newToggleStyle = defaultToggleStyle()
                 toggleDuration = 300
+                # self.left_box_shadow.setParent(None)
             
             # setup the menu animation
             self.sizeAnim = self.create_menu_animation(

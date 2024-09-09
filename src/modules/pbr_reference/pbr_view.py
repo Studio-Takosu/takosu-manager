@@ -10,10 +10,10 @@ sys.path.append(moduleDir)
 sys.path.append(srcDir)
 # sys.path.append(uiDir)
 # -----------------------------------------------------------------------------
-from PySide6.QtWidgets import QWidget, QMainWindow
+from PySide6.QtWidgets import QWidget, QGraphicsDropShadowEffect
+from PySide6.QtGui import QColor
 # from interfaces import ViewInterface
 from widgets import *
-# from ui_pbr_reference import Ui_PbrReferenceWidget # type: ignore
 from .ui import Ui_PbrReferenceWidget
 
 class PBRView(QWidget):
@@ -58,6 +58,25 @@ class PBRView(QWidget):
       # Set up the Grid View -------------------------------------------------------
       self.ui.gridWidget = ScrollableGridView()
       self.ui.materialDashFrame.layout().addWidget(self.ui.gridWidget)
+      
+      
+      # Create a QGraphicsDropShadowEffect
+      shadow = QGraphicsDropShadowEffect( self.ui.materialPropFrame )
+      shadow.setBlurRadius(45)
+      shadow.setColor(QColor(0, 0, 0, 50))
+      shadow.setOffset(15, 5)
+      
+      
+      # # Apply the shadow to the materialPropFrame
+      self.ui.materialPropFrame.setGraphicsEffect(shadow)
+      self.ui.materialPropFrame.raise_()
+      
+      shadow = QGraphicsDropShadowEffect( self.ui.materialPropFrame )
+      shadow.setBlurRadius(45)
+      shadow.setColor(QColor(0, 0, 0, 50))
+      shadow.setOffset(0, 5)
+      self.ui.propertiesTitleFrame.setGraphicsEffect(shadow)
+      self.ui.propertiesTitleFrame.raise_()
     
     def display_material(self, material_data):
         """Update the UI with material data."""

@@ -8,7 +8,8 @@ from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 
 # GUI FILE
-from ui_main_window import Ui_MainWindow
+# from ui_main_window import Ui_MainWindow
+from .ui.ui_main_window import Ui_MainWindow
 
 
 """

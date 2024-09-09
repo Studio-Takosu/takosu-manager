@@ -75,7 +75,7 @@ class Ui_PbrReferenceWidget(object):
 "\n"
 "#propertiesTitleFrame {\n"
 "	background-color: rgb(98, 114, 164);\n"
-"	border-bottom: 2px solid #282A36;\n"
+"	border-bottom: 0px solid #282A36;\n"
 "	margin-right: 4px;\n"
 "	padding-left: 15px;\n"
 "}")

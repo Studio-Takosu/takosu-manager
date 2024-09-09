@@ -29,6 +29,9 @@ class Ui_MainWindow(object):
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(1280, 720)
         MainWindow.setMinimumSize(QSize(940, 560))
+        icon = QIcon()
+        icon.addFile(u":/images/resources/images/takosu.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        MainWindow.setWindowIcon(icon)
         MainWindow.setUnifiedTitleAndToolBarOnMac(False)
         self.styleSheet = QWidget(MainWindow)
         self.styleSheet.setObjectName(u"styleSheet")
@@ -61,7 +64,7 @@ class Ui_MainWindow(object):
 "/* /////////////////////////////////////////////////////////////////////////////////////////////////\n"
 "Background App */\n"
 "#bgApp {\n"
-"	background-color: rgb(30, 30, 30);\n"
+"	background-color: #282A36;\n"
 "	border: 0px solid #6272A4\n"
 "}\n"
 "\n"
@@ -176,8 +179,8 @@ class Ui_MainWindow(object):
 "#bottomBar QLabel { font-size: 11px; color: rgb(113, 126, 149); padding-left: 10px; padding-right: 10px; padding-bottom: 2px; }\n"
 "\n"
 "\n"
-"/* ////////////////////////////////////////////////////"
-                        "/////////////////////////////////////////////\n"
+"/* ////////////////////////////////////////////"
+                        "/////////////////////////////////////////////////////\n"
 "Content Pages */\n"
 "\n"
 "/* //////////////////// \n"
@@ -214,8 +217,8 @@ class Ui_MainWindow(object):
 "	border-style: solid; \n"
 "}\n"
 "\n"
-"/* ///////////////////////////////////////////////////////////////"
-                        "//////////////////////////////////\n"
+"/* ///////////////////////////////////////////////////////"
+                        "//////////////////////////////////////////\n"
 "Settings Right Box */\n"
 "#settingsRightBox { \n"
 "	background-color: rgb(44, 49, 58);\n"
@@ -270,6 +273,7 @@ class Ui_MainWindow(object):
         self.leftMenuFrame = QFrame(self.leftMenuBg)
         self.leftMenuFrame.setObjectName(u"leftMenuFrame")
         self.leftMenuFrame.setMinimumSize(QSize(0, 0))
+        self.leftMenuFrame.setMaximumSize(QSize(16777215, 16777215))
         self.verticalLayout_3 = QVBoxLayout(self.leftMenuFrame)
         self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
@@ -443,8 +447,18 @@ class Ui_MainWindow(object):
 
         self.appLayout.addWidget(self.leftMenuBg)
 
+        self.leftMenuShadow = QFrame(self.bgApp)
+        self.leftMenuShadow.setObjectName(u"leftMenuShadow")
+        self.leftMenuShadow.setMinimumSize(QSize(0, 670))
+        self.leftMenuShadow.setMaximumSize(QSize(16777215, 16777215))
+        self.horizontalLayout_10 = QHBoxLayout(self.leftMenuShadow)
+        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+
+        self.appLayout.addWidget(self.leftMenuShadow, 0, Qt.AlignmentFlag.AlignBottom)
+
         self.contentBox = QFrame(self.bgApp)
         self.contentBox.setObjectName(u"contentBox")
+        self.contentBox.setMaximumSize(QSize(16777215, 16777215))
         self.verticalLayout_2 = QVBoxLayout(self.contentBox)
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
@@ -507,9 +521,9 @@ class Ui_MainWindow(object):
         self.settingsTopBtn.setMinimumSize(QSize(28, 28))
         self.settingsTopBtn.setMaximumSize(QSize(28, 28))
         self.settingsTopBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon = QIcon()
-        icon.addFile(u":/icons/resources/icons/icon_settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.settingsTopBtn.setIcon(icon)
+        icon1 = QIcon()
+        icon1.addFile(u":/icons/resources/icons/icon_settings.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.settingsTopBtn.setIcon(icon1)
         self.settingsTopBtn.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_6.addWidget(self.settingsTopBtn)
@@ -521,9 +535,9 @@ class Ui_MainWindow(object):
         self.minimizeAppBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.minimizeAppBtn.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.minimizeAppBtn.setAutoFillBackground(False)
-        icon1 = QIcon()
-        icon1.addFile(u":/icons/resources/icons/icon_minimize.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.minimizeAppBtn.setIcon(icon1)
+        icon2 = QIcon()
+        icon2.addFile(u":/icons/resources/icons/icon_minimize.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.minimizeAppBtn.setIcon(icon2)
         self.minimizeAppBtn.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_6.addWidget(self.minimizeAppBtn)
@@ -533,9 +547,9 @@ class Ui_MainWindow(object):
         self.maximizeRestoreAppBtn.setMinimumSize(QSize(28, 28))
         self.maximizeRestoreAppBtn.setMaximumSize(QSize(28, 28))
         self.maximizeRestoreAppBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon2 = QIcon()
-        icon2.addFile(u":/icons/resources/icons/icon_maximize.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.maximizeRestoreAppBtn.setIcon(icon2)
+        icon3 = QIcon()
+        icon3.addFile(u":/icons/resources/icons/icon_maximize.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.maximizeRestoreAppBtn.setIcon(icon3)
         self.maximizeRestoreAppBtn.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_6.addWidget(self.maximizeRestoreAppBtn)
@@ -545,9 +559,9 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setMinimumSize(QSize(28, 28))
         self.closeAppBtn.setMaximumSize(QSize(28, 28))
         self.closeAppBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon3 = QIcon()
-        icon3.addFile(u":/icons/resources/icons/icon_close.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.closeAppBtn.setIcon(icon3)
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/resources/icons/icon_close.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.closeAppBtn.setIcon(icon4)
         self.closeAppBtn.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_6.addWidget(self.closeAppBtn)
@@ -640,7 +654,7 @@ class Ui_MainWindow(object):
         self.settingsRightBox.setGeometry(QRect(1220, 0, 0, 645))
         sizePolicy3.setHeightForWidth(self.settingsRightBox.sizePolicy().hasHeightForWidth())
         self.settingsRightBox.setSizePolicy(sizePolicy3)
-        self.settingsRightBox.setMinimumSize(QSize(0, 643))
+        self.settingsRightBox.setMinimumSize(QSize(0, 0))
         self.settingsRightBox.setMaximumSize(QSize(0, 16777215))
         self.verticalLayout_7 = QVBoxLayout(self.settingsRightBox)
         self.verticalLayout_7.setSpacing(0)
@@ -708,7 +722,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.contentStackedWidget.setCurrentIndex(1)
+        self.contentStackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -751,5 +765,3 @@ class Ui_MainWindow(object):
         self.label.setText(QCoreApplication.translate("MainWindow", u"Asset Library Page", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: Studio Takosu", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"v0.0.1", None))
-    # retranslateUi
-
