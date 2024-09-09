@@ -32,9 +32,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pbr_view = PBRView(self)
         self.pbr_controller = PBRController(self.pbr_model, self.pbr_view)
         
-        # load the data
-        self.pbr_model.load_data()
-        
         # attach the pbr_view to the materialRefContainer
         self.materialRefContainer.layout().addWidget(self.pbr_view)
         
@@ -148,6 +145,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             btn_parent.setStyleSheet(updatedStyle) # Apply updated style
             # Update titleRightInfo text
             self.titleRightInfo.setText(btn.text())
+            # Start loading process
+            self.pbr_controller.start_loading()
         
         # SHOW ASSET PAGE
         elif btn_name == "asset_btn":
@@ -381,6 +380,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # """)
         # self.homePage.update()
         # self.homePage.repaint()
+        # 1220 x 645
+        # 1280 x 720
+        # 880 x 485
     
     def timer_resizeContentFrame(self):
         self.resizeContentFrame()
