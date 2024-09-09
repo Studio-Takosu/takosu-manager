@@ -16,15 +16,16 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QLineEdit, QListWidget, QListWidgetItem, QPushButton,
-    QSizePolicy, QVBoxLayout, QWidget)
+    QLineEdit, QListView, QListWidget, QListWidgetItem,
+    QPushButton, QSizePolicy, QStackedWidget, QVBoxLayout,
+    QWidget)
 
 class Ui_PbrReferenceWidget(object):
     def setupUi(self, PbrReferenceWidget):
         if not PbrReferenceWidget.objectName():
             PbrReferenceWidget.setObjectName(u"PbrReferenceWidget")
         PbrReferenceWidget.resize(1220, 645)
-        PbrReferenceWidget.setMinimumSize(QSize(940, 560))
+        PbrReferenceWidget.setMinimumSize(QSize(0, 0))
         PbrReferenceWidget.setStyleSheet(u"/* ////////////////////////////////////////////////////////////\n"
 "MATERIAL REFERENCE */\n"
 ".QLabel {\n"
@@ -93,11 +94,19 @@ class Ui_PbrReferenceWidget(object):
 "	background-color: #44475A;\n"
 "	border-radius: 20px;\n"
 "}")
-        self.verticalLayout_3 = QVBoxLayout(PbrReferenceWidget)
-        self.verticalLayout_3.setSpacing(0)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.materialTopFrame = QFrame(PbrReferenceWidget)
+        self.verticalLayout_11 = QVBoxLayout(PbrReferenceWidget)
+        self.verticalLayout_11.setSpacing(0)
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.PbrStackedWidget = QStackedWidget(PbrReferenceWidget)
+        self.PbrStackedWidget.setObjectName(u"PbrStackedWidget")
+        self.pbrMainPage = QWidget()
+        self.pbrMainPage.setObjectName(u"pbrMainPage")
+        self.verticalLayout = QVBoxLayout(self.pbrMainPage)
+        self.verticalLayout.setSpacing(0)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.materialTopFrame = QFrame(self.pbrMainPage)
         self.materialTopFrame.setObjectName(u"materialTopFrame")
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -170,9 +179,9 @@ class Ui_PbrReferenceWidget(object):
         self.verticalLayout_27.addWidget(self.filterFrame)
 
 
-        self.verticalLayout_3.addWidget(self.materialTopFrame)
+        self.verticalLayout.addWidget(self.materialTopFrame)
 
-        self.materialBotFrame = QWidget(PbrReferenceWidget)
+        self.materialBotFrame = QWidget(self.pbrMainPage)
         self.materialBotFrame.setObjectName(u"materialBotFrame")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Expanding)
         sizePolicy1.setHorizontalStretch(0)
@@ -213,7 +222,14 @@ class Ui_PbrReferenceWidget(object):
         self.matLibraryListWidget.setObjectName(u"matLibraryListWidget")
         self.matLibraryListWidget.setMaximumSize(QSize(16777215, 16777215))
         self.matLibraryListWidget.setStyleSheet(u"")
-        self.matLibraryListWidget.setItemAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+        self.matLibraryListWidget.setFrameShape(QFrame.Shape.NoFrame)
+        self.matLibraryListWidget.setFrameShadow(QFrame.Shadow.Raised)
+        self.matLibraryListWidget.setAutoScroll(False)
+        self.matLibraryListWidget.setDefaultDropAction(Qt.DropAction.IgnoreAction)
+        self.matLibraryListWidget.setAlternatingRowColors(False)
+        self.matLibraryListWidget.setResizeMode(QListView.ResizeMode.Fixed)
+        self.matLibraryListWidget.setUniformItemSizes(True)
+        self.matLibraryListWidget.setSelectionRectVisible(True)
         self.matLibraryListWidget.setSortingEnabled(True)
 
         self.verticalLayout_2.addWidget(self.matLibraryListWidget)
@@ -266,11 +282,11 @@ class Ui_PbrReferenceWidget(object):
         self.verticalLayout_7.setSpacing(0)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
         self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.label = QLabel(self.matRenderFrame)
-        self.label.setObjectName(u"label")
-        self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.matRenderLabel = QLabel(self.matRenderFrame)
+        self.matRenderLabel.setObjectName(u"matRenderLabel")
+        self.matRenderLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_7.addWidget(self.label)
+        self.verticalLayout_7.addWidget(self.matRenderLabel)
 
 
         self.horizontalLayout_3.addWidget(self.matRenderFrame)
@@ -312,10 +328,33 @@ class Ui_PbrReferenceWidget(object):
         self.horizontalLayout_2.addWidget(self.materialDashFrame)
 
 
-        self.verticalLayout_3.addWidget(self.materialBotFrame)
+        self.verticalLayout.addWidget(self.materialBotFrame)
+
+        self.PbrStackedWidget.addWidget(self.pbrMainPage)
+        self.splashPage = QWidget()
+        self.splashPage.setObjectName(u"splashPage")
+        self.verticalLayout_10 = QVBoxLayout(self.splashPage)
+        self.verticalLayout_10.setSpacing(0)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.splashFrame = QFrame(self.splashPage)
+        self.splashFrame.setObjectName(u"splashFrame")
+        self.verticalLayout_3 = QVBoxLayout(self.splashFrame)
+        self.verticalLayout_3.setSpacing(0)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+
+        self.verticalLayout_10.addWidget(self.splashFrame)
+
+        self.PbrStackedWidget.addWidget(self.splashPage)
+
+        self.verticalLayout_11.addWidget(self.PbrStackedWidget)
 
 
         self.retranslateUi(PbrReferenceWidget)
+
+        self.PbrStackedWidget.setCurrentIndex(0)
+
 
         QMetaObject.connectSlotsByName(PbrReferenceWidget)
     # setupUi
@@ -327,6 +366,6 @@ class Ui_PbrReferenceWidget(object):
         self.cancelSearchBtn.setText("")
         self.materialLibrayLabel.setText(QCoreApplication.translate("PbrReferenceWidget", u"Library", None))
         self.matLabel.setText(QCoreApplication.translate("PbrReferenceWidget", u"Material Name", None))
-        self.label.setText(QCoreApplication.translate("PbrReferenceWidget", u"Material Render", None))
+        self.matRenderLabel.setText(QCoreApplication.translate("PbrReferenceWidget", u"Material Render", None))
     # retranslateUi
 
