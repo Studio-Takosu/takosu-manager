@@ -87,7 +87,7 @@ class PBRController(ControllerInterface):
     
     def switch_to_main_page(self):
         """ Switch to the main page of the application. """
-        self.view.ui.PbrStackedWidget.setCurrentIndex(2)
+        self.view.ui.PbrStackedWidget.setCurrentIndex(0)
         self.set_material_library()
     
     def on_material_selected(self, item):
@@ -98,28 +98,7 @@ class PBRController(ControllerInterface):
     
     def set_material_library(self):
         """Set the material library data in the view."""
-        materialNames = self.model.material_names
-        self.view.ui.matLibraryListWidget.clear()
-        # self.view.ui.matLibraryListWidget.addItems(materialNames)
         self.view.ui.gridWidget.populate_grid_view(self.model.materials_data)
-        # Loop through the material names and add them to the list widget, with icons
-        # for materialName in materialNames:
-        #     item = QListWidgetItem(materialName)
-        #     matData = self.model.get_material_data(materialName)
-        #     # print("Material data:", matData['image'])
-        #     item.setIcon( QIcon(matData['image']) )
-        #     self.view.ui.matLibraryListWidget.addItem(item)
-        
-        
-        # # Select the first material by default
-        # self.view.ui.matLibraryListWidget.setCurrentItem(self.view.ui.matLibraryListWidget.item(0))
-        # self.view.ui.matLabel.setText(materialNames[0])
-        # baseImg = QPixmap(matData['image'])
-        # img = self.create_rounded_pixmap(baseImg, 25)
-        # self.view.ui.matRenderLabel.setPixmap( QIcon(img).pixmap(200, 200) )
-        # self.view.ui.matRenderLabel.setMaximumSize(200, 200)
-        # self.view.ui.matRenderLabel.setStyleSheet("border: 5px solid #282A36; border-radius: 5px;")
-        # self.view.ui.matRenderLabel.parent().layout().setAlignment(Qt.AlignCenter)
         
     def create_rounded_pixmap(self, pixmap: QPixmap, radius: int = 10) -> QPixmap:
         """Create a rounded pixmap from a square pixmap."""

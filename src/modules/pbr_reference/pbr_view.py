@@ -57,7 +57,7 @@ class PBRView(QWidget):
       # ----------------------------------------------------------------------------
       # Set up the Grid View -------------------------------------------------------
       self.ui.gridWidget = ScrollableGridView()
-      self.ui.testFrame.layout().addWidget(self.ui.gridWidget)
+      self.ui.materialDashFrame.layout().addWidget(self.ui.gridWidget)
     
     def display_material(self, material_data):
         """Update the UI with material data."""
