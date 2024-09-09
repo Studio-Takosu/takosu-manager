@@ -70,7 +70,23 @@ Material List Frame */
 	background-color: rgb(98, 114, 164);
 	border-bottom: 0px solid #282A36;
 	margin-right: 4px;
-	padding-left: 15px;
+	padding-left: 10px;
+}
+#propertiesTitleFrame .QPushButton {
+	border: none;
+	border-radius: 12px;
+	background-color: rgb(75, 75, 75);
+	background-position: center;
+    background-repeat: no-repeat;
+}
+#propertiesTitleFrame .QPushButton:hover { 
+	background-color: rgb(90, 90, 90);
+	border-style: solid; 
+	color: rgb(170, 0, 0);
+}
+#propertiesTitleFrame .QPushButton:pressed { 
+	background-color: #BD93F9; 
+	border-style: solid; 
 }</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_11">
@@ -319,13 +335,13 @@ border: none;</string>
            <widget class="QFrame" name="materialPropFrame">
             <property name="minimumSize">
              <size>
-              <width>240</width>
+              <width>320</width>
               <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>320</width>
+              <width>0</width>
               <height>16777215</height>
              </size>
             </property>
@@ -353,10 +369,51 @@ border: none;</string>
                  <height>60</height>
                 </size>
                </property>
-               <layout class="QVBoxLayout" name="verticalLayout_4">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>60</height>
+                </size>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout">
                 <property name="spacing">
+                 <number>9</number>
+                </property>
+                <property name="leftMargin">
                  <number>0</number>
                 </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QPushButton" name="propsCloseButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>24</width>
+                    <height>24</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>24</width>
+                    <height>24</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">/* background-image : url(:/icons/resources/icons/icon_close_24.svg); */
+image: url(:/icons/resources/icons/icon_close_24.svg);</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
                 <item>
                  <widget class="QLabel" name="propertiesLabel">
                   <property name="sizePolicy">

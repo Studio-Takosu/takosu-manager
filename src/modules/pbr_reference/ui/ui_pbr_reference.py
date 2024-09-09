@@ -77,7 +77,23 @@ class Ui_PbrReferenceWidget(object):
 "	background-color: rgb(98, 114, 164);\n"
 "	border-bottom: 0px solid #282A36;\n"
 "	margin-right: 4px;\n"
-"	padding-left: 15px;\n"
+"	padding-left: 10px;\n"
+"}\n"
+"#propertiesTitleFrame .QPushButton {\n"
+"	border: none;\n"
+"	border-radius: 12px;\n"
+"	background-color: rgb(75, 75, 75);\n"
+"	background-position: center;\n"
+"    background-repeat: no-repeat;\n"
+"}\n"
+"#propertiesTitleFrame .QPushButton:hover { \n"
+"	background-color: rgb(90, 90, 90);\n"
+"	border-style: solid; \n"
+"	color: rgb(170, 0, 0);\n"
+"}\n"
+"#propertiesTitleFrame .QPushButton:pressed { \n"
+"	background-color: #BD93F9; \n"
+"	border-style: solid; \n"
 "}")
         self.verticalLayout_11 = QVBoxLayout(PbrReferenceWidget)
         self.verticalLayout_11.setSpacing(0)
@@ -179,8 +195,8 @@ class Ui_PbrReferenceWidget(object):
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.materialPropFrame = QFrame(self.materialBotFrame)
         self.materialPropFrame.setObjectName(u"materialPropFrame")
-        self.materialPropFrame.setMinimumSize(QSize(240, 0))
-        self.materialPropFrame.setMaximumSize(QSize(320, 16777215))
+        self.materialPropFrame.setMinimumSize(QSize(320, 0))
+        self.materialPropFrame.setMaximumSize(QSize(0, 16777215))
         self.verticalLayout_2 = QVBoxLayout(self.materialPropFrame)
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
@@ -188,9 +204,20 @@ class Ui_PbrReferenceWidget(object):
         self.propertiesTitleFrame = QFrame(self.materialPropFrame)
         self.propertiesTitleFrame.setObjectName(u"propertiesTitleFrame")
         self.propertiesTitleFrame.setMinimumSize(QSize(0, 60))
-        self.verticalLayout_4 = QVBoxLayout(self.propertiesTitleFrame)
-        self.verticalLayout_4.setSpacing(0)
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.propertiesTitleFrame.setMaximumSize(QSize(16777215, 60))
+        self.horizontalLayout = QHBoxLayout(self.propertiesTitleFrame)
+        self.horizontalLayout.setSpacing(9)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.propsCloseButton = QPushButton(self.propertiesTitleFrame)
+        self.propsCloseButton.setObjectName(u"propsCloseButton")
+        self.propsCloseButton.setMinimumSize(QSize(24, 24))
+        self.propsCloseButton.setMaximumSize(QSize(24, 24))
+        self.propsCloseButton.setStyleSheet(u"/* background-image : url(:/icons/resources/icons/icon_close_24.svg); */\n"
+"image: url(:/icons/resources/icons/icon_close_24.svg);")
+
+        self.horizontalLayout.addWidget(self.propsCloseButton)
+
         self.propertiesLabel = QLabel(self.propertiesTitleFrame)
         self.propertiesLabel.setObjectName(u"propertiesLabel")
         sizePolicy.setHeightForWidth(self.propertiesLabel.sizePolicy().hasHeightForWidth())
@@ -198,7 +225,7 @@ class Ui_PbrReferenceWidget(object):
         self.propertiesLabel.setStyleSheet(u"")
         self.propertiesLabel.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
 
-        self.verticalLayout_4.addWidget(self.propertiesLabel)
+        self.horizontalLayout.addWidget(self.propertiesLabel)
 
 
         self.verticalLayout_2.addWidget(self.propertiesTitleFrame)
@@ -273,6 +300,7 @@ class Ui_PbrReferenceWidget(object):
         self.searchBtn.setText("")
         self.searchLineEdit.setPlaceholderText(QCoreApplication.translate("PbrReferenceWidget", u"Search", None))
         self.cancelSearchBtn.setText("")
+        self.propsCloseButton.setText("")
         self.propertiesLabel.setText(QCoreApplication.translate("PbrReferenceWidget", u"Properties", None))
     # retranslateUi
 
