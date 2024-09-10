@@ -1,19 +1,5 @@
 {
     "name": "Skin III",
-    "color": [
-        0.623,
-        0.433,
-        0.343
-    ],
-    "metalness": 0,
-    "roughness": 0.5,
-    "ior": 1.4,
-    "subsurfaceRadius": [
-        0.482,
-        0.169,
-        0.109
-    ],
-    "density": 1020,
     "category": [
         "Human"
     ],
@@ -35,5 +21,21 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-iii.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.623,
+            0.433,
+            0.343
+        ],
+        "metalness": 0,
+        "roughness": 0.5,
+        "ior": 1.4,
+        "subsurfaceRadius": [
+            0.482,
+            0.169,
+            0.109
+        ],
+        "density": 1020
+    }
 }

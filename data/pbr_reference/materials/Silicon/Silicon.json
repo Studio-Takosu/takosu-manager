@@ -1,22 +1,5 @@
 {
     "name": "Silicon",
-    "color": [
-        0.344,
-        0.367,
-        0.419
-    ],
-    "metalness": 1,
-    "roughness": 0,
-    "ior": 1.5,
-    "complexIor": [
-        3.835,
-        0.014,
-        4.073,
-        0.028,
-        4.673,
-        0.095
-    ],
-    "density": 2330,
     "category": [
         "Metal"
     ],
@@ -31,5 +14,24 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/silicon.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.344,
+            0.367,
+            0.419
+        ],
+        "metalness": 1,
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            3.835,
+            0.014,
+            4.073,
+            0.028,
+            4.673,
+            0.095
+        ],
+        "density": 2330
+    }
 }

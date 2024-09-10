@@ -1,27 +1,5 @@
 {
     "name": "Copper",
-    "color": [
-        0.926,
-        0.721,
-        0.504
-    ],
-    "metalness": 1,
-    "specularColor": [
-        0.996,
-        0.957,
-        0.823
-    ],
-    "roughness": 0,
-    "ior": 1.5,
-    "complexIor": [
-        0.27105,
-        3.6092,
-        0.67693,
-        2.6248,
-        1.3164,
-        2.2921
-    ],
-    "density": 8940,
     "category": [
         "Metal"
     ],
@@ -36,5 +14,29 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/copper.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.926,
+            0.721,
+            0.504
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.996,
+            0.957,
+            0.823
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            0.27105,
+            3.6092,
+            0.67693,
+            2.6248,
+            1.3164,
+            2.2921
+        ],
+        "density": 8940
+    }
 }

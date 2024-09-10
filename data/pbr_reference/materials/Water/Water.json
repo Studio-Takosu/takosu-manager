@@ -1,29 +1,5 @@
 {
     "name": "Water",
-    "color": [
-        1,
-        1,
-        1
-    ],
-    "metalness": 0,
-    "roughness": 0,
-    "ior": 1.3325,
-    "transmission": 1,
-    "transmissionDispersion": 55.78,
-    "density": 1000,
-    "densityRange": [
-        958,
-        1000
-    ],
-    "viscosity": 1.002,
-    "acousticAbsorption": [
-        0.008,
-        0.008,
-        0.013,
-        0.015,
-        0.02,
-        0.025
-    ],
     "category": [
         "Liquid"
     ],
@@ -46,5 +22,31 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/water.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            1,
+            1,
+            1
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.3325,
+        "transmission": 1,
+        "transmissionDispersion": 55.78,
+        "density": 1000,
+        "densityRange": [
+            958,
+            1000
+        ],
+        "viscosity": 1.002,
+        "acousticAbsorption": [
+            0.008,
+            0.008,
+            0.013,
+            0.015,
+            0.02,
+            0.025
+        ]
+    }
 }

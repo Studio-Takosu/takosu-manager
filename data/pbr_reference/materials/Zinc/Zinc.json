@@ -1,27 +1,5 @@
 {
     "name": "Zinc",
-    "color": [
-        0.802,
-        0.844,
-        0.863
-    ],
-    "metalness": 1,
-    "specularColor": [
-        0.817,
-        0.922,
-        0.964
-    ],
-    "roughness": 0,
-    "ior": 1.5,
-    "complexIor": [
-        3.4161,
-        7.0325,
-        1.9286,
-        6.3963,
-        1.0424,
-        5.125
-    ],
-    "density": 7000,
     "category": [
         "Metal"
     ],
@@ -35,5 +13,29 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/zinc.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.802,
+            0.844,
+            0.863
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.817,
+            0.922,
+            0.964
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            3.4161,
+            7.0325,
+            1.9286,
+            6.3963,
+            1.0424,
+            5.125
+        ],
+        "density": 7000
+    }
 }

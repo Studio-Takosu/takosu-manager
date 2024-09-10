@@ -1,19 +1,5 @@
 {
     "name": "Plastic (PVC)",
-    "color": [
-        1,
-        1,
-        1
-    ],
-    "metalness": 0,
-    "roughness": 0,
-    "ior": 1.531,
-    "transmission": 1,
-    "density": 1300,
-    "densityRange": [
-        1100,
-        1450
-    ],
     "category": [
         "Plastic"
     ],
@@ -27,5 +13,21 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-pvc.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            1,
+            1,
+            1
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.531,
+        "transmission": 1,
+        "density": 1300,
+        "densityRange": [
+            1100,
+            1450
+        ]
+    }
 }

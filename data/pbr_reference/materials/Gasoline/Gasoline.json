@@ -1,16 +1,5 @@
 {
     "name": "Gasoline",
-    "color": [
-        1,
-        0.97,
-        0.617
-    ],
-    "metalness": 0,
-    "roughness": 0,
-    "ior": 1.427,
-    "transmission": 1,
-    "density": 770,
-    "viscosity": 0.6,
     "category": [
         "Liquid"
     ],
@@ -27,5 +16,18 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/gasoline.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            1,
+            0.97,
+            0.617
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.427,
+        "transmission": 1,
+        "density": 770,
+        "viscosity": 0.6
+    }
 }

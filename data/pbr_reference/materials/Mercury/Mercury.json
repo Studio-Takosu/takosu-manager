@@ -1,28 +1,5 @@
 {
     "name": "Mercury",
-    "color": [
-        0.781,
-        0.779,
-        0.779
-    ],
-    "metalness": 1,
-    "specularColor": [
-        0.879,
-        0.91,
-        0.941
-    ],
-    "roughness": 0,
-    "ior": 1.5,
-    "complexIor": [
-        2.0733,
-        5.3383,
-        1.5523,
-        4.651,
-        1.0606,
-        3.8628
-    ],
-    "density": 13546,
-    "viscosity": 1.552,
     "category": [
         "Metal"
     ],
@@ -39,5 +16,30 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/mercury.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.781,
+            0.779,
+            0.779
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.879,
+            0.91,
+            0.941
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            2.0733,
+            5.3383,
+            1.5523,
+            4.651,
+            1.0606,
+            3.8628
+        ],
+        "density": 13546,
+        "viscosity": 1.552
+    }
 }

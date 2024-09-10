@@ -1,18 +1,5 @@
 {
     "name": "Charcoal",
-    "color": [
-        0.02,
-        0.02,
-        0.02
-    ],
-    "metalness": 0,
-    "roughness": 0.5,
-    "ior": 1.5,
-    "density": 300,
-    "densityRange": [
-        200,
-        500
-    ],
     "category": [
         "Organic"
     ],
@@ -28,5 +15,20 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/charcoal.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.02,
+            0.02,
+            0.02
+        ],
+        "metalness": 0,
+        "roughness": 0.5,
+        "ior": 1.5,
+        "density": 300,
+        "densityRange": [
+            200,
+            500
+        ]
+    }
 }

@@ -1,15 +1,5 @@
 {
     "name": "Plastic (Acrylic)",
-    "color": [
-        1,
-        1,
-        1
-    ],
-    "metalness": 0,
-    "roughness": 0,
-    "ior": 1.476,
-    "transmission": 1,
-    "density": 1180,
     "category": [
         "Plastic"
     ],
@@ -25,5 +15,17 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-acrylic.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            1,
+            1,
+            1
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.476,
+        "transmission": 1,
+        "density": 1180
+    }
 }

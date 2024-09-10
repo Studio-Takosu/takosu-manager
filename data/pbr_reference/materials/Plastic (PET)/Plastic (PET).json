@@ -1,15 +1,5 @@
 {
     "name": "Plastic (PET)",
-    "color": [
-        1,
-        1,
-        1
-    ],
-    "metalness": 0,
-    "roughness": 0,
-    "ior": 1.575,
-    "transmission": 1,
-    "density": 1380,
     "category": [
         "Plastic"
     ],
@@ -23,5 +13,17 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/plastic-pet.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            1,
+            1,
+            1
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.575,
+        "transmission": 1,
+        "density": 1380
+    }
 }

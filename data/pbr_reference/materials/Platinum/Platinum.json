@@ -1,27 +1,5 @@
 {
     "name": "Platinum",
-    "color": [
-        0.679,
-        0.642,
-        0.588
-    ],
-    "metalness": 1,
-    "specularColor": [
-        0.785,
-        0.789,
-        0.784
-    ],
-    "roughness": 0,
-    "ior": 1.5,
-    "complexIor": [
-        2.3757,
-        4.2655,
-        2.0847,
-        3.7153,
-        1.8453,
-        3.1365
-    ],
-    "density": 21450,
     "category": [
         "Metal"
     ],
@@ -36,5 +14,29 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/platinum.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.679,
+            0.642,
+            0.588
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.785,
+            0.789,
+            0.784
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            2.3757,
+            4.2655,
+            2.0847,
+            3.7153,
+            1.8453,
+            3.1365
+        ],
+        "density": 21450
+    }
 }

@@ -1,19 +1,5 @@
 {
     "name": "Skin I",
-    "color": [
-        0.847,
-        0.638,
-        0.552
-    ],
-    "metalness": 0,
-    "roughness": 0.5,
-    "ior": 1.4,
-    "subsurfaceRadius": [
-        0.482,
-        0.169,
-        0.109
-    ],
-    "density": 1020,
     "category": [
         "Human"
     ],
@@ -33,5 +19,21 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-i.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.847,
+            0.638,
+            0.552
+        ],
+        "metalness": 0,
+        "roughness": 0.5,
+        "ior": 1.4,
+        "subsurfaceRadius": [
+            0.482,
+            0.169,
+            0.109
+        ],
+        "density": 1020
+    }
 }

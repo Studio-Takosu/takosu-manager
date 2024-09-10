@@ -1,27 +1,5 @@
 {
     "name": "Tungsten",
-    "color": [
-        0.504,
-        0.498,
-        0.478
-    ],
-    "metalness": 1,
-    "specularColor": [
-        0.403,
-        0.418,
-        0.423
-    ],
-    "roughness": 0,
-    "ior": 1.5,
-    "complexIor": [
-        3.6518,
-        2.7955,
-        3.5064,
-        2.7585,
-        3.313,
-        2.6051
-    ],
-    "density": 19300,
     "category": [
         "Metal"
     ],
@@ -35,5 +13,29 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/tungsten.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.504,
+            0.498,
+            0.478
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.403,
+            0.418,
+            0.423
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            3.6518,
+            2.7955,
+            3.5064,
+            2.7585,
+            3.313,
+            2.6051
+        ],
+        "density": 19300
+    }
 }

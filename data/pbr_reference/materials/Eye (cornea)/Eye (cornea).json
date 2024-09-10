@@ -1,15 +1,5 @@
 {
     "name": "Eye (cornea)",
-    "color": [
-        1,
-        1,
-        1
-    ],
-    "metalness": 0,
-    "roughness": 0,
-    "ior": 1.376,
-    "transmission": 1,
-    "density": 0,
     "category": [
         "Human"
     ],
@@ -23,5 +13,17 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/eye-cornea.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            1,
+            1,
+            1
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.376,
+        "transmission": 1,
+        "density": 0
+    }
 }

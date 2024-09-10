@@ -1,16 +1,5 @@
 {
     "name": "Blood",
-    "color": [
-        0.64448,
-        0.003,
-        0.005
-    ],
-    "metalness": 0,
-    "roughness": 0,
-    "ior": 1.301,
-    "transmission": 1,
-    "density": 1060,
-    "viscosity": 3,
     "category": [
         "Human"
     ],
@@ -31,5 +20,18 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/blood.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.64448,
+            0.003,
+            0.005
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.301,
+        "transmission": 1,
+        "density": 1060,
+        "viscosity": 3
+    }
 }

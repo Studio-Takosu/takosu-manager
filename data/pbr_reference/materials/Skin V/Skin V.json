@@ -1,19 +1,5 @@
 {
     "name": "Skin V",
-    "color": [
-        0.283,
-        0.148,
-        0.079
-    ],
-    "metalness": 0,
-    "roughness": 0.5,
-    "ior": 1.4,
-    "subsurfaceRadius": [
-        0.367,
-        0.137,
-        0.068
-    ],
-    "density": 1020,
     "category": [
         "Human"
     ],
@@ -34,5 +20,21 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/skin-v.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.283,
+            0.148,
+            0.079
+        ],
+        "metalness": 0,
+        "roughness": 0.5,
+        "ior": 1.4,
+        "subsurfaceRadius": [
+            0.367,
+            0.137,
+            0.068
+        ],
+        "density": 1020
+    }
 }

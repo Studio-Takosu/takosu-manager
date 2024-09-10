@@ -1,16 +1,5 @@
 {
     "name": "Ice",
-    "color": [
-        1,
-        1,
-        1
-    ],
-    "metalness": 0,
-    "roughness": 0.5,
-    "ior": 1.3098,
-    "transmission": 1,
-    "transmissionDispersion": 64.87,
-    "density": 917,
     "category": [
         "Crystal"
     ],
@@ -26,5 +15,18 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/ice.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            1,
+            1,
+            1
+        ],
+        "metalness": 0,
+        "roughness": 0.5,
+        "ior": 1.3098,
+        "transmission": 1,
+        "transmissionDispersion": 64.87,
+        "density": 917
+    }
 }

@@ -1,27 +1,5 @@
 {
     "name": "Gold",
-    "color": [
-        0.944,
-        0.776,
-        0.373
-    ],
-    "metalness": 1,
-    "specularColor": [
-        0.998,
-        0.981,
-        0.751
-    ],
-    "roughness": 0,
-    "ior": 1.5,
-    "complexIor": [
-        0.18299,
-        3.4242,
-        0.42108,
-        2.3459,
-        1.3734,
-        1.7704
-    ],
-    "density": 19320,
     "category": [
         "Metal"
     ],
@@ -36,5 +14,29 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/gold.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.944,
+            0.776,
+            0.373
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.998,
+            0.981,
+            0.751
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            0.18299,
+            3.4242,
+            0.42108,
+            2.3459,
+            1.3734,
+            1.7704
+        ],
+        "density": 19320
+    }
 }

@@ -1,20 +1,5 @@
 {
     "name": "Honey",
-    "color": [
-        0.83077,
-        0.397,
-        0.038
-    ],
-    "metalness": 0,
-    "roughness": 0,
-    "ior": 1.504,
-    "transmission": 1,
-    "density": 1400,
-    "densityRange": [
-        1380,
-        1450
-    ],
-    "viscosity": 10000,
     "category": [
         "Liquid"
     ],
@@ -34,5 +19,22 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/honey.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.83077,
+            0.397,
+            0.038
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.504,
+        "transmission": 1,
+        "density": 1400,
+        "densityRange": [
+            1380,
+            1450
+        ],
+        "viscosity": 10000
+    }
 }

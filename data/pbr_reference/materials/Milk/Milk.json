@@ -1,24 +1,5 @@
 {
     "name": "Milk",
-    "color": [
-        0.815,
-        0.813,
-        0.682
-    ],
-    "metalness": 0,
-    "roughness": 0,
-    "ior": 1.348,
-    "subsurfaceRadius": [
-        1.842,
-        1.044,
-        0.35
-    ],
-    "density": 1030,
-    "densityRange": [
-        1026,
-        1035
-    ],
-    "viscosity": 2,
     "category": [
         "Liquid"
     ],
@@ -38,5 +19,26 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/milk.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.815,
+            0.813,
+            0.682
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.348,
+        "subsurfaceRadius": [
+            1.842,
+            1.044,
+            0.35
+        ],
+        "density": 1030,
+        "densityRange": [
+            1026,
+            1035
+        ],
+        "viscosity": 2
+    }
 }

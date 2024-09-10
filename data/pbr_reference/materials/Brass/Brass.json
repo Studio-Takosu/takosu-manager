@@ -1,27 +1,5 @@
 {
     "name": "Brass",
-    "color": [
-        0.887,
-        0.789,
-        0.434
-    ],
-    "metalness": 1,
-    "specularColor": [
-        0.988,
-        0.976,
-        0.843
-    ],
-    "roughness": 0,
-    "ior": 1.5,
-    "complexIor": [
-        0.444,
-        3.695,
-        0.527,
-        2.765,
-        1.094,
-        1.829
-    ],
-    "density": 8600,
     "category": [
         "Metal"
     ],
@@ -36,5 +14,29 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/brass.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.887,
+            0.789,
+            0.434
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.988,
+            0.976,
+            0.843
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            0.444,
+            3.695,
+            0.527,
+            2.765,
+            1.094,
+            1.829
+        ],
+        "density": 8600
+    }
 }

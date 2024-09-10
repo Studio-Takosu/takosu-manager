@@ -1,27 +1,5 @@
 {
     "name": "Titanium",
-    "color": [
-        0.616,
-        0.582,
-        0.544
-    ],
-    "metalness": 1,
-    "specularColor": [
-        0.689,
-        0.683,
-        0.689
-    ],
-    "roughness": 0,
-    "ior": 1.5,
-    "complexIor": [
-        2.7407,
-        3.8143,
-        2.5418,
-        3.4345,
-        2.267,
-        3.0385
-    ],
-    "density": 4540,
     "category": [
         "Metal"
     ],
@@ -35,5 +13,29 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/titanium.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.616,
+            0.582,
+            0.544
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.689,
+            0.683,
+            0.689
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            2.7407,
+            3.8143,
+            2.5418,
+            3.4345,
+            2.267,
+            3.0385
+        ],
+        "density": 4540
+    }
 }

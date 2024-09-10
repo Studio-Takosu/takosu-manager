@@ -1,17 +1,5 @@
 {
     "name": "Soap Bubble",
-    "color": [
-        1,
-        1,
-        1
-    ],
-    "metalness": 0,
-    "roughness": 0,
-    "ior": 1,
-    "transmission": 1,
-    "thinFilmThickness": 500,
-    "thinFilmIor": 1.4,
-    "density": 0,
     "category": [
         "Organic"
     ],
@@ -26,5 +14,19 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/soap-bubble.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            1,
+            1,
+            1
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1,
+        "transmission": 1,
+        "thinFilmThickness": 500,
+        "thinFilmIor": 1.4,
+        "density": 0
+    }
 }

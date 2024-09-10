@@ -1,14 +1,5 @@
 {
     "name": "Car Paint",
-    "color": [
-        0.1,
-        0.1,
-        0.1
-    ],
-    "metalness": 0,
-    "roughness": 0,
-    "ior": 1.5,
-    "density": 0,
     "category": [
         "Manmade"
     ],
@@ -30,5 +21,16 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/car-paint.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.1,
+            0.1,
+            0.1
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.5,
+        "density": 0
+    }
 }

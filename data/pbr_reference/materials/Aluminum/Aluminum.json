@@ -1,27 +1,5 @@
 {
     "name": "Aluminum",
-    "color": [
-        0.912,
-        0.914,
-        0.92
-    ],
-    "metalness": 1,
-    "specularColor": [
-        0.97,
-        0.979,
-        0.988
-    ],
-    "roughness": 0,
-    "ior": 1.5,
-    "complexIor": [
-        1.3456,
-        7.4746,
-        0.96521,
-        6.3995,
-        0.61722,
-        5.3031
-    ],
-    "density": 2700,
     "category": [
         "Metal"
     ],
@@ -39,5 +17,29 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/aluminum.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.912,
+            0.914,
+            0.92
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.97,
+            0.979,
+            0.988
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            1.3456,
+            7.4746,
+            0.96521,
+            6.3995,
+            0.61722,
+            5.3031
+        ],
+        "density": 2700
+    }
 }

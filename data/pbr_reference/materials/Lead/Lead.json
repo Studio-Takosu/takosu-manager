@@ -1,27 +1,5 @@
 {
     "name": "Lead",
-    "color": [
-        0.632,
-        0.626,
-        0.641
-    ],
-    "metalness": 1,
-    "specularColor": [
-        0.803,
-        0.808,
-        0.862
-    ],
-    "roughness": 0,
-    "ior": 1.5,
-    "complexIor": [
-        1.91,
-        3.51,
-        1.83,
-        3.4,
-        1.44,
-        3.18
-    ],
-    "density": 11340,
     "category": [
         "Metal"
     ],
@@ -36,5 +14,29 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/lead.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.632,
+            0.626,
+            0.641
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.803,
+            0.808,
+            0.862
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            1.91,
+            3.51,
+            1.83,
+            3.4,
+            1.44,
+            3.18
+        ],
+        "density": 11340
+    }
 }

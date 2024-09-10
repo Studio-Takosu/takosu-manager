@@ -1,20 +1,5 @@
 {
     "name": "Ketchup",
-    "color": [
-        0.164,
-        0.006,
-        0.002
-    ],
-    "metalness": 0,
-    "roughness": 0.1,
-    "ior": 1.3,
-    "subsurfaceRadius": [
-        0.476,
-        0.058,
-        0.039
-    ],
-    "density": 1150,
-    "viscosity": 50000,
     "category": [
         "Organic"
     ],
@@ -33,5 +18,22 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/ketchup.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.164,
+            0.006,
+            0.002
+        ],
+        "metalness": 0,
+        "roughness": 0.1,
+        "ior": 1.3,
+        "subsurfaceRadius": [
+            0.476,
+            0.058,
+            0.039
+        ],
+        "density": 1150,
+        "viscosity": 50000
+    }
 }

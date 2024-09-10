@@ -1,14 +1,5 @@
 {
     "name": "Office Paper",
-    "color": [
-        0.794,
-        0.834,
-        0.884
-    ],
-    "metalness": 0,
-    "roughness": 0.5,
-    "ior": 1.5,
-    "density": 800,
     "category": [
         "Manmade"
     ],
@@ -23,5 +14,16 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/office-paper.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.794,
+            0.834,
+            0.884
+        ],
+        "metalness": 0,
+        "roughness": 0.5,
+        "ior": 1.5,
+        "density": 800
+    }
 }

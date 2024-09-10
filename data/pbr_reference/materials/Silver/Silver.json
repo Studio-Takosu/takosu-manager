@@ -1,27 +1,5 @@
 {
     "name": "Silver",
-    "color": [
-        0.962,
-        0.949,
-        0.922
-    ],
-    "metalness": 1,
-    "specularColor": [
-        0.999,
-        0.998,
-        0.998
-    ],
-    "roughness": 0,
-    "ior": 1.5,
-    "complexIor": [
-        0.15943,
-        3.9291,
-        0.14512,
-        3.19,
-        0.13547,
-        2.3808
-    ],
-    "density": 10500,
     "category": [
         "Metal"
     ],
@@ -37,5 +15,29 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/silver.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.962,
+            0.949,
+            0.922
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.999,
+            0.998,
+            0.998
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            0.15943,
+            3.9291,
+            0.14512,
+            3.19,
+            0.13547,
+            2.3808
+        ],
+        "density": 10500
+    }
 }

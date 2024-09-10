@@ -1,22 +1,5 @@
 {
     "name": "Concrete",
-    "color": [
-        0.51,
-        0.51,
-        0.51
-    ],
-    "metalness": 0,
-    "roughness": 0.5,
-    "ior": 1.5,
-    "density": 2400,
-    "acousticAbsorption": [
-        0.01,
-        0.01,
-        0.02,
-        0.02,
-        0.02,
-        0.02
-    ],
     "category": [
         "Manmade"
     ],
@@ -33,5 +16,24 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/concrete.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.51,
+            0.51,
+            0.51
+        ],
+        "metalness": 0,
+        "roughness": 0.5,
+        "ior": 1.5,
+        "density": 2400,
+        "acousticAbsorption": [
+            0.01,
+            0.01,
+            0.02,
+            0.02,
+            0.02,
+            0.02
+        ]
+    }
 }

@@ -1,27 +1,5 @@
 {
     "name": "Iron",
-    "color": [
-        0.531,
-        0.512,
-        0.496
-    ],
-    "metalness": 1,
-    "specularColor": [
-        0.571,
-        0.54,
-        0.586
-    ],
-    "roughness": 0,
-    "ior": 1.5,
-    "complexIor": [
-        2.9114,
-        3.0893,
-        2.9497,
-        2.9318,
-        2.5845,
-        2.767
-    ],
-    "density": 7870,
     "category": [
         "Metal"
     ],
@@ -36,5 +14,29 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/iron.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.531,
+            0.512,
+            0.496
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.571,
+            0.54,
+            0.586
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            2.9114,
+            3.0893,
+            2.9497,
+            2.9318,
+            2.5845,
+            2.767
+        ],
+        "density": 7870
+    }
 }

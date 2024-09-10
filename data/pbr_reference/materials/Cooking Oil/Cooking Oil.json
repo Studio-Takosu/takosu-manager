@@ -1,16 +1,5 @@
 {
     "name": "Cooking Oil",
-    "color": [
-        0.737911,
-        0.687,
-        0.091
-    ],
-    "metalness": 0,
-    "roughness": 0,
-    "ior": 1.47,
-    "transmission": 1,
-    "density": 920,
-    "viscosity": 60,
     "category": [
         "Liquid"
     ],
@@ -29,5 +18,18 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/cooking-oil.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.737911,
+            0.687,
+            0.091
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.47,
+        "transmission": 1,
+        "density": 920,
+        "viscosity": 60
+    }
 }

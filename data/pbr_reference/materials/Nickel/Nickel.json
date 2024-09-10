@@ -1,27 +1,5 @@
 {
     "name": "Nickel",
-    "color": [
-        0.649,
-        0.61,
-        0.541
-    ],
-    "metalness": 1,
-    "specularColor": [
-        0.797,
-        0.801,
-        0.789
-    ],
-    "roughness": 0,
-    "ior": 1.5,
-    "complexIor": [
-        2.0592,
-        3.7574,
-        1.8179,
-        3.2741,
-        1.621,
-        2.6933
-    ],
-    "density": 8900,
     "category": [
         "Metal"
     ],
@@ -36,5 +14,29 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/nickel.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.649,
+            0.61,
+            0.541
+        ],
+        "metalness": 1,
+        "specularColor": [
+            0.797,
+            0.801,
+            0.789
+        ],
+        "roughness": 0,
+        "ior": 1.5,
+        "complexIor": [
+            2.0592,
+            3.7574,
+            1.8179,
+            3.2741,
+            1.621,
+            2.6933
+        ],
+        "density": 8900
+    }
 }

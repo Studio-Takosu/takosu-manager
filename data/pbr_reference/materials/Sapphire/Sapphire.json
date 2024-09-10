@@ -1,16 +1,5 @@
 {
     "name": "Sapphire",
-    "color": [
-        0.67,
-        0.764,
-        0.855
-    ],
-    "metalness": 0,
-    "roughness": 0,
-    "ior": 1.7682,
-    "transmission": 1,
-    "transmissionDispersion": 72.2,
-    "density": 3980,
     "category": [
         "Crystal"
     ],
@@ -27,5 +16,18 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/sapphire.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.67,
+            0.764,
+            0.855
+        ],
+        "metalness": 0,
+        "roughness": 0,
+        "ior": 1.7682,
+        "transmission": 1,
+        "transmissionDispersion": 72.2,
+        "density": 3980
+    }
 }

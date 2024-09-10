@@ -1,21 +1,5 @@
 {
     "name": "Pearl",
-    "color": [
-        0.8,
-        0.75,
-        0.7
-    ],
-    "metalness": 0,
-    "roughness": 0.35,
-    "ior": 1.68,
-    "subsurfaceRadius": [
-        0.3,
-        0.5,
-        0.3
-    ],
-    "thinFilmThickness": 420,
-    "thinFilmIor": 2,
-    "density": 2700,
     "category": [
         "Organic"
     ],
@@ -34,5 +18,23 @@
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/pearl.jpeg"
-    ]
+    ],
+    "properties": {
+        "color": [
+            0.8,
+            0.75,
+            0.7
+        ],
+        "metalness": 0,
+        "roughness": 0.35,
+        "ior": 1.68,
+        "subsurfaceRadius": [
+            0.3,
+            0.5,
+            0.3
+        ],
+        "thinFilmThickness": 420,
+        "thinFilmIor": 2,
+        "density": 2700
+    }
 }
