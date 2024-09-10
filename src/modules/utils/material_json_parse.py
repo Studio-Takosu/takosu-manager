@@ -2,6 +2,8 @@ import os
 import json
 import requests
 
+downloadImg = False
+
 # Load the JSON data
 with open('data\pbr_reference\materials.json', 'r') as f:
     materials_data = json.load(f)
@@ -22,13 +24,34 @@ for material in materials_data:
     if not os.path.exists(material_dir):
         os.makedirs(material_dir)
     
-    # Save material data to a file
+    # Create the file path for the material data
     material_file_path = os.path.join(material_dir, f'{material_name}.json')
+    
+    # Restructure the material data to include the following keys in a 'properties' dictionary:
+    # - 'color', 'metalness', 'specularColor', 'roughness', 'ior', 'subsurfaceRadius', 'transmission',
+    # - 'transmissionDispersion', 'complexIor', 'thinFilmThickness', 'thinFilmIor', 'density', 'densityRange',
+    # - 'viscosity', 'acousticAbsorption'
+    properties = {}
+    for key in ['color', 'metalness', 'specularColor', 'roughness', 'ior', 'subsurfaceRadius', 'transmission',
+                'transmissionDispersion', 'complexIor', 'thinFilmThickness', 'thinFilmIor', 'density', 'densityRange',
+                'viscosity', 'acousticAbsorption']:
+        if key in material:
+            # add the key to the properties dictionary
+            properties[key] = material[key]
+            # remove the key from the material dictionary
+            material.pop(key)
+    
+    # Add the properties dictionary to the material data
+    material['properties'] = properties
+    
+    
+    # Save material data to a file
     with open(material_file_path, 'w') as material_file:
         json.dump(material, material_file, indent=4)
     
+    
     # Download the reference image if available
-    if 'reference' in material and material['reference']:
+    if 'reference' in material and material['reference'] and downloadImg:
         image_url = material['reference'][0]
         image_name = os.path.join(material_dir, f'{material_name}.jpeg')
         
