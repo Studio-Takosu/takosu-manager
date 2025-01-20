@@ -54,29 +54,30 @@ class PBRView(QWidget):
       self.ui.PbrStackedWidget.setCurrentIndex(1)
       # self.ui.matLibraryListWidget.clear()
       
+      
       # ----------------------------------------------------------------------------
       # Set up the Grid View -------------------------------------------------------
       self.ui.gridWidget = ScrollableGridView()
       self.ui.materialDashFrame.layout().addWidget(self.ui.gridWidget)
       
       
-      # Create a QGraphicsDropShadowEffect
+      # ----------------------------------------------------------------------------
+      # Create a drop shadow for materialPropFrame ---------------------------------
       shadow = QGraphicsDropShadowEffect( self.ui.materialPropFrame )
       shadow.setBlurRadius(45)
       shadow.setColor(QColor(0, 0, 0, 50))
       shadow.setOffset(15, 5)
-      
-      
-      # # Apply the shadow to the materialPropFrame
       self.ui.materialPropFrame.setGraphicsEffect(shadow)
       self.ui.materialPropFrame.raise_()
       
+      # Create a drop shadow for propertiesTitleFrame
       shadow = QGraphicsDropShadowEffect( self.ui.materialPropFrame )
       shadow.setBlurRadius(45)
       shadow.setColor(QColor(0, 0, 0, 50))
       shadow.setOffset(0, 5)
       self.ui.propertiesTitleFrame.setGraphicsEffect(shadow)
       self.ui.propertiesTitleFrame.raise_()
+      
     
     def display_material(self, material_data):
         """Update the UI with material data."""

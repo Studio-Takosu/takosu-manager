@@ -2,18 +2,22 @@
 
 import os
 import sys
+srcDir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(srcDir)
 from typing import Any
 from interfaces import ControllerInterface
 from PySide6.QtCore import QThreadPool, QTimer, Qt, QRectF, QPropertyAnimation, QEasingCurve, QObject, QPoint
-from PySide6.QtWidgets import QListWidgetItem
+from PySide6.QtWidgets import QApplication, QListWidgetItem
 from PySide6.QtGui import QIcon, QPixmap, QPainter, QPainterPath
+from widgets import MaterialPropertyWidget
 
 class PBRController(ControllerInterface):
     def __init__(self, model, view):
         self.model = model
         self.view = view
         self.splash_view = self.view.ui.splash_screen
+        self.selected_material = None
         
         self.connect_signals()
 
@@ -32,8 +36,8 @@ class PBRController(ControllerInterface):
         ui.cancelSearchBtn.clicked.connect(self.on_cancel_search)
         ui.propsCloseButton.clicked.connect(self.toggle_properties_frame)
         ui.gridWidget.grid_widget.selected.connect(self.on_material_selected)
+        ui.matLibraryListWidget.itemClicked.connect(self.on_material_property_selected)
         
-        # ui.matLibraryListWidget.itemClicked.connect(self.on_material_selected)
         # ui.searchBtn.installEventFilter(self)
         
     def on_button_clicked(self):
@@ -101,7 +105,6 @@ class PBRController(ControllerInterface):
         self.splash_view.set_loading_status("")
         self.model.percent_loaded = 100
         print("Material data loaded successfully.")
-        # self.switch_to_main_page()
         QTimer.singleShot(500, self.switch_to_main_page)
     
     def switch_to_main_page(self):
@@ -115,9 +118,124 @@ class PBRController(ControllerInterface):
     
     def on_material_selected(self, item):
         """ Opens the Properties Tab when a material is selected in the grid view. """
-        # print("Material selected:", item)
+        materialName = item
+        self.selected_material = materialName
+        self.view.ui.matLibraryListWidget.clear()
+        
+        # Get the material data and add the properies to the list widget
+        mat_data = self.model.get_material_data(materialName)
+        
+        # Update labels for selected material
+        self.view.ui.materialNameLabel.setText(materialName)
+        self.view.ui.categoryLabel.setText( mat_data['category'][0] )
+        
+        for property_name, property_value in mat_data['properties'].items():
+            if property_name == "complexIor": continue 
+            if property_name == "densityRange": continue
+            if property_name == 'acousticAbsorption': continue
+            if property_name == 'density' and property_value == 0: continue
+            
+            list_widget_item = QListWidgetItem(property_name)
+            property_name = self.format_property_name(property_name)
+            print("Property:", property_name, "Value:", property_value)
+            
+            # Create a custom widget for the property
+            property_widget = MaterialPropertyWidget(property_name, property_value)
+            
+            # Create a QListWidgetItem to hold the custom widget
+            # Set the item size to match the custom widget
+            list_widget_item.setSizeHint(property_widget.size())
+            
+            # Add the QListWidgetItem to the QListWidget
+            self.view.ui.matLibraryListWidget.addItem(list_widget_item)
+            
+            # Set the custom widget to be displayed in the QListWidgetItem
+            self.view.ui.matLibraryListWidget.setItemWidget(list_widget_item, property_widget)
+        
         self.toggle_properties_frame(True)
         
+    
+    def on_material_property_selected(self, item):
+        """Copy the selected property value/s to the clipboard."""
+        listWidget = item.listWidget()
+        widget = listWidget.itemWidget(item)
+        property_name = item.text()
+        property_value = ''
+        
+        # if property_value_label exists, set the property value
+        if widget and hasattr(widget, 'property_value_label'):
+            property_value = widget.property_value_label.text()
+        # lets get the property value the material_data dictionary
+        else:
+            material_data = self.model.get_material_data(self.selected_material)
+            value = material_data['properties'][property_name]
+            # if it's a color property
+            if len(value) == 3:
+                # convert color to hex, pass it as a tuple
+                rgb_tuple = (value[0], value[1], value[2])
+                property_value = self.linear_rgb_to_hex(rgb_tuple)
+                # property_value = rgb_tuple
+                # pass
+        
+        print(f"Property: {property_name} - Value: {property_value} copied to clipboard.")
+        # Copy the property value to the clipboard
+        clipboard = QApplication.clipboard()
+        clipboard.setText(property_value)
+        self.view.ui.matLibraryListWidget.clearSelection()
+        
+        
+    def format_property_name(self, property_name):
+        # Change the property name to title case and add a space if necessary
+        # specularColor -> Specular Color, subsurfaceRadius -> Subsurface Radius
+        # transmissionDispersion -> Transmission Dispersion, complexIor -> Complex IOR
+        # thinFilmThickness -> Thin Film Thickness, densityRange -> Density Range
+        # acousticAbsorption -> Acoustic Absorption
+        if property_name == "specularColor":
+            property_name = "Specular Color"
+        elif property_name == "subsurfaceRadius":
+            property_name = "Subsurface Radius"
+        elif property_name == "transmissionDispersion":
+            property_name = "Transmission Dispersion"
+        elif property_name == "complexIor":
+            property_name = "Complex IOR"
+        elif property_name == "ior":
+            property_name = "IOR"
+        elif property_name == "thinFilmThickness":
+            property_name = "Thin Film Thickness"
+        elif property_name == "densityRange":
+            property_name = "Density Range"
+        elif property_name == "acousticAbsorption":
+            property_name = "Acoustic Absorption"
+        else:
+            property_name = property_name.title()
+        
+        return property_name
+    
+    def linear_rgb_to_hex(self, rgb_linear: tuple ) -> str:
+        """
+        Convert a linear RGB triplet to a hexadecimal color code.
+        
+        Args:
+            rgb_linear (tuple): A tuple of linear RGB values (R, G, B) in decimal format (0.0 to 1.0).
+        
+        Returns:
+            str: A string representing the hexadecimal color code.
+        """
+        # Step 1: Clamp the RGB values between 0 and 1
+        r_clamped = max(0, min(1, rgb_linear[0]))
+        g_clamped = max(0, min(1, rgb_linear[1]))
+        b_clamped = max(0, min(1, rgb_linear[2]))
+
+        # Step 2: Convert linear RGB values to 8-bit integers (0-255)
+        r_int = int(round(r_clamped * 255))
+        g_int = int(round(g_clamped * 255))
+        b_int = int(round(b_clamped * 255))
+
+        # Step 3: Convert to hex and format with leading zeros if necessary
+        hex_value = "#{:02X}{:02X}{:02X}".format(r_int, g_int, b_int)
+
+        return hex_value
+    
     def create_rounded_pixmap(self, pixmap: QPixmap, radius: int = 10) -> QPixmap:
         """Create a rounded pixmap from a square pixmap."""
         # Create an empty pixmap with the same size as the original

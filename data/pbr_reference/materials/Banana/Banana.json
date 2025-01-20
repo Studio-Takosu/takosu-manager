@@ -8,7 +8,8 @@
         "https://spectraldb.com/measurements/00379/"
     ],
     "tags": [
-        ""
+        "fruit",
+        "organic"
     ],
     "reference": [
         "https://raw.githubusercontent.com/AntonPalmqvist/physically-based-api/main/images/renders/cycles/600/banana.jpeg"

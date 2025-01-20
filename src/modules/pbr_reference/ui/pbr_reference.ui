@@ -66,27 +66,79 @@ Material List Frame */
 	border-right: 4px solid #BD93F9;
 }
 
+
 #propertiesTitleFrame {
 	background-color: rgb(98, 114, 164);
 	border-bottom: 0px solid #282A36;
 	margin-right: 4px;
-	padding-left: 10px;
+	padding-left: 15px;
 }
-#propertiesTitleFrame .QPushButton {
+#propertiesTitleFrame #propertiesLabel {
+	font: 800 16pt &quot;Exo Medium&quot;;
+}
+
+#materialPropBtnFrame {
+	margin-right: 4px;
+	background-color: rgb(47, 47, 47);
+}
+#materialPropBtnFrame .QPushButton {
 	border: none;
 	border-radius: 12px;
 	background-color: rgb(75, 75, 75);
 	background-position: center;
     background-repeat: no-repeat;
 }
-#propertiesTitleFrame .QPushButton:hover { 
+#materialPropBtnFrame .QPushButton:hover { 
 	background-color: rgb(90, 90, 90);
 	border-style: solid; 
 	color: rgb(170, 0, 0);
 }
-#propertiesTitleFrame .QPushButton:pressed { 
+#materialPropBtnFrame .QPushButton:pressed { 
 	background-color: #BD93F9; 
 	border-style: solid; 
+}
+
+
+#materialNameFrame {
+	background-color: rgb(47, 47, 47);
+	margin-right: 4px;
+}
+#materialNameFrame #materialNameLabel {
+	font: 800 16pt &quot;Exo ExtraBold&quot;;
+	color: rgb(255, 255, 255);
+}
+#materialNameFrame #categoryLabel {
+	font: 500 8pt &quot;Exo Medium&quot;;
+	color: rgb(175, 175, 175);
+}
+
+
+#tagsFrame {
+	background-color: rgb(36, 36, 36);
+	margin-right: 4px;
+}
+#tagsFrame .QFrame {
+}
+#tagsFrame .QPushButton {
+	font: 800 10pt &quot;Exo Medium&quot;;
+	color: rgb(255, 255, 255);
+	background-color: rgb(58, 58, 58);
+	border: none;
+	border-radius: 13px;
+	padding: 5px, 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#tagsFrame .QPushButton:hover {
+	background-color: rgb(69, 69, 69);
+}
+#tagsFrame .QPushButton:pressed {
+	font: 800 10pt &quot;Exo Medium&quot;;
+	background-color: rgb(69, 69, 69);
+	border-radius: 13px;
+	padding: 3px, 3px;
+	padding-left: 5px;
+	padding-right: 5px;
 }</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_11">
@@ -362,31 +414,28 @@ border: none;</string>
               <number>0</number>
              </property>
              <item>
-              <widget class="QFrame" name="propertiesTitleFrame">
+              <widget class="QFrame" name="materialPropBtnFrame">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>60</height>
+                 <height>0</height>
                 </size>
                </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>60</height>
-                </size>
+               <property name="layoutDirection">
+                <enum>Qt::LayoutDirection::RightToLeft</enum>
                </property>
-               <layout class="QHBoxLayout" name="horizontalLayout">
+               <layout class="QVBoxLayout" name="verticalLayout_15">
                 <property name="spacing">
-                 <number>9</number>
+                 <number>0</number>
                 </property>
                 <property name="leftMargin">
-                 <number>0</number>
+                 <number>15</number>
                 </property>
                 <property name="topMargin">
-                 <number>0</number>
+                 <number>8</number>
                 </property>
                 <property name="rightMargin">
-                 <number>0</number>
+                 <number>15</number>
                 </property>
                 <property name="bottomMargin">
                  <number>0</number>
@@ -414,6 +463,181 @@ image: url(:/icons/resources/icons/icon_close_24.svg);</string>
                   </property>
                  </widget>
                 </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="materialNameFrame">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>60</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>60</height>
+                </size>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,1">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>15</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>15</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item alignment="Qt::AlignmentFlag::AlignTop">
+                 <widget class="QLabel" name="materialNameLabel">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>MATERIAL NAME</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignmentFlag::AlignTop">
+                 <widget class="QLabel" name="categoryLabel">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>CATEGORY</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="tagsFrame">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>80</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <layout class="QGridLayout" name="gridLayout" rowstretch="0" columnstretch="0,0">
+                <property name="leftMargin">
+                 <number>15</number>
+                </property>
+                <property name="topMargin">
+                 <number>10</number>
+                </property>
+                <property name="rightMargin">
+                 <number>15</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>10</number>
+                </property>
+                <property name="spacing">
+                 <number>6</number>
+                </property>
+                <item row="0" column="1" alignment="Qt::AlignmentFlag::AlignLeft">
+                 <widget class="QFrame" name="tagFrame_1">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_3">
+                   <item>
+                    <widget class="QPushButton" name="Mirror">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Mirror</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="Aluminium">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>Aluminium</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="propertiesTitleFrame">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>60</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>60</height>
+                </size>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout">
+                <property name="spacing">
+                 <number>9</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>12</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QLabel" name="propertiesLabel">
                   <property name="sizePolicy">
@@ -426,7 +650,7 @@ image: url(:/icons/resources/icons/icon_close_24.svg);</string>
                    <string notr="true"/>
                   </property>
                   <property name="text">
-                   <string>Properties</string>
+                   <string>PROPERTIES</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -438,9 +662,21 @@ image: url(:/icons/resources/icons/icon_close_24.svg);</string>
              </item>
              <item>
               <widget class="QListWidget" name="matLibraryListWidget">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
                <property name="maximumSize">
                 <size>
-                 <width>16777215</width>
+                 <width>320</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -453,8 +689,17 @@ image: url(:/icons/resources/icons/icon_close_24.svg);</string>
                <property name="frameShadow">
                 <enum>QFrame::Shadow::Raised</enum>
                </property>
+               <property name="sizeAdjustPolicy">
+                <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
+               </property>
                <property name="autoScroll">
                 <bool>false</bool>
+               </property>
+               <property name="showDropIndicator" stdset="0">
+                <bool>false</bool>
+               </property>
+               <property name="dragDropMode">
+                <enum>QAbstractItemView::DragDropMode::NoDragDrop</enum>
                </property>
                <property name="defaultDropAction">
                 <enum>Qt::DropAction::IgnoreAction</enum>
@@ -462,8 +707,20 @@ image: url(:/icons/resources/icons/icon_close_24.svg);</string>
                <property name="alternatingRowColors">
                 <bool>false</bool>
                </property>
+               <property name="verticalScrollMode">
+                <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
+               </property>
+               <property name="horizontalScrollMode">
+                <enum>QAbstractItemView::ScrollMode::ScrollPerPixel</enum>
+               </property>
+               <property name="movement">
+                <enum>QListView::Movement::Free</enum>
+               </property>
                <property name="resizeMode">
                 <enum>QListView::ResizeMode::Fixed</enum>
+               </property>
+               <property name="spacing">
+                <number>6</number>
                </property>
                <property name="uniformItemSizes">
                 <bool>true</bool>

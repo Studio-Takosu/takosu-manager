@@ -5,7 +5,7 @@ from typing import Any
 # ----------------------------------------------------------------
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QFrame
 from PySide6.QtGui import QIcon
-from PySide6.QtCore import QPropertyAnimation, QEasingCurve, QPoint, QObject, QSize, QTimer, Qt
+from PySide6.QtCore import QPropertyAnimation, QEasingCurve, QPoint, QObject, QSize, QTimer, QThreadPool
 # ----------------------------------------------------------------
 from app import *
 from modules import *
@@ -342,13 +342,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             
             if currentSize.width() == initialSize.width():
                 # Open the settingsRightBox
-                self.settingsRightBox.raise_()  # Raise settingsRightBox to be on top
+                self.settingsRightBox.raise_()
                 updatedSize = expandedSize
                 updatedPos = openPos
                 animDuration = self.ANIMATION_DURATION
             else:
                 # Close the settingsRightBox
-                # self.settingsRightBox.lower()  # Lower settingsRightBox to be behind pagesContainer
                 updatedSize = initialSize
                 updatedPos = closedPos
                 animDuration = 300

@@ -15,10 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QLineEdit, QListView, QListWidget, QListWidgetItem,
-    QPushButton, QSizePolicy, QStackedWidget, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QFrame, QGridLayout,
+    QHBoxLayout, QLabel, QLineEdit, QListView,
+    QListWidget, QListWidgetItem, QPushButton, QSizePolicy,
+    QStackedWidget, QVBoxLayout, QWidget)
 
 class Ui_PbrReferenceWidget(object):
     def setupUi(self, PbrReferenceWidget):
@@ -73,27 +73,80 @@ class Ui_PbrReferenceWidget(object):
 "	border-right: 4px solid #BD93F9;\n"
 "}\n"
 "\n"
+"\n"
 "#propertiesTitleFrame {\n"
 "	background-color: rgb(98, 114, 164);\n"
 "	border-bottom: 0px solid #282A36;\n"
 "	margin-right: 4px;\n"
-"	padding-left: 10px;\n"
+"	padding-left: 15px;\n"
 "}\n"
-"#propertiesTitleFrame .QPushButton {\n"
+"#propertiesTitleFrame #propertiesLabel {\n"
+"	font: 800 16pt \"Exo Medium\";\n"
+"}\n"
+"\n"
+"#materialPropBtnFrame {\n"
+"	margin-right: 4px;\n"
+"	background-color: rgb(47, 47, 47);\n"
+"}\n"
+"#materialPropBtnFrame .QPushButton {\n"
 "	border: none;\n"
 "	border-radius: 12px;\n"
 "	background-color: rgb(75, 75, 75);\n"
 "	background-position: center;\n"
 "    background-repeat: no-repeat;\n"
 "}\n"
-"#propertiesTitleFrame .QPushButton:hover { \n"
+"#materialPropBtnFrame .QPushButton:hover { \n"
 "	background-color: rgb(90, 90, 90);\n"
 "	border-style: solid; \n"
 "	color: rgb(170, 0, 0);\n"
 "}\n"
-"#propertiesTitleFrame .QPushButton:pressed { \n"
+"#materialPropBtnFrame .QPushButton:pressed { \n"
 "	background-color: #BD93F9; \n"
 "	border-style: solid; \n"
+"}\n"
+"\n"
+"\n"
+"#materialNameFrame {\n"
+"	background-c"
+                        "olor: rgb(47, 47, 47);\n"
+"	margin-right: 4px;\n"
+"}\n"
+"#materialNameFrame #materialNameLabel {\n"
+"	font: 800 16pt \"Exo ExtraBold\";\n"
+"	color: rgb(255, 255, 255);\n"
+"}\n"
+"#materialNameFrame #categoryLabel {\n"
+"	font: 500 8pt \"Exo Medium\";\n"
+"	color: rgb(175, 175, 175);\n"
+"}\n"
+"\n"
+"\n"
+"#tagsFrame {\n"
+"	background-color: rgb(36, 36, 36);\n"
+"	margin-right: 4px;\n"
+"}\n"
+"#tagsFrame .QFrame {\n"
+"}\n"
+"#tagsFrame .QPushButton {\n"
+"	font: 800 10pt \"Exo Medium\";\n"
+"	color: rgb(255, 255, 255);\n"
+"	background-color: rgb(58, 58, 58);\n"
+"	border: none;\n"
+"	border-radius: 13px;\n"
+"	padding: 5px, 5px;\n"
+"	padding-left: 10px;\n"
+"	padding-right: 10px;\n"
+"}\n"
+"#tagsFrame .QPushButton:hover {\n"
+"	background-color: rgb(69, 69, 69);\n"
+"}\n"
+"#tagsFrame .QPushButton:pressed {\n"
+"	font: 800 10pt \"Exo Medium\";\n"
+"	background-color: rgb(69, 69, 69);\n"
+"	border-radius: 13px;\n"
+"	padding: 3px, 3px;\n"
+"	padding-left: 5px;\n"
+"	padding-right: 5px;\n"
 "}")
         self.verticalLayout_11 = QVBoxLayout(PbrReferenceWidget)
         self.verticalLayout_11.setSpacing(0)
@@ -201,6 +254,96 @@ class Ui_PbrReferenceWidget(object):
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.materialPropBtnFrame = QFrame(self.materialPropFrame)
+        self.materialPropBtnFrame.setObjectName(u"materialPropBtnFrame")
+        self.materialPropBtnFrame.setMinimumSize(QSize(0, 0))
+        self.materialPropBtnFrame.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
+        self.verticalLayout_15 = QVBoxLayout(self.materialPropBtnFrame)
+        self.verticalLayout_15.setSpacing(0)
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.verticalLayout_15.setContentsMargins(15, 8, 15, 0)
+        self.propsCloseButton = QPushButton(self.materialPropBtnFrame)
+        self.propsCloseButton.setObjectName(u"propsCloseButton")
+        self.propsCloseButton.setMinimumSize(QSize(24, 24))
+        self.propsCloseButton.setMaximumSize(QSize(24, 24))
+        self.propsCloseButton.setStyleSheet(u"/* background-image : url(:/icons/resources/icons/icon_close_24.svg); */\n"
+"image: url(:/icons/resources/icons/icon_close_24.svg);")
+
+        self.verticalLayout_15.addWidget(self.propsCloseButton)
+
+
+        self.verticalLayout_2.addWidget(self.materialPropBtnFrame)
+
+        self.materialNameFrame = QFrame(self.materialPropFrame)
+        self.materialNameFrame.setObjectName(u"materialNameFrame")
+        self.materialNameFrame.setMinimumSize(QSize(0, 60))
+        self.materialNameFrame.setMaximumSize(QSize(16777215, 60))
+        self.verticalLayout_4 = QVBoxLayout(self.materialNameFrame)
+        self.verticalLayout_4.setSpacing(0)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.verticalLayout_4.setContentsMargins(15, 0, 15, 0)
+        self.materialNameLabel = QLabel(self.materialNameFrame)
+        self.materialNameLabel.setObjectName(u"materialNameLabel")
+        sizePolicy.setHeightForWidth(self.materialNameLabel.sizePolicy().hasHeightForWidth())
+        self.materialNameLabel.setSizePolicy(sizePolicy)
+        self.materialNameLabel.setAlignment(Qt.AlignmentFlag.AlignBottom|Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft)
+
+        self.verticalLayout_4.addWidget(self.materialNameLabel, 0, Qt.AlignmentFlag.AlignTop)
+
+        self.categoryLabel = QLabel(self.materialNameFrame)
+        self.categoryLabel.setObjectName(u"categoryLabel")
+        sizePolicy.setHeightForWidth(self.categoryLabel.sizePolicy().hasHeightForWidth())
+        self.categoryLabel.setSizePolicy(sizePolicy)
+        self.categoryLabel.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
+
+        self.verticalLayout_4.addWidget(self.categoryLabel, 0, Qt.AlignmentFlag.AlignTop)
+
+        self.verticalLayout_4.setStretch(1, 1)
+
+        self.verticalLayout_2.addWidget(self.materialNameFrame)
+
+        self.tagsFrame = QFrame(self.materialPropFrame)
+        self.tagsFrame.setObjectName(u"tagsFrame")
+        sizePolicy.setHeightForWidth(self.tagsFrame.sizePolicy().hasHeightForWidth())
+        self.tagsFrame.setSizePolicy(sizePolicy)
+        self.tagsFrame.setMinimumSize(QSize(0, 80))
+        self.tagsFrame.setMaximumSize(QSize(16777215, 16777215))
+        self.gridLayout = QGridLayout(self.tagsFrame)
+        self.gridLayout.setSpacing(6)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.gridLayout.setContentsMargins(15, 10, 15, 10)
+        self.tagFrame_1 = QFrame(self.tagsFrame)
+        self.tagFrame_1.setObjectName(u"tagFrame_1")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Maximum)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.tagFrame_1.sizePolicy().hasHeightForWidth())
+        self.tagFrame_1.setSizePolicy(sizePolicy2)
+        self.horizontalLayout_3 = QHBoxLayout(self.tagFrame_1)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.Mirror = QPushButton(self.tagFrame_1)
+        self.Mirror.setObjectName(u"Mirror")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Fixed)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.Mirror.sizePolicy().hasHeightForWidth())
+        self.Mirror.setSizePolicy(sizePolicy3)
+
+        self.horizontalLayout_3.addWidget(self.Mirror)
+
+        self.Aluminium = QPushButton(self.tagFrame_1)
+        self.Aluminium.setObjectName(u"Aluminium")
+        sizePolicy3.setHeightForWidth(self.Aluminium.sizePolicy().hasHeightForWidth())
+        self.Aluminium.setSizePolicy(sizePolicy3)
+
+        self.horizontalLayout_3.addWidget(self.Aluminium)
+
+
+        self.gridLayout.addWidget(self.tagFrame_1, 0, 1, 1, 1, Qt.AlignmentFlag.AlignLeft)
+
+
+        self.verticalLayout_2.addWidget(self.tagsFrame)
+
         self.propertiesTitleFrame = QFrame(self.materialPropFrame)
         self.propertiesTitleFrame.setObjectName(u"propertiesTitleFrame")
         self.propertiesTitleFrame.setMinimumSize(QSize(0, 60))
@@ -208,16 +351,7 @@ class Ui_PbrReferenceWidget(object):
         self.horizontalLayout = QHBoxLayout(self.propertiesTitleFrame)
         self.horizontalLayout.setSpacing(9)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.propsCloseButton = QPushButton(self.propertiesTitleFrame)
-        self.propsCloseButton.setObjectName(u"propsCloseButton")
-        self.propsCloseButton.setMinimumSize(QSize(24, 24))
-        self.propsCloseButton.setMaximumSize(QSize(24, 24))
-        self.propsCloseButton.setStyleSheet(u"/* background-image : url(:/icons/resources/icons/icon_close_24.svg); */\n"
-"image: url(:/icons/resources/icons/icon_close_24.svg);")
-
-        self.horizontalLayout.addWidget(self.propsCloseButton)
-
+        self.horizontalLayout.setContentsMargins(0, 0, 12, 0)
         self.propertiesLabel = QLabel(self.propertiesTitleFrame)
         self.propertiesLabel.setObjectName(u"propertiesLabel")
         sizePolicy.setHeightForWidth(self.propertiesLabel.sizePolicy().hasHeightForWidth())
@@ -232,14 +366,19 @@ class Ui_PbrReferenceWidget(object):
 
         self.matLibraryListWidget = QListWidget(self.materialPropFrame)
         self.matLibraryListWidget.setObjectName(u"matLibraryListWidget")
-        self.matLibraryListWidget.setMaximumSize(QSize(16777215, 16777215))
+        self.matLibraryListWidget.setMinimumSize(QSize(0, 0))
+        self.matLibraryListWidget.setMaximumSize(QSize(320, 16777215))
         self.matLibraryListWidget.setStyleSheet(u"")
         self.matLibraryListWidget.setFrameShape(QFrame.Shape.NoFrame)
         self.matLibraryListWidget.setFrameShadow(QFrame.Shadow.Raised)
         self.matLibraryListWidget.setAutoScroll(False)
         self.matLibraryListWidget.setDefaultDropAction(Qt.DropAction.IgnoreAction)
-        self.matLibraryListWidget.setAlternatingRowColors(False)
+        self.matLibraryListWidget.setAlternatingRowColors(True)
+        self.matLibraryListWidget.setVerticalScrollMode(QAbstractItemView.ScrollMode.ScrollPerPixel)
+        self.matLibraryListWidget.setHorizontalScrollMode(QAbstractItemView.ScrollMode.ScrollPerPixel)
+        self.matLibraryListWidget.setMovement(QListView.Movement.Free)
         self.matLibraryListWidget.setResizeMode(QListView.ResizeMode.Fixed)
+        self.matLibraryListWidget.setSpacing(6)
         self.matLibraryListWidget.setUniformItemSizes(True)
         self.matLibraryListWidget.setSelectionRectVisible(True)
         self.matLibraryListWidget.setSortingEnabled(True)
@@ -251,11 +390,11 @@ class Ui_PbrReferenceWidget(object):
 
         self.materialDashFrame = QFrame(self.materialBotFrame)
         self.materialDashFrame.setObjectName(u"materialDashFrame")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.materialDashFrame.sizePolicy().hasHeightForWidth())
-        self.materialDashFrame.setSizePolicy(sizePolicy2)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.materialDashFrame.sizePolicy().hasHeightForWidth())
+        self.materialDashFrame.setSizePolicy(sizePolicy4)
         self.verticalLayout_5 = QVBoxLayout(self.materialDashFrame)
         self.verticalLayout_5.setSpacing(0)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
@@ -301,6 +440,10 @@ class Ui_PbrReferenceWidget(object):
         self.searchLineEdit.setPlaceholderText(QCoreApplication.translate("PbrReferenceWidget", u"Search", None))
         self.cancelSearchBtn.setText("")
         self.propsCloseButton.setText("")
-        self.propertiesLabel.setText(QCoreApplication.translate("PbrReferenceWidget", u"Properties", None))
+        self.materialNameLabel.setText(QCoreApplication.translate("PbrReferenceWidget", u"MATERIAL NAME", None))
+        self.categoryLabel.setText(QCoreApplication.translate("PbrReferenceWidget", u"CATEGORY", None))
+        self.Mirror.setText(QCoreApplication.translate("PbrReferenceWidget", u"Mirror", None))
+        self.Aluminium.setText(QCoreApplication.translate("PbrReferenceWidget", u"Aluminium", None))
+        self.propertiesLabel.setText(QCoreApplication.translate("PbrReferenceWidget", u"PROPERTIES", None))
     # retranslateUi
 
